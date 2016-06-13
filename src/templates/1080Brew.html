@@ -1,1 +1,15 @@
-Coffee shop
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<form method="POST" action=""> {% csrf_token %}
+
+{{ form }}
+
+<button type="submit" name="action">RESERVE SPACE</button>
+
+</form>
+
+{% endblock content %}
