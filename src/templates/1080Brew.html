@@ -4,12 +4,328 @@
 {% block content %}
 
 
-<form method="POST" action=""> {% csrf_token %}
+<!-- landing section logo and information -->
 
-{{ form }}
 
-<button type="submit" name="action">RESERVE SPACE</button>
+  <div id="index-banner" class="parallax-container" style="height:650px;">
 
-</form>
+  <!--large-->
+    <div class="section no-pad-bot hide-on-med-and-down " style=" padding-top:140px;">
+
+      <div class="container " style="background-color:rgba(255, 255, 255, 0.6); border-radius: 5%; height:350px; width:480px;">
+            <br><br>
+
+            <center>
+            <!-- logo -->
+            <p style="padding-top:10px;" ><img  src='{% static "img/brew/logo.jpg" %}'  style="  width:225px; height:225px; border-radius: 15%; padding-top:0px;" alt="image for article"></p>
+            </center>
+
+              <div class="row center">
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; line-height:0em; ">1080 Wyckoff Ave. Queens, Ny 11385</h5>
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; font-size:18px; line-height:0em;">Hours: 8am-6pm Mon-Fri Sat & Sun</h5>
+              </div>
+             <br><br>
+       </div>
+    </div>
+
+
+
+
+<!--tablet logo section-->
+
+<div class="section no-pad-bot hide-on-small-only hide-on-large-only " style=" padding-top:20px;">
+
+      <div class="container " style="background-color:rgba(255, 255, 255, 0.6); border-radius: 5%; height:470px; width:580px; ">
+            <br><br>
+
+            <center>
+            <!-- logo -->
+            <p style="padding-top:10px;" ><img  src='{% static "img/brew/logo.jpg" %}'  style="  width:300px; height:300px; border-radius: 15%; padding-top:0px;" alt="image for article"></p>
+            </center>
+
+              <div class="row center">
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; line-height:1em; ">1080 Wyckoff Ave. Queens, Ny 11385</h5>
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; font-size:18px; line-height:1em;">Hours: 8am-6pm Mon-Fri Sat & Sun</h5>
+              </div>
+             <br><br>
+       </div>
+    </div>
+
+
+<!-- mobile logo section-->
+
+<div class="section no-pad-bot hide-on-med-and-up" style=" padding-top:70px;">
+
+      <div class="container hide-on-med-and-up" style="background-color:rgba(255, 255, 255, 0.6); border-radius: 5%; height:470px; width:280px; ">
+            <br><br>
+
+            <center>
+            <!-- logo -->
+            <p style="padding-top:10px;" ><img  src='{% static "img/brew/logo.jpg" %}'  style="  width:250px; height:250px; border-radius: 15%; padding-top:0px;" alt="image for article"></p>
+            </center>
+
+              <div class="row center">
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; line-height:1em; ">1080 Wyckoff Ave. Queens, Ny 11385</h5>
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; font-size:18px; line-height:1em;">Hours: 8am-6pm Mon-Fri Sat & Sun</h5>
+              </div>
+             <br><br>
+       </div>
+    </div>
+
+
+
+
+
+
+    <div class="parallax"><img src='{% static "img/brew/background1.jpg" %}' alt="Unsplashed background img 1"></div>
+  </div>
+        <center>
+        <div style="padding-bottom:15px;"></div>
+        <img style="width:3%; height:3%;" src='{% static "img/brew/downArrow.svg" %}'>
+        </center>
+
+
+
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   menu   -->
+
+
+      <div class="row" style="padding-top:20px;">
+                  <h4 class="center">Menu</h4>
+          <hr>
+
+        <div class="col s12 m4 l4">
+          <div class="icon-block">
+                  <h2 class="center "><img class="thumbnail" src='{% static "img/brew/menuCoffee.jpg" %}'></h2>
+                  <h5 class="center" style=" line-height: 0em;">Coffee</h5>
+                  <br>
+                  <h6 class="center" style=" line-height: 1em;">Cappuchino $4</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Drip Coffee $2.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Latte $3.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Hot Tea $4.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Americano $2.50</h6>
+          </div>
+        </div>
+
+         <div class="col s12 m4 l4">
+          <div class="icon-block">
+                  <h2 class="center "><img class="thumbnail" src='{% static "img/brew/menuPastries.jpg" %}'></h2>
+                  <h5 class="center" style=" line-height: 0em;">Pastries</h5>
+                  <br>
+                  <h6 class="center" style=" line-height: 1em;">Croissants $4.75</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Bagel $1.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Waffle $5.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Scone $3.50</h6> 
+          </div>
+        </div>
+
+         <div class="col s12 m4 l4">
+          <div class="icon-block">
+                  <h2 class="center "><img class="thumbnail" src='{% static "img/brew/menuSandwiches.jpg" %}'></h2>
+                  <h5 class="center" style=" line-height: 0em;">Sandwiches</h5>
+                  <br>
+                  <h6 class="center" style=" line-height: 1em;">Italian $7</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Brie and Apple $9.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Monzerella and Tomatoe $6.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Warm Baguette $4.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Tuna Salad on Croisant $6.50</h6>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="parallax-container valign-wrapper">
+   
+    <div class="parallax"><img src='{% static "img/brew/background3.jpg" %}' alt="Unsplashed background img 2"></div>
+  </div>
+</div>
+
+
+
+
+  <div class="container">
+    <div class="section">
+      <br>
+      <div class="row">
+        <div class="col s12 ">
+          {# <h3><i class="mdi-content-send "></i></h3> #}
+          <h4 class="center">Recent</h4>
+          <hr>
+          <div style="padding-bottom:20px;"></div>
+          <div class="col s12 m12 l12">
+          <h5>Rangoon Noodle Lab Cafe Takeover <small class="light" style="padding-left:20px;">5/20/16</small></h5>
+          <!-- image is 500x300 -->
+          <p class="center"><img class="responsive-img" src='{% static "img/brew/rangoonNoodleLab.jpg" %}' alt="image for article"></p>
+          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo. Read More...</p>
+        </div>
+      </div>
+
+
+
+        <div class="col s12 m12 l12">
+          <h5>Hello World This is the First Blog Post<small class="light" style="padding-left:20px;">2/5/16</small></h5>
+        <!-- image is 500x300 -->
+          <p class="center "><img class="responsive-img" src='{% static "img/brew/helloWorld.jpg" %}' alt="image for article"></p>
+          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo. Read More...</p>
+        </div>
+</div>
+    </div>
+  </div>
+
+
+
+
+  
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+    <!--
+      <div class="container"  style="background-color:rgba(255, 255, 255, 0.6);">
+        <div class="row center">
+
+          <h5 class="header col s12  black-text"> Sample Text Advertising the Coffee Shop</h5>
+        </div>
+      </div>
+      -->
+    </div>
+
+
+    <div class="parallax"><img src='{% static "img/brew/background4.jpg" %}' alt="Unsplashed background img 2"></div>
+  </div>
+
+
+
+
+
+
+
+  <!--last section Reserve Space Form and about section -->
+
+
+  <div class="page-footer white">
+    <div class="container">
+    <div class="row">
+      <div class="row">
+        <div class="col s12 m12">
+
+          <div class="icon-block" style="padding-left:0px;">
+            
+            <h4 class="center">About Us</h4>
+            <hr>
+     
+        </div>
+        </div>
+      
+    </div>
+
+          
+
+
+      <div class="row">
+        <div class=" col l6 s12">
+   
+          <h5 class="black-text center" style="font-weight:bold; padding-top:20px;">1080 Brew</h5>
+          <p class="black-text text-lighten-4">
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo. </p>
+
+
+        <p><span style="font-weight:bold;">1080 Brew:</span> 1080coffee@gmail.com</p>
+        <p><span style="font-weight:bold;">Adress:</span> 10-80 Wyckoff Avenue Ridgewood, NY 11385</p>      
+        <p>347-484-9220</p>
+
+
+        </div>
+
+
+
+<!--  RESERVE SPPACE-->
+
+        <div class="row">
+        <div class="col s12 m3 l6">
+          <div class=" white " >
+          <div class="col m3 "style="background-color:white; padding-bottom:0px; width:200px;">
+          <h5  class="left"style="color:black;  font-weight:bold;  padding-left:0px; padding-top:15px;">Mailing List</h5>
+          </div>
+
+</div>
+
+
+<!-- FORM FOR RESERVING SPACE -->
+
+
+
+            <div class="left " style="padding-top:15px;">
+
+          <label for="date"style="color:black;"><span style="color:red;">*</span>Email Adress:</label>
+         <input style="color:black;"type="email"></input>
+
+    <label for="date"style="color:black;"><span style="color:red;">*</span>Name:</label>
+         <input style="color:black;"type="email"></input>
+
+
+     
+      <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Message</label>
+        </div>
+      </div>
+    </form>
+  </div>
+        
+
+           
+            <button class="black btn waves-effect waves-light" style="" type="submit" name="action">RESERVE SPACE
+            <i class="material-icons right">send</i>
+            </button>
+        <div style="padding-bottom:30px;"></div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+<div style="padding-bottom:30px;"></div>
+
+
+<!-- GOOGLE MAPS  -->
+
+         <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:300px;width:450px;'><div id='gmap_canvas' style='height:300px;width:450px;'></div><div><small><a href="http://embedgooglemaps.com">                  embed google map              </a></small></div><div><small><a href="http://freedirectorysubmissionsites.com">directory submission sites</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(40.6942764,-73.9027486),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.6942764,-73.9027486)});infowindow = new google.maps.InfoWindow({content:'<strong>Rockwall Studios</strong><br>1080 Wyckoff Ave. Ridgewood Queens 11385<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+{# <form method="POST" action=""> {% csrf_token %} #}
+{#  #}
+{# {{ form }} #}
+{#  #}
+{# <button type="submit" name="action">RESERVE SPACE</button> #}
+{#  #}
+{# </form> #}
 
 {% endblock content %}

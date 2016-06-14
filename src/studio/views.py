@@ -40,3 +40,13 @@ def directory(request):
 
 def studio(request):
     return render(request,"studio.html")
+
+def available(request):
+    return render(request,"available_spaces.html")
+
+def tour(request):
+    return render(request,"tour.html")
+
+def floorplan(request):
+    return render(request,"floorplan.html")
+

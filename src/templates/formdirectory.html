@@ -1,0 +1,36 @@
+<form method="GET" action="">
+<input type="text" name="q" placeholder="Search" value="{{ request.GET.q }}">
+<input type="submit" value="search">
+</form>
+
+<br />
+    {% for obj in object_list %}
+
+      {% if obj.image %}       
+      <img src="/media/{{ obj.image }}">  
+      {% endif %}          
+
+       {{ obj.first_name }}<br />
+       {{ obj.last_name }}<br />
+        <br />
+
+
+    {% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ object_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+
+

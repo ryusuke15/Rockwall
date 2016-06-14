@@ -6,18 +6,126 @@
     <title>Rockwall Studios</title>
     <meta name="description" content="Rockwall Studios">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--CSS  -->
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/normalize.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel='stylesheet' href='{% static "css/materialize.css" %}'>
+    <link rel='stylesheet' href='{% static "css/indexMainLandingPage.css" %}'>
+    <link rel='stylesheet' href='{% static "css/main.css" %}'>
+    <link rel='stylesheet' href='{% static "css/style.css" %}'>
+    <link rel='stylesheet' href='{% static "css/floorplan.css" %}'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> -->
-    <!-- <link rel='stylesheet' href='{% static "css/style.css" %}'> -->
+    
 </head>
 <body>
 
+<header>
+<!--navigation bar -->
+
+  <!-- desktop nav bar -->
+<nav class="hide-on-med-and-down">
+    <div class="nav-wrapper black">
+        <a href="/" class="brand-logo" style="width:10%; font-size:20px; padding-left:10px; padding-top:0px; color:black; font-weight:bold;">
+            <img src='{% static "img/logo.svg" %}' style="width:100%; height:10%;" id="rockwallLogo">
+        </a>
+
+        <a href="event_space"  style="font-size:14px; font-weight: bold; padding-left:190px; color:white;">1080 Project Space</a>
+
+        <a href="studio"  style="font-size:14px; font-weight: bold; padding-left:10px; color:white;">Studio Renta/ Directory</a>
+        <a href="1080_Brew"  style="font-size:14px; font-weight: bold; padding-left:10px; color:white;">1080 Brew</a>
+
+        <ul class="right hide-on-small-and-down">
+        
+            <li><i style=" color:white; font-size:20px; "class="fi-social-facebook"></i></li>
+
+            <li><i style=" color:white; font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+
+            <li><i style=" color:white; font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+        </ul>
+    </div>
+</nav>
+
+<!-- Tablet nav bar -->
+<nav class="hide-on-small-only hide-on-large-only ">
+    <div class="nav-wrapper black">
+
+        <a href="/" class="brand-logo left" style="width:18%; padding-left:0px; padding-top:0px; color:black; font-weight:bold;">
+            <img style="width:100%; height:20%;" id="rockwallLogo" src='{% static "img/logo.svg" %}'></a>
+      <a href="event_space"  style="font-size:14px; font-weight: bold; padding-left:190px; color:white;">1080 Project Space</a>
+
+       <a href="studio" style="font-size:14px; font-weight: bold; padding-left:10px; color:white;">Studio Renta/ Directory</a>
+       <a href="1080_Brew" style="font-size:14px; font-weight: bold; padding-left:10px; color:white;">1080 Brew</a>
+
+
+
+      <ul class="right hide-on-small-and-down">
+        
+        <li><i  style=" color:white; font-size:20px; "class="fi-social-facebook"></i></li>
+
+          <li><i style=" color:white; font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+
+          <li><i style=" color:white; font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+      </ul>
+    </div>
+  </nav>
+
+
+<!--Mobile nav bar -->
+  
+  <nav class="hide-on-med-and-up">
+     <div class="nav-wrapper black">
+
+      <a href="/" class="brand-logo left" style="width:21%; padding-left:0px; padding-top:0px; color:black; font-weight:bold;">
+        <img style="width:100%; height:100%;" id="rockwallLogo" src='{% static "img/logo.svg" %}'></a>
+      <a href="event_space"  style="font-size:7px; font-weight: bold; padding-left:100px; color:white;">1080 Project Space</a>
+
+       <a href="studio"  style="font-size:7px; font-weight: bold; padding-left:12px; color:white;">Studio Renta/ Directory</a>
+       <a href="1080_Brew"  style="font-size:7px; font-weight: bold; padding-left:12px; color:white;">1080 Brew</a>
+      
+    </div>
+</nav>
+
+
+</header>
+
+
+<!--Content  -->
 {% block content %}
 {% endblock content %}
 
+<br>
+
+<footer>
+
+
+<div class="row expanded">
+<div class="medium-12 columns" style="background-color:grey;">
+<ul class="menu align-center">
+<li class="menu-text align-right" style="color:white;">Copyright © 2099 Rockwallstudios LLC.</li>
+</ul>
+</div>
+</div>
+</footer>
+
+
 <!--JS Lib  -->
-
-
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script> 
+<script src='{% static "js/materialize.js" %}'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/modernizr.js"></script>
+<script src='{% static "js/init.js" %}'></script>
+<script>
+      $(document).foundation();
+</script>
+<script>
+  $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
+</script>
 
 </body>
 </html>

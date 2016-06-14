@@ -1,0 +1,193 @@
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="row medium-12 large-12 columns">
+  <div class="subNavArea">
+
+<!-- desktop -->
+    <ul class="menu">
+
+      <!--<li  class="menu-text show-for-large" style="font-size:45px; padding-left:0px; padding-bottom:0px; " >Rockwall Studios</li> -->
+      <li><a href="studio"  class="show-for-large"style="color:black; font-size:45px; font-weight:bold; padding-top:25px;">Rockwall Studios</a></li>
+      <li><a href="directory"  class="show-for-large"style="color:black; font-weight:bold; padding-top:35px;">Directory</a></li>
+      <li><a href="available_spaces"  class="show-for-large"style="color:black;   font-weight:bold; padding-top:35px;">Available Spaces</a></li>
+      <li><a href="floorplan"  class="show-for-large"style="color:black;  font-weight:bold; padding-top:35px;">Floorplan</a></li>
+      <li><a href="tour" class="show-for-large" style="color:black;  font-weight:bold; padding-top:35px;">Arrange a Tour</a></li>
+
+
+<!-- tablet -->
+<center>
+      <li class="menu-text hide-for-large  show-for-medium center" style="font-size:60px;  padding-top:30px;" >Rockwall Studios</li>
+</center>
+
+      <center>
+          <li  style="display:inline-block; text-align:center;"><a href="directory" class="hide-for-large show-for-medium " style="color:black; font-weight:bold; padding-top:0px; padding-left:0px;  ">Directory</a></li>
+          <li  style="display:inline-block; text-align:center;"><a href="available_spaces"  class="hide-for-large show-for-medium"style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Available Spaces </a></li>
+
+          <li  style="display:inline-block; text-align:center;"><a href="floorplan" class="hide-for-large show-for-medium" style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Floorplan </a></li>
+
+          <li  style="display:inline-block; text-align:center;"><a href="tour" class="hide-for-large show-for-medium" style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Arrange a Tour </a></li>
+      </center>
+ 
+
+
+      <!--mobile-->
+      <center>
+      <li class="menu-text show-for-small-only " style="font-size:30px;  padding-top:0px; padding-left:0px;" >Rockwall Studios</li>
+ 
+      <hr class="show-for-small-only">
+
+      <li style="display:inline-block; text-align:center;" ><a href="directory" class="show-for-small-only center" style="color:black; font-weight:bold; padding-top:5px; padding-left:0px; font-size:10px; ">Directory</a></li>
+      <li style="display:inline-block; text-align:center;"><a href="available_spaces"  class="show-for-small-only center"style="color:black; font-weight:bold; padding-top:5px; padding-left:10px; font-size:10px;">Available Spaces</a></li>
+      <li style="display:inline-block; text-align:center;"><a href="floorplan" class="show-for-small-only center"style="color:black; font-weight:bold; padding-top:5px; padding-left:10px; font-size:10px;">Floorplan</a></li>
+      <li style="display:inline-block; text-align:center;"><a href="tour" class="show-for-small-only center"style="color:black; font-weight:bold; padding-top:5px; padding-left:10px; font-size:10px;">Arrange a Tour</a></li>
+
+<hr class="show-for-small-only">
+</center>
+  </ul>
+</div>
+</div>
+
+<!-- slider -->
+
+
+<div class="orbit hide-for-small-only" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <ul class="orbit-container" style="height:281px">
+        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+        <li class="orbit-slide is-active">
+        <img src='{% static "img/studio/sliderImage1.jpg" %}'>
+        </li>
+        <li class="orbit-slide">
+        <img src='{% static "img/studio/sliderImage2.jpg" %}'>
+        </li>
+        <li class="orbit-slide">
+        <img src='{% static "img/studio/sliderImage3.jpg" %}'>
+        </li>
+
+    </ul>
+</div>
+
+<br>
+<br>
+
+<div class="row column">
+<div class="row medium-12 large-12 columns">
+<div class="blog-post">
+<ul class="menu">
+<li style="font-size:30px; padding-left:0px; " >Available Spaces</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- cards section --> 
+
+<div class="row small-up-1 medium-up-2 large-up-2">
+
+<!--Begining of Card -->
+<div class="column  ">
+<div class="w3-card " style="">
+<div class="w3-container w3-light-grey">
+  <h3>A24</h3>
+</div>
+<div class="w3-container">
+      <p><a  href="index_AvailableSpaceSolo.html">  <img src='{% static "img/studio/sampleRoom1.jpg" %}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:15px; padding-bottom:20px;">
+      </a></p>
+      <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
+      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" > 500 sq. ft.</p>
+      <p class="hide-on-large-only" style=" padding-top:0px; padding-bottom:0px;" > 500 sq. ft.</p>
+      <p class=" hide-for-large" style="" > $800 / month</p>
+      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" > $800 / month</p>
+      <p class="hide-on-med-and-down" style="padding-left:210px;"><a  href="#" class="button black" >Arrange A Tour</a></p>
+      <p class="hide-for-large" style="padding-left:0px;"><a  href="#" class="button black" >Arrange A Tour</a></p>
+  <br>
+  <hr>
+</div>
+</div>
+</div>
+
+<!--End of card-->
+
+<!--Begining of Card -->
+<div class="column  ">
+<div class="w3-card " style="">
+<div class="w3-container w3-light-grey">
+  <h3>A24</h3>
+</div>
+<div class="w3-container">
+  <img src='{% static "img/studio/sampleRoom2.jpg" %}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:10px; padding-bottom:0px;">
+      </a></p>
+      <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
+      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" > 500 sq. ft.</p>
+      <p class="hide-on-large-only" style=" padding-top:0px; padding-bottom:0px;" > 500 sq. ft.</p>
+      <p class=" hide-for-large" style="" > $800 / month</p>
+      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" > $800 / month</p>
+      <p class="hide-on-med-and-down" style="padding-left:210px;"><a  href="#" class="button black" >Arrange A Tour</a></p>
+      <p class="hide-for-large" style="padding-left:0px;"><a  href="#" class="button black" >Arrange A Tour</a></p>
+  <br>
+  <hr>
+</div>
+</div>
+</div>
+
+<!--End of card-->
+
+
+
+
+
+
+
+<!--Begining of Card -->
+<div class="column  ">
+<div class="w3-card " style="">
+
+<header class="w3-container w3-light-grey">
+  <h3>D4</h3>
+</header>
+<div class="w3-container">
+  <img src='{% static "img/studio/sampleRoom3.jpg" %}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:10px; padding-bottom:0px;">
+
+  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
+
+  
+  <p style=" padding-top:0px; padding-bottom:0px;" > 500 sq. ft.</p>
+          <p class=" hide-for-large" style="" > $800 / month</p>
+
+    <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:220px;" > $800 / month</p>
+
+ 
+  <br>
+  <hr>
+</div>
+</div>
+</div>
+
+<!--End of card-->
+
+<!--Begining of Card -->
+<div class="column  ">
+<div class="w3-card " style="">
+
+<header class="w3-container w3-light-grey">
+  <h3>C25</h3>
+</header>
+<div class="w3-container">
+  <img src='{% static "img/studio/sampleRoom4.jpg" %}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:10px; padding-bottom:0px;">
+  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
+  <p style=" padding-top:0px; padding-bottom:0px;" > 500 sq. ft.</p>
+  <p class=" hide-for-large" style="" > $800 / month</p>
+  <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:220px;" > $800 / month</p>
+
+  <br>
+  <hr>
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock content %}

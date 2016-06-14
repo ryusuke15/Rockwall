@@ -2,41 +2,294 @@
 {% load staticfiles %}
 
 {% block content %}
+<div class="row medium-12 large-12 columns">
+  <div class="subNavArea">
 
-<form method="GET" action="">
-<input type="text" name="q" placeholder="Search" value="{{ request.GET.q }}">
-<input type="submit" value="search">
-</form>
+<!-- desktop -->
+    <ul class="menu">
 
-<br />
-    {% for obj in object_list %}
-
-      {% if obj.image %}       
-      <img src="/media/{{ obj.image }}">  
-      {% endif %}          
-
-       {{ obj.first_name }}<br />
-       {{ obj.last_name }}<br />
-        <br />
+      <!--<li  class="menu-text show-for-large" style="font-size:45px; padding-left:0px; padding-bottom:0px; " >Rockwall Studios</li> -->
+      <li><a href="studio"  class="show-for-large"style="color:black; font-size:45px; font-weight:bold; padding-top:25px;">Rockwall Studios</a></li>
+      <li><a href="directory"  class="show-for-large"style="color:black; font-weight:bold; padding-top:35px;">Directory</a></li>
+      <li><a href="available_spaces"  class="show-for-large"style="color:black;   font-weight:bold; padding-top:35px;">Available Spaces</a></li>
+      <li><a href="floorplan"  class="show-for-large"style="color:black;  font-weight:bold; padding-top:35px;">Floorplan</a></li>
+      <li><a href="tour" class="show-for-large" style="color:black;  font-weight:bold; padding-top:35px;">Arrange a Tour</a></li>
 
 
-    {% endfor %}
+<!-- tablet -->
+<center>
+      <li class="menu-text hide-for-large  show-for-medium center" style="font-size:60px;  padding-top:30px;" >Rockwall Studios</li>
+</center>
 
-<div class="pagination">
-    <span class="step-links">
-        {% if object_list.has_previous %}
-            <a href="?page={{ object_list.previous_page_number }}">previous</a>
-        {% endif %}
+      <center>
+          <li  style="display:inline-block; text-align:center;"><a href="directory" class="hide-for-large show-for-medium " style="color:black; font-weight:bold; padding-top:0px; padding-left:0px;  ">Directory</a></li>
+          <li  style="display:inline-block; text-align:center;"><a href="available_spaces"  class="hide-for-large show-for-medium"style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Available Spaces </a></li>
 
-        <span class="current">
-            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
-        </span>
+          <li  style="display:inline-block; text-align:center;"><a href="floorplan" class="hide-for-large show-for-medium" style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Floorplan </a></li>
 
-        {% if object_list.has_next %}
-            <a href="?page={{ object_list.next_page_number }}">next</a>
-        {% endif %}
-    </span>
+          <li  style="display:inline-block; text-align:center;"><a href="tour" class="hide-for-large show-for-medium" style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Arrange a Tour </a></li>
+      </center>
+ 
+
+
+      <!--mobile-->
+      <center>
+      <li class="menu-text show-for-small-only " style="font-size:30px;  padding-top:0px; padding-left:0px;" >Rockwall Studios</li>
+ 
+      <hr class="show-for-small-only">
+
+      <li style="display:inline-block; text-align:center;" ><a href="directory" class="show-for-small-only center" style="color:black; font-weight:bold; padding-top:5px; padding-left:0px; font-size:10px; ">Directory</a></li>
+      <li style="display:inline-block; text-align:center;"><a href="available_spaces"  class="show-for-small-only center"style="color:black; font-weight:bold; padding-top:5px; padding-left:10px; font-size:10px;">Available Spaces</a></li>
+      <li style="display:inline-block; text-align:center;"><a href="floorplan" class="show-for-small-only center"style="color:black; font-weight:bold; padding-top:5px; padding-left:10px; font-size:10px;">Floorplan</a></li>
+      <li style="display:inline-block; text-align:center;"><a href="tour" class="show-for-small-only center"style="color:black; font-weight:bold; padding-top:5px; padding-left:10px; font-size:10px;">Arrange a Tour</a></li>
+
+<hr class="show-for-small-only">
+</center>
+  </ul>
+</div>
 </div>
 
+<!-- slider -->
+
+
+<div class="orbit hide-for-small-only" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <ul class="orbit-container" style="height:281px">
+        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+        <li class="orbit-slide is-active">
+        <img src='{% static "img/studio/sliderImage1.jpg" %}'>
+        </li>
+        <li class="orbit-slide">
+        <img src='{% static "img/studio/sliderImage2.jpg" %}'>
+        </li>
+        <li class="orbit-slide">
+        <img src='{% static "img/studio/sliderImage3.jpg" %}'>
+        </li>
+
+    </ul>
+</div>
+
+<div class="top-bar" style="background-color:white;">
+<div class="row white">
+<div class="top-bar-left white" style="padding-top:0px; ">
+<ul class="dropdown menu white" data-dropdown-menu>
+
+<li class="menu-text show-for-large " style="background-color:white; font-size:20px; padding-top:20px; ">Directory</li>
+<li class="menu-text show-for-medium-only " style="background-color:white; font-size:20px; padding-top:30px; ">Directory</li>
+
+<li class="menu-text show-for-small-only" style="background-color:white; font-size:20px; "><u>Directory</u></li>
+
+
+</li>
+
+</ul>
+</div>
+<div class="top-bar-right">
+<ul class="menu right" style="background-color:white;">
+<li><input style="padding-top:7px; font-size:10px;" type="search" placeholder="Search"></li>
+<li><button type="button" class="button small" style="color:black;" >Search</button></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="row small-up-1 medium-up-2 large-up-2">
+
+
+<!--Begining of Card -->
+<div class="column  ">
+<div class="w3-card " style="">
+
+<header class="w3-container w3-light-grey">
+  <h3>John Arno Photography</h3>
+</header>
+<div class="w3-container">
+  <img src='{% static "img/studio/profilePic1.jpg" %}' alt="Avatar" class="w3-left w3-circle w3-margin-right hide-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
+  <center>
+  <img src='{% static "img/studio/profilePic1.jpg" %}' alt="Avatar" class="w3-left w3-circle w3-margin-right show-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
+</center>
+  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
+
+  
+  <p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" > sample.com</p>
+  <p style=" padding-top:0px; padding-bottom:10px;" class="show-for-small-only" > sample.com</p>
+  <ul class="menu">
+
+
+        <li class="show-for-large "><i  style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i></li>
+
+        <li class="show-for-large "><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+
+         <li class="show-for-large"><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+        <li class="show-for-large"><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
+        </li>
+
+
+        <li class="hide-for-large  "><i  style=" color:black;font-size:20px; padding-left:0px; color:black;"class="fi-social-facebook"></i></li>
+
+        <li class="hide-for-large"><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+        <li class="hide-for-large "><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+        <li class="hide-for-large "><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
+        </li>
+
+
+
+
+
+
+
+
+</ul>
+  <br>
+  <hr>
+</div>
+</div>
+</div>
+
+<!--End of card-->
+
+
+
+
+
+<!--Begining of Card -->
+<div class="column  ">
+<div class="w3-card " style="">
+
+<header class="w3-container w3-light-grey">
+  <h3>727 Studios</h3>
+</header>
+<div class="w3-container">
+  <img src='{% static "img/studio/profilePic2.jpg" %}' alt="Avatar" class="w3-left w3-circle w3-margin-right" style=" padding-top:10px; padding-bottom:10px;">
+
+  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
+
+    <p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" > sample.com</p>
+  <p style=" padding-top:0px; padding-bottom:10px;" class="show-for-small-only" > sample.com</p>
+  <ul class="menu ">
+
+ 
+        <li class="show-for-large "><i  style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i></li>
+
+        <li class="show-for-large "><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+
+         <li class="show-for-large"><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+        <li class="show-for-large"><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
+        </li>
+
+
+        <li class="hide-for-large  "><i  style=" color:black;font-size:20px; padding-left:0px; color:black;"class="fi-social-facebook"></i></li>
+
+        <li class="hide-for-large"><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+        <li class="hide-for-large "><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+        <li class="hide-for-large "><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
+        </li>
+
+
+</ul>
+  <br>
+  <hr>
+</div>
+</div>
+</div>
+
+<!--End of card-->
+
+<!--Begining of Card -->
+<div class="column  ">
+<div class="w3-card " style="">
+
+<header class="w3-container w3-light-grey">
+  <h3>John Doe</h3>
+</header>
+<div class="w3-container">
+  <img src="http://placehold.it/200x200&text=Pegasi B" alt="Avatar" class="w3-left w3-circle w3-margin-right" style=" padding-top:10px; padding-bottom:10px;">
+
+  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
+
+  
+  <p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" > sample.com</p>
+  <p style=" padding-top:0px; padding-bottom:10px;" class="show-for-small-only" > sample.com</p>
+  <ul class="menu ">
+
+ 
+        <li class="show-for-large "><i  style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i></li>
+
+        <li class="show-for-large "><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+
+         <li class="show-for-large"><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+        <li class="show-for-large"><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
+        </li>
+
+
+        <li class="hide-for-large  "><i  style=" color:black;font-size:20px; padding-left:0px; color:black;"class="fi-social-facebook"></i></li>
+
+        <li class="hide-for-large"><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+        <li class="hide-for-large "><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+        <li class="hide-for-large "><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
+        </li>
+
+
+</ul>
+  <br>
+  <hr>
+</div>
+</div>
+</div>
+
+<!--End of card-->
+
+<!--Begining of Card -->
+<div class="column  ">
+<div class="w3-card " style="">
+
+<header class="w3-container w3-light-grey">
+  <h3>John Doe</h3>
+</header>
+<div class="w3-container">
+  <img src="http://placehold.it/200x200&text=Pegasi B" alt="Avatar" class="w3-left w3-circle w3-margin-right" style=" padding-top:10px; padding-bottom:0px;">
+
+  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
+
+  
+  <p style=" padding-top:0px; padding-bottom:10px;" > sample.com</p>
+  <ul class="menu ">
+
+ 
+        <li class="show-for-large "><i  style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i></li>
+
+        <li class="show-for-large "><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+
+         <li class="show-for-large"><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+        <li class="show-for-large"><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
+        </li>
+
+
+        <li class="hide-for-large  "><i  style=" color:black;font-size:20px; padding-left:0px; color:black;"class="fi-social-facebook"></i></li>
+
+        <li class="hide-for-large"><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+        <li class="hide-for-large "><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
+          
+        <li class="hide-for-large "><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
+        </li>
+
+
+</ul>
+  <br>
+  <hr>
+</div>
+</div>
+</div>
 
 {% endblock content %}

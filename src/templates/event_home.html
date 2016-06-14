@@ -1,3 +1,283 @@
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="top-bar white hide-on-med-and-down">
+<div class="row white">
+<div class="top-bar-left white">
+<ul class="dropdown menu white" data-dropdown-menu>
+<li class="menu-text white" style="font-size:50px; ">1080 Project Space</li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Upcoming</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Past</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Rent the Space</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- tablet -->
+<div class="top-bar white hide-on-small-only hide-on-large-only">
+<div class="row white">
+<div class="top-bar-left white">
+<ul class="dropdown menu white" data-dropdown-menu>
+<li class="menu-text white" style="font-size:30px; padding-top:30px; ">1080 Project Space</li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Upcoming</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Past</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Rent the Space</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- mobile -->
+<div class="top-bar white hide-on-med-and-up ">
+<div class="row white ">
+<div class="top-bar-left white" style="display:inline;">
+<ul class="dropdown menu white " data-dropdown-menu>
+<div class="center-align">
+<li class="menu-text white" style="font-size:32px; ">1080 Project Space</li>
+</div>
+<hr>
+<center>
+<li  style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:0px;" href="#">Upcoming</a></li>
+<li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="#">Past</a></li>
+<li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="#">Rent the Space</a></li>
+</center>
+</ul>
+<hr>
+
+</div>
+</div>
+</div>
+
+
+<!-- orbit slider -->
+
+<div class="row hide-for-small-only"  style="padding-top:px;">
+<div class="medium-12 columns">
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+  <ul class="orbit-container">
+    <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+    <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+ 
+    <li class="is-active orbit-slide">
+
+      <img class="orbit-image4" src='{% static "img/event/slider1.jpg" %}' alt="main article image">
+    </li>
+    <li class="orbit-slide">
+      <img class="orbit-image4" src='{% static "img/event/slider2.jpg" %}' alt="main article image">
+    </li>
+    <li class="orbit-slide">
+      <img class="orbit-image4" src='{% static "img/event/slider3.jpg" %}' alt="main article image">
+    </li>
+      <li class="orbit-slide">
+      <img class="orbit-image4" src='{% static "img/event/slider4.jpg" %}' alt="main article image">
+    </li>
+    
+  </ul>
+
+</div>
+</div>
+</div>
 
 
 
+
+
+
+
+
+<div class="row column ">
+<div class="large-12 columns" style="background-color:grey; align:right; color:white; ">
+  
+</div>
+
+<div style="padding-bottom:0px; font-weight:bold;"></div>
+
+
+<div class="large-12 columns" style="border-right: 1px solid #E3E5E8;">
+<article>
+<div class="row">
+
+<!-- Recent Accordian tab -->
+
+<ul class="accordion" data-accordion   >
+  <li class="accordion-item is-active " data-accordion-item  >
+    <a href="#" class="accordion-title" style="background-color:black;  color:white; font-size:20px;">Recent</a>
+    <div class="accordion-content" data-tab-content >
+    <div class="row">
+<div class="large-6 medium-6 small-12 columns">
+<p><img class="responsive-img hide-for-small-only" src='{% static "img/event/1080GalleryShow2.jpg" %}' alt="image for article" alt="article preview image"></p>
+<p><img class=" show-for-small-only" src='{% static "img/event/1080GalleryShow2.jpg" %}' alt="image for article" alt="article preview image"></p>
+
+
+</div>
+<div class="large-6 medium-6 small-12 columns">
+<h5><a href="#" style="color:black; font-size:20px;">1080 Project Space Group Show</a></h5>
+<p>
+<span><i class="fi-torso"> By XXXX XXXXXXXXX &nbsp;&nbsp;</i></span>
+<span><i class="fi-calendar"> 4/20/16 &nbsp;&nbsp;</i></span>
+
+</p>
+<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
+<div class="show-for-small-only small-12 columns">
+
+</div>
+</div>
+</div>
+ </div>
+  </li>
+  <!-- ... -->
+</ul>
+
+<!-- Upcoming Accordian tab -->
+
+<ul class="accordion" data-accordion data-allow-all-closed="true">
+  <li class="accordion-item " data-accordion-item>
+    <a href="#" class="accordion-title" style="background-color:black; color:white; font-size:20px;">Upcoming</a>
+    <div class="accordion-content" data-tab-content>
+    <div class="row">
+<div class="llarge-6 medium-6 small-12 columns">
+<p><img src='{% static "img/event/bushwickopenstudios.jpg" %}' alt="image for article" alt="article preview image"></p>
+</div>
+<div class="large-6 medium-6 small-12 columns">
+<h5><a href="#" style="color:black; font-size:20px;">1080 Project Space Group Show</a></h5>
+<p>
+<span><i class="fi-torso"> By XXX XXX &nbsp;&nbsp;</i></span>
+<span><i class="fi-calendar"> XX/XX/XX &nbsp;&nbsp;</i></span>
+
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
+</div>
+</div>
+ </div>
+  </li>
+  <!-- ... -->
+</ul>
+
+
+<!-- Past Accordian tab -->
+
+
+<ul class="accordion" data-accordion data-allow-all-closed="true">
+  <li class="accordion-item " data-accordion-item>
+    <a href="#" class="accordion-title" style="background-color:black; color:white; font-size:20px;">Past</a>
+    <div class="accordion-content" data-tab-content>
+    <div class="row">
+<div class="large-6 medium-6 small-12 columns">
+<p><img src='{% static "img/event/galleryShowPoster.jpg" %}'alt="image for article" alt="article preview image"></p>
+</div>
+<div class="large-6 medium-6 small-12 columns">
+<h5><a href="#" style="color:black; font-size:20px;">1080 Project Space Group Show</a></h5>
+<p>
+<span><i class="fi-torso"> By XXX XXX &nbsp;&nbsp;</i></span>
+<span><i class="fi-calendar"> XX/XX/XX &nbsp;&nbsp;</i></span>
+
+</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
+</div>
+</div>
+ </div>
+  </li>
+  <!-- ... -->
+</ul>
+
+
+
+
+
+<!-- rent the space contact form -->
+
+<ul class="accordion" data-accordion data-allow-all-closed="true">
+  <li class="accordion-item " data-accordion-item>
+    <a href="#" class="accordion-title"  style="background-color:black; color:white; font-size:20px;" >Rent The Space</a>
+    <div class="accordion-content" data-tab-content>
+
+
+<div class="row">
+<center>
+<div class="large-12 small-12 columns"> 
+
+<h5><a href="#" style="color:black; font-weight:bold; dispaly:inline;">Learn About 1080 Project Space</a></h5>
+<hr>
+</center>
+
+<!--<p >Rockwall Studios is a community, first and foremost, made up of hundreds of incredibly talented artists, professionals and musicians.
+Join us, and instantly connect with individuals and businesses of all colors, shapes and sizes. 
+
+The studio is located on the border of Bushwick (Brooklyn) and Ridgewood (Queens). The neighborhood is vibrant and is  currently the landing pad for NYC’s Great Artistic Migration. The L train is 2 minutes away and parking is available on nearby streets.</p> -->
+</div>
+<div class="large-6 medium-6 small-12 columns">
+<p><img class="responsive-img"  src='{% static "img/event/1080ProjectSpace.jpg" %}' alt="image for article" alt="article preview image"></p>
+</div>
+<div class="large-6 medium-6 small-12 columns">
+
+<div class="flex-video " style="overflow:visible;">
+<iframe  src="https://calendar.google.com/calendar/embed?src=rockwall.mgmt%40gmail.com&ctz=America/New_York" style="border: 0" width="500" height="700" frameborder="0" scrolling="no"></iframe>
+</div>
+</div>
+
+
+<div class="row medium-12 large-12 columns">
+<div class="blog-post" style="padding-left:10px;">
+<hr>
+<p class="black-text " style="font-weight:normal; font-size:14px; padding-bottom:30px;">Rockwall Studios is a community, first and foremost, made up of hundreds of incredibly talented artists, professionals and musicians.
+Join us, and instantly connect with individuals and businesses of all colors, shapes and sizes. 
+
+The studio is located on the border of Bushwick (Brooklyn) and Ridgewood (Queens). The neighborhood is vibrant and is  currently the landing pad for NYC’s Great Artistic Migration. The L train is 2 minutes away and parking is available on nearby streets.</p>
+
+ <h5 class="black-text " style="font-weight:normal; font-size:18px; padding-bottom:30px;">**If you would like to contact us please fill out the form below and we will get back to you as soon as we can</h5>
+
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input  id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input  id="email" type="text" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+            <div class="row">
+       <div class="input-field col s6">
+          <input id="request_time" type="text" class="validate">
+          <label for="request_time">Request Time</label>
+
+        </div>
+         <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="request_date">Request Date</label>
+        </div>
+</div>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="message" type="text" class="validate">
+          <label for="message">Message</label>
+        </div>
+      </div>
+      <a href="#" class="button black">Submit</a>
+
+    </form>
+  </div>
+</div>
+</center>
+</div>
+    </div>
+  </li>
+  <!-- ... -->
+</ul>
+</article>
+</div>
+</div>
+<br>
+</div>
+
+{% endblock content %}
