@@ -1,5 +1,7 @@
 {% extends "studio_base.html" %}
 {% load staticfiles %}
+{% load materializecss %}
+
 
 {% block content %}
 
@@ -8,9 +10,9 @@
 <div class="top-bar-left white">
 <ul class="dropdown menu white" data-dropdown-menu>
 <li class="menu-text white" style="font-size:50px; ">1080 Project Space</li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Upcoming</a></li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Past</a></li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Rent the Space</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="event_space#upcoming">Upcoming</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="event_space#past">Past</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="event_space#rent_space">Rent the Space</a></li>
 </ul>
 </div>
 </div>
@@ -21,9 +23,9 @@
 <div class="top-bar-left white">
 <ul class="dropdown menu white" data-dropdown-menu>
 <li class="menu-text white" style="font-size:30px; padding-top:30px; ">1080 Project Space</li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Upcoming</a></li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Past</a></li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="#">Rent the Space</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="event_space#upcoming">Upcoming</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="event_space#past">Past</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="event_space#rent_space">Rent the Space</a></li>
 </ul>
 </div>
 </div>
@@ -38,9 +40,9 @@
 </div>
 <hr>
 <center>
-<li  style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:0px;" href="#">Upcoming</a></li>
-<li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="#">Past</a></li>
-<li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="#">Rent the Space</a></li>
+<li  style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:0px;" href="event_space#upcoming">Upcoming</a></li>
+<li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="event_space#past">Past</a></li>
+<li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="event_space#rent_space">Rent the Space</a></li>
 </center>
 </ul>
 <hr>
@@ -102,83 +104,96 @@
 
 <ul class="accordion" data-accordion   >
   <li class="accordion-item is-active " data-accordion-item  >
-    <a href="#" class="accordion-title" style="background-color:black;  color:white; font-size:20px;">Recent</a>
+    <a href="#" class="accordion-title" style="background-color:black; color:white; font-size:20px;">Recent</a>
     <div class="accordion-content" data-tab-content >
-    <div class="row">
-<div class="large-6 medium-6 small-12 columns">
-<p><img class="responsive-img hide-for-small-only" src='{% static "img/event/1080GalleryShow2.jpg" %}' alt="image for article" alt="article preview image"></p>
-<p><img class=" show-for-small-only" src='{% static "img/event/1080GalleryShow2.jpg" %}' alt="image for article" alt="article preview image"></p>
-
-
+        {% for blog in recent %}
+        <div class="row">
+          <div class="large-6 columns">
+          <p><img src='/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
+          </div>
+          <div class="large-6 columns">
+          <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
+          <p>
+          <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>&nbsp;
+          <span><i class="fi-clock">&nbsp;&nbsp;Start Time&nbsp;{{ blog.time }}</i></span>
+          </p>  
+          <p>{{ blog.content }}</p>
+          </div>
+        </div>
+        {% endfor %}
 </div>
-<div class="large-6 medium-6 small-12 columns">
-<h5><a href="#" style="color:black; font-size:20px;">1080 Project Space Group Show</a></h5>
-<p>
-<span><i class="fi-torso"> By XXXX XXXXXXXXX &nbsp;&nbsp;</i></span>
-<span><i class="fi-calendar"> 4/20/16 &nbsp;&nbsp;</i></span>
-
-</p>
-<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-<div class="show-for-small-only small-12 columns">
-
-</div>
-</div>
-</div>
- </div>
-  </li>
-  <!-- ... -->
+</li>
 </ul>
 
 <!-- Upcoming Accordian tab -->
 
-<ul class="accordion" data-accordion data-allow-all-closed="true">
+<ul id="upcoming"class="accordion" data-accordion data-allow-all-closed="true">
   <li class="accordion-item " data-accordion-item>
     <a href="#" class="accordion-title" style="background-color:black; color:white; font-size:20px;">Upcoming</a>
     <div class="accordion-content" data-tab-content>
-    <div class="row">
-<div class="llarge-6 medium-6 small-12 columns">
-<p><img src='{% static "img/event/bushwickopenstudios.jpg" %}' alt="image for article" alt="article preview image"></p>
-</div>
-<div class="large-6 medium-6 small-12 columns">
-<h5><a href="#" style="color:black; font-size:20px;">1080 Project Space Group Show</a></h5>
-<p>
-<span><i class="fi-torso"> By XXX XXX &nbsp;&nbsp;</i></span>
-<span><i class="fi-calendar"> XX/XX/XX &nbsp;&nbsp;</i></span>
 
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
+        {% for blog in upcoming %}
+        <div class="row">
+          <div class="large-6 columns">
+          <p><img src='/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
+          </div>
+          <div class="large-6 columns">
+          <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
+          <p>
+          <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>&nbsp;
+          <span><i class="fi-clock">&nbsp;&nbsp;Start Time&nbsp;{{ blog.time }}</i></span>
+          </p>  
+          <p>{{ blog.content }}</p>
+          </div>
+        </div>
+        {% endfor %}
 </div>
-</div>
- </div>
-  </li>
-  <!-- ... -->
+</li>
 </ul>
 
 
 <!-- Past Accordian tab -->
 
 
-<ul class="accordion" data-accordion data-allow-all-closed="true">
+<ul id="past" class="accordion" data-accordion data-allow-all-closed="true">
   <li class="accordion-item " data-accordion-item>
     <a href="#" class="accordion-title" style="background-color:black; color:white; font-size:20px;">Past</a>
     <div class="accordion-content" data-tab-content>
-    <div class="row">
-<div class="large-6 medium-6 small-12 columns">
-<p><img src='{% static "img/event/galleryShowPoster.jpg" %}'alt="image for article" alt="article preview image"></p>
-</div>
-<div class="large-6 medium-6 small-12 columns">
-<h5><a href="#" style="color:black; font-size:20px;">1080 Project Space Group Show</a></h5>
-<p>
-<span><i class="fi-torso"> By XXX XXX &nbsp;&nbsp;</i></span>
-<span><i class="fi-calendar"> XX/XX/XX &nbsp;&nbsp;</i></span>
 
-</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
+        {% for blog in object_list %}
+        <div class="row">
+          <div class="large-6 columns">
+          <p><img src='/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
+          </div>
+          <div class="large-6 columns">
+          <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
+          <p>
+          <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>&nbsp;
+          <span><i class="fi-clock">&nbsp;&nbsp;Start Time&nbsp;{{ blog.time }}</i></span>
+          </p>  
+          </div>
+        </div>
+        {% endfor %}
+
+        <div class="pagination">
+        <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ objects_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">next</a>
+        {% endif %}
+        </span>
+        </div>
+
+
 </div>
-</div>
- </div>
-  </li>
-  <!-- ... -->
+</li>
 </ul>
 
 
@@ -187,7 +202,7 @@
 
 <!-- rent the space contact form -->
 
-<ul class="accordion" data-accordion data-allow-all-closed="true">
+<ul id="rent_space" class="accordion" data-accordion data-allow-all-closed="true">
   <li class="accordion-item " data-accordion-item>
     <a href="#" class="accordion-title"  style="background-color:black; color:white; font-size:20px;" >Rent The Space</a>
     <div class="accordion-content" data-tab-content>
@@ -228,45 +243,15 @@ The studio is located on the border of Bushwick (Brooklyn) and Ridgewood (Queens
  <h5 class="black-text " style="font-weight:normal; font-size:18px; padding-bottom:30px;">**If you would like to contact us please fill out the form below and we will get back to you as soon as we can</h5>
 
 <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input  id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input  id="email" type="text" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-            <div class="row">
-       <div class="input-field col s6">
-          <input id="request_time" type="text" class="validate">
-          <label for="request_time">Request Time</label>
+    <form method='POST' action=''>{% csrf_token %}
 
-        </div>
-         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="request_date">Request Date</label>
-        </div>
-</div>
-      
       <div class="row">
-        <div class="input-field col s12">
-          <input id="message" type="text" class="validate">
-          <label for="message">Message</label>
-        </div>
+            {{ form|materializecss }}
+        
       </div>
-      <a href="#" class="button black">Submit</a>
-
+      <a href="" class="button black">Submit</a>
+    
     </form>
-  </div>
 </div>
 </center>
 </div>

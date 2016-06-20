@@ -103,19 +103,24 @@
   <li class="accordion-item is-active " data-accordion-item  >
     <a href="#" class="accordion-title" style="background-color:black;  color:white; font-size:24px;">Spotlight</a>
     <div class="accordion-content" data-tab-content >
-    <div class="row">
-    <div class="large-6 columns">
-    <p><img src='{% static "img/home/1080GalleryShow2.jpg" %}'></p>
-    </div>
-    <div class="large-6 columns">
-    <h5><a href="#" style="color:black;">1080 Project Space Group Show</a></h5>
-    <p>
-    <span><i class="fi-torso"> By XXXX XXXXXXXXX &nbsp;&nbsp;</i></span>
-    <span><i class="fi-calendar"> 4/20/16 &nbsp;&nbsp;</i></span>
-    </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-    </div>
-    </div>
+
+
+        {% for blog in spotlight %}
+        <div class="row">
+          <div class="large-6 columns">
+          <p><img src='/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
+          </div>
+          <div class="large-6 columns">
+          <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
+          <p>
+          <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
+          </p>  
+          <p>{{ blog.content }}</p>
+          </div>
+        </div>
+        {% endfor %}
+
+
     </div>
   </li>
 </ul>
@@ -125,20 +130,24 @@
   <li class="accordion-item " data-accordion-item>
     <a href="#" class="accordion-title" style="background-color:black; color:white; font-size:22px;">Upcoming</a>
       <div class="accordion-content" data-tab-content>
-       <div class="row">
-        <div class="large-6 columns">
-        <p><img src='{% static "img/home/bushwickopenstudios.jpg" %}' alt="image for article" alt="article preview image"></p>
+
+
+        {% for blog in upcoming %}
+        <div class="row">
+          <div class="large-6 columns">
+          <p><img src='/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
+          </div>
+          <div class="large-6 columns">
+          <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
+          <p>
+          <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
+          </p>  
+          <p>{{ blog.content }}</p>
+          </div>
         </div>
-        <div class="large-6 columns">
-        <h5><a href="#" style="color:black;">Bushwick Open Studios</a></h5>
-        <p>
-        <span><i class="fi-torso"> By XXX XXX &nbsp;&nbsp;</i></span>
-        <span><i class="fi-calendar"> XX/XX/XX &nbsp;&nbsp;</i></span>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-        </div>
-      </div>
-     </div>
+        {% endfor %}
+
+    </div>
   </li>
 </ul>
 
@@ -148,19 +157,39 @@
   <li class="accordion-item " data-accordion-item>
     <a href="#" class="accordion-title"  style="background-color:black; color:white; font-size:22px;" >Past</a>
       <div class="accordion-content" data-tab-content>
+
+        {% for blog in object_list %}
         <div class="row">
           <div class="large-6 columns">
-          <p><img src='{% static "img/home/galleryShowPoster.jpg" %}' alt="image for article" alt="article preview image"></p>
+          <p><img src='/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
           </div>
           <div class="large-6 columns">
-          <h5><a href="#" style="color:black;">Sample Past News post </a></h5>
+          <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
           <p>
-          <span><i class="fi-torso"> By XX XXX &nbsp;&nbsp;</i></span>
-          <span><i class="fi-calendar"> XX/XX/XX &nbsp;&nbsp;</i></span>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.Lorem ipsum   dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
+          <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
+          </p>  
+          <p>{{ blog.content }}</p>
           </div>
         </div>
+        {% endfor %}
+
+        <div class="pagination">
+        <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ objects_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">next</a>
+        {% endif %}
+        </span>
+        </div>
+
+
        </div>
     </li>
 </ul>

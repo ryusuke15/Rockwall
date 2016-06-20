@@ -1,7 +1,7 @@
 from django import forms
-from .models import Mailing_List
+from .models import Contact
 
 class ContactForm(forms.ModelForm):
     class Meta:
-            model = Mailing_List
-            fields = ['email']
+            model = Contact
+            fields = ['first_name','last_name','email','comment']

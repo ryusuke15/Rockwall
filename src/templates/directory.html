@@ -8,7 +8,6 @@
 <!-- desktop -->
     <ul class="menu">
 
-      <!--<li  class="menu-text show-for-large" style="font-size:45px; padding-left:0px; padding-bottom:0px; " >Rockwall Studios</li> -->
       <li><a href="studio"  class="show-for-large"style="color:black; font-size:45px; font-weight:bold; padding-top:25px;">Rockwall Studios</a></li>
       <li><a href="directory"  class="show-for-large"style="color:black; font-weight:bold; padding-top:35px;">Directory</a></li>
       <li><a href="available_spaces"  class="show-for-large"style="color:black;   font-weight:bold; padding-top:35px;">Available Spaces</a></li>
@@ -85,15 +84,16 @@
 </ul>
 </div>
 <div class="top-bar-right">
+<form method='GET' action=''>
 <ul class="menu right" style="background-color:white;">
-<li><input style="padding-top:7px; font-size:10px;" type="search" placeholder="Search"></li>
-<li><button type="button" class="button small" style="color:black;" >Search</button></li>
+<li><input style="padding-top:7px; font-size:10px;" name='q' type="search" placeholder="Search directory"></li>
+<li><button type="submit" value='Search'class="button small" style="color:black;" >Search</button></li>
 </ul>
-</div>
-</div>
-</div>
+</form>
 
-
+</div>
+</div>
+</div>
 
 
 
@@ -101,143 +101,50 @@
 
 
 <!--Begining of Card -->
-<div class="column  ">
-<div class="w3-card " style="">
+
+{% for tenant in object_list %}
+
+<div class="column">
+<div class="w3-card ">
 
 <header class="w3-container w3-light-grey">
-  <h3>John Arno Photography</h3>
+  <h3 class="center">{{ tenant.first_name }} {{tenant.last_name}}</h3>
 </header>
 <div class="w3-container">
-  <img src='{% static "img/studio/profilePic1.jpg" %}' alt="Avatar" class="w3-left w3-circle w3-margin-right hide-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
+  <img src='media/{{ tenant.image}}' alt="Avatar" class="w3-left w3-circle w3-margin-right hide-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
   <center>
-  <img src='{% static "img/studio/profilePic1.jpg" %}' alt="Avatar" class="w3-left w3-circle w3-margin-right show-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
+  <img src='media/{{ tenant.image }}' alt="Avatar" class="w3-left w3-circle w3-margin-right show-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
 </center>
-  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
-
-  
-  <p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" > sample.com</p>
-  <p style=" padding-top:0px; padding-bottom:10px;" class="show-for-small-only" > sample.com</p>
+  <p style=" padding-top:10px; padding-bottom:10px;" >{{ tenant.content }}</p>
+    
+    {% if tenant.web %}
+  <a href="{{ tenant.web }}"><p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" >{{ tenant.web }}</p></a>
+  <a href="{{ tenant.web }}"<p style=" padding-top:0px; padding-bottom:10px;" class="show-for-small-only" >{{ tenant.web }}</p></a>
+    {% endif %}
   <ul class="menu">
-
-
-        <li class="show-for-large "><i  style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i></li>
-
-        <li class="show-for-large "><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
-
-         <li class="show-for-large"><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
-          
-        <li class="show-for-large"><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
-        </li>
-
-
-        <li class="hide-for-large  "><i  style=" color:black;font-size:20px; padding-left:0px; color:black;"class="fi-social-facebook"></i></li>
-
-        <li class="hide-for-large"><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
-        <li class="hide-for-large "><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
-          
-        <li class="hide-for-large "><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
-        </li>
-
-
-
-
-
-
-
-
-</ul>
-  <br>
-  <hr>
-</div>
-</div>
-</div>
-
-<!--End of card-->
-
-
-
-
-
-<!--Begining of Card -->
-<div class="column  ">
-<div class="w3-card " style="">
-
-<header class="w3-container w3-light-grey">
-  <h3>727 Studios</h3>
-</header>
-<div class="w3-container">
-  <img src='{% static "img/studio/profilePic2.jpg" %}' alt="Avatar" class="w3-left w3-circle w3-margin-right" style=" padding-top:10px; padding-bottom:10px;">
-
-  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
-
-    <p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" > sample.com</p>
-  <p style=" padding-top:0px; padding-bottom:10px;" class="show-for-small-only" > sample.com</p>
-  <ul class="menu ">
-
  
-        <li class="show-for-large "><i  style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i></li>
+    <li class="show-for-large "><a href='mailto:{{ tenant.email}}'><i style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-mail"></i></a></li>
 
-        <li class="show-for-large "><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
+    {% if tenant.facebook %}
+        <li class="show-for-large "><a href='{{ tenant.facebook}}'><i  style="color:black;font-size:20px;"class="fi-social-facebook"></i></a></li>
+    {% endif %}
 
-         <li class="show-for-large"><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
-          
-        <li class="show-for-large"><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
-        </li>
-
-
-        <li class="hide-for-large  "><i  style=" color:black;font-size:20px; padding-left:0px; color:black;"class="fi-social-facebook"></i></li>
-
-        <li class="hide-for-large"><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
-        <li class="hide-for-large "><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
-          
-        <li class="hide-for-large "><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
-        </li>
+    {% if tenant.twitter %}
+         <li class="show-for-large"><a href='{{ tenant.twitter }}'><i style=" color:black;font-size:20px;"class="fi-social-twitter"></i></a></li>
+    {% endif %}
 
 
-</ul>
-  <br>
-  <hr>
-</div>
-</div>
-</div>
+    <li class="hide-for-large"><a href='mailto:{{ tenant.email}}'><i style=" color:black;font-size:20px; color:black;"class="fi-mail"></i></a></li>
 
-<!--End of card-->
+    {% if tenant.facebook %}
+        <li class="hide-for-large"><a href='{{ tenant.facebook}}'><i  style="color:black;font-size:20px;"class="fi-social-facebook"></i></a></li>
+    {% endif %}
 
-<!--Begining of Card -->
-<div class="column  ">
-<div class="w3-card " style="">
-
-<header class="w3-container w3-light-grey">
-  <h3>John Doe</h3>
-</header>
-<div class="w3-container">
-  <img src="http://placehold.it/200x200&text=Pegasi B" alt="Avatar" class="w3-left w3-circle w3-margin-right" style=" padding-top:10px; padding-bottom:10px;">
-
-  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
-
-  
-  <p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" > sample.com</p>
-  <p style=" padding-top:0px; padding-bottom:10px;" class="show-for-small-only" > sample.com</p>
-  <ul class="menu ">
-
- 
-        <li class="show-for-large "><i  style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i></li>
-
-        <li class="show-for-large "><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
-
-         <li class="show-for-large"><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
-          
-        <li class="show-for-large"><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
-        </li>
+    {% if tenant.twitter %}
+         <li class="hide-for-large"><a href='{{ tenant.twitter }}'><i style=" color:black;font-size:20px;"class="fi-social-twitter"></i></a></li>
+    {% endif %}
 
 
-        <li class="hide-for-large  "><i  style=" color:black;font-size:20px; padding-left:0px; color:black;"class="fi-social-facebook"></i></li>
-
-        <li class="hide-for-large"><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
-        <li class="hide-for-large "><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
-          
-        <li class="hide-for-large "><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
-        </li>
 
 
 </ul>
@@ -246,50 +153,7 @@
 </div>
 </div>
 </div>
+{% endfor %}
 
-<!--End of card-->
-
-<!--Begining of Card -->
-<div class="column  ">
-<div class="w3-card " style="">
-
-<header class="w3-container w3-light-grey">
-  <h3>John Doe</h3>
-</header>
-<div class="w3-container">
-  <img src="http://placehold.it/200x200&text=Pegasi B" alt="Avatar" class="w3-left w3-circle w3-margin-right" style=" padding-top:10px; padding-bottom:0px;">
-
-  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
-
-  
-  <p style=" padding-top:0px; padding-bottom:10px;" > sample.com</p>
-  <ul class="menu ">
-
- 
-        <li class="show-for-large "><i  style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i></li>
-
-        <li class="show-for-large "><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
-
-         <li class="show-for-large"><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
-          
-        <li class="show-for-large"><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
-        </li>
-
-
-        <li class="hide-for-large  "><i  style=" color:black;font-size:20px; padding-left:0px; color:black;"class="fi-social-facebook"></i></li>
-
-        <li class="hide-for-large"><i  style=" color:black;font-size:20px;  padding-left:20px;"class="fi-social-twitter"></i></li>
-        <li class="hide-for-large "><i style=" color:black;font-size:20px; padding-left:20px; "class="fi-social-google-plus"></i></li>
-          
-        <li class="hide-for-large "><i href="#"  style="color:black;  font-size:20px; padding-left:20px; padding-right:0px;"  <i class="fi-torso"></i></i>
-        </li>
-
-
-</ul>
-  <br>
-  <hr>
 </div>
-</div>
-</div>
-
 {% endblock content %}

@@ -2,10 +2,33 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 from django.shortcuts import render
 
-from .models import Tenant
+from .models import Blog, Tenant
 # Create your views here.
 def home(request):
-    return render(request,"home.html")
+    queryset_list = Blog.objects.order_by("-date").filter(spotlight=False, upcoming=False)
+    
+    spotlight = Blog.objects.order_by("-date").filter(spotlight=True)    
+    upcoming = Blog.objects.order_by("-date").filter(upcoming = True)
+
+    paginator = Paginator(queryset_list, 5)
+    page = request.GET.get('page')
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        queryset = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        queryset = paginator.page(paginator.num_pages)
+
+
+    context={
+            "object_list": queryset,
+            "spotlight": spotlight,
+            "upcoming": upcoming
+            }
+    return render(request,"home.html", context)
+
 
 def directory(request):
     queryset_list = Tenant.objects.order_by("last_name")
@@ -21,7 +44,7 @@ def directory(request):
             Q(web__icontains=query)
             ).distinct()
     
-    paginator = Paginator(queryset_list, 5)
+    paginator = Paginator(queryset_list, 10)
 
     page = request.GET.get('page')
     try:
