@@ -5,8 +5,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-
-
 # Create your views here.
 from .forms import ContactForm
 from .models import Blog, Contact

@@ -10,10 +10,11 @@ class Contact(models.Model):
     last_name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
+    date = models.DateField()
     received  = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __unicode__(self):
-        return self.first_name + self.last_name
+        return self.first_name +" "+ self.last_name
 
 class Blog(models.Model):
     title = models.CharField(max_length=120)

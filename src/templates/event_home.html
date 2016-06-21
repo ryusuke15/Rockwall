@@ -82,7 +82,15 @@
 </div>
 
 
-
+{% if messages %}
+<div id="about"class="row">
+<ul class="messages green-text text-darken-1">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
 
 
 
@@ -243,13 +251,14 @@ The studio is located on the border of Bushwick (Brooklyn) and Ridgewood (Queens
  <h5 class="black-text " style="font-weight:normal; font-size:18px; padding-bottom:30px;">**If you would like to contact us please fill out the form below and we will get back to you as soon as we can</h5>
 
 <div class="row">
-    <form method='POST' action=''>{% csrf_token %}
+    <form method='POST' action='event_space?#about'>{% csrf_token %}
 
       <div class="row">
             {{ form|materializecss }}
-        
+       <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
+            <i class="material-icons right">send</i>
+        </button>
       </div>
-      <a href="" class="button black">Submit</a>
     
     </form>
 </div>

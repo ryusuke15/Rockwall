@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'coffee_shop',
 ]
 
+CRISPY_TEMPLATE = 'materialize_css_forms'
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

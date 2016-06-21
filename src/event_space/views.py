@@ -1,4 +1,6 @@
+from django.contrib import  messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from .models import Blog
@@ -27,6 +29,8 @@ def event_home(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+        messages.success(request, "Thank you very much. Your comment has been submitted successfully." )
+        return HttpResponseRedirect("/event_space") 
 
     context={
             "object_list": queryset,
@@ -34,6 +38,6 @@ def event_home(request):
             "recent": recent,
             "upcoming": upcoming
             }
+   
     return render(request,"event_home.html", context)
-
 
