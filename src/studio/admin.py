@@ -10,7 +10,7 @@ class BlogAdmin(admin.ModelAdmin):
         model = Blog
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ["__unicode__","email","received"]
+    list_display = ["__unicode__","date","email","received"]
     class Meta:
         model = Contact
 

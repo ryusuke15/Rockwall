@@ -107,9 +107,12 @@
 
         {% for blog in spotlight %}
         <div class="row">
+
+            {% if blog.image %}
           <div class="large-6 columns">
           <p><img src='/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
           </div>
+            {% endif %}
           <div class="large-6 columns">
           <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
           <p>
@@ -134,9 +137,11 @@
 
         {% for blog in upcoming %}
         <div class="row">
+            {% if blog.image %}
           <div class="large-6 columns">
           <p><img src='/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
           </div>
+            {% endif %}
           <div class="large-6 columns">
           <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
           <p>
@@ -161,8 +166,10 @@
         {% for blog in object_list %}
         <div class="row">
           <div class="large-6 columns">
-          <p><img src='/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
+            {% if blog.image%}
+          <p><img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
           </div>
+            {% endif %}
           <div class="large-6 columns">
           <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
           <p>

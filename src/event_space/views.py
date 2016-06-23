@@ -3,7 +3,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from .models import Blog
+from .models import Blog, Contact
 from .forms import ContactForm
 
 # Create your views here.
@@ -24,13 +24,15 @@ def event_home(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         queryset = paginator.page(paginator.num_pages)
-   
+
     form = ContactForm(request.POST or None)
     if form.is_valid():
+
         instance = form.save(commit=False)
         instance.save()
-        messages.success(request, "Thank you very much. Your comment has been submitted successfully." )
-        return HttpResponseRedirect("/event_space") 
+
+        messages.success(request, "Thank you very much. Your request has been submitted successfully." )
+        return HttpResponseRedirect("/project_space") 
 
     context={
             "object_list": queryset,

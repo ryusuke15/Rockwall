@@ -1,8 +1,11 @@
+from django.contrib import  messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponseRedirect
 from django.db.models import Q
 from django.shortcuts import render
 
 from .models import Blog, Tenant
+from .forms import ContactForm
 # Create your views here.
 def home(request):
     queryset_list = Blog.objects.order_by("-date").filter(spotlight=False, upcoming=False)
@@ -68,7 +71,24 @@ def available(request):
     return render(request,"available_spaces.html")
 
 def tour(request):
-    return render(request,"tour.html")
+
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+
+        instance = form.save(commit=False)
+        instance.save()
+        messages.success(request, "Thank you very much. Your request has been submitted successfully." )
+        return HttpResponseRedirect("/tour") 
+
+
+    context={
+            "form":form,
+            }
+
+    return render(request,"tour.html", context)
+
+
+
 
 def floorplan(request):
     return render(request,"floorplan.html")

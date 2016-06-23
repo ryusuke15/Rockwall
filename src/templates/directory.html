@@ -111,10 +111,14 @@
   <h3 class="center">{{ tenant.first_name }} {{tenant.last_name}}</h3>
 </header>
 <div class="w3-container">
-  <img src='media/{{ tenant.image}}' alt="Avatar" class="w3-left w3-circle w3-margin-right hide-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
+
+    {% if tenant.image %}
+  <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image}}' alt="Avatar" class="w3-left w3-circle w3-margin-right hide-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
   <center>
-  <img src='media/{{ tenant.image }}' alt="Avatar" class="w3-left w3-circle w3-margin-right show-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
+  <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image }}' alt="Avatar" class="w3-left w3-circle w3-margin-right show-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
 </center>
+    {% endif %}
+
   <p style=" padding-top:10px; padding-bottom:10px;" >{{ tenant.content }}</p>
     
     {% if tenant.web %}

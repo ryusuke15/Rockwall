@@ -21,7 +21,7 @@ from django.contrib import admin
 urlpatterns = [
     url('^', include("studio.urls")),
     url('^1080_Brew', include("coffee_shop.urls")),
-    url('^event_space', include("event_space.urls")),
+    url('^project_space', include("event_space.urls")),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', admin.site.urls),
 ]

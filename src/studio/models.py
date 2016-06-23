@@ -4,6 +4,13 @@ from django.db import models
 
 # Create your models here.
 
+def tenant_image_location(instance, filename):
+    return "studio/tenant/%s/%s" %(instance.room, filename)
+
+def blog_image_location(instance, filename):
+    return "studio/blog/%s/%s" %(instance.date, filename)
+
+
 class Tenant(models.Model):
 
     ROOM_NUMBERS_CHOICES = (
@@ -33,7 +40,7 @@ class Tenant(models.Model):
     first_name = models.CharField(max_length = 100, null=True, blank=True)
     last_name = models.CharField(max_length = 100)
     email = models.EmailField(null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to=tenant_image_location,  null=True, blank=True)
     room = models.CharField(max_length=30, choices=ROOM_NUMBERS_CHOICES, unique=True)
     content = models.TextField()
     web = models.URLField(max_length=200, null=True, blank=True)
@@ -47,6 +54,7 @@ class Contact(models.Model):
     first_name = models.CharField(max_length = 100, null=True, blank=True)
     last_name = models.CharField(max_length = 100)
     email = models.EmailField(max_length=50)
+    date = models.DateField()
     message = models.TextField()
     received  = models.DateTimeField(auto_now=False, auto_now_add = True)
     
@@ -56,7 +64,7 @@ class Contact(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()
-    image = models.ImageField(null=True, blank=True, width_field="width_field", height_field="height_field")
+    image = models.ImageField(upload_to=blog_image_location, null=True, blank=True, width_field="width_field", height_field="height_field")
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
     date = models.DateField()

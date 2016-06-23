@@ -154,29 +154,30 @@
 <div class="container">
     <div class="section">
     <br>
+
         <div class="row">
             <div class="col s12 ">
                 <h4 class="center">Recent</h4>
                 <hr>
                    
-        <div style="padding-bottom:20px;"></div>
- 
+                <div style="padding-bottom:20px;"></div>
+
         {% for blog in object_list %}         
-
-            <div class="col s12 m12 l12">
-                <h5>{{ blog.title }}
-                <small class="light" style="padding-left:20px;">{{ blog.timestamp }}</small>
-                <small>{% if blog.draft %}<span style='color:red;'>Draft</span>{% endif %}</small>
-                </h5>
+                    <div class="col s12 m12 l12">
+                        <h5>{{ blog.title }}
+                        <small class="light" style="padding-left:20px;">{{ blog.timestamp }}</small>
+                        </h5>
                     <!-- image is 500x300 -->
-               {% if blog.image %}
-                <p class="center"><img class="responsive-img" src='media/{{ blog.image }}' alt="image for article"></p>
-               {% endif %}               
-                <p class="left-align light">{{ blog.content }}</p>
-            </div>
-
+                        {% if blog.image %}
+                        <p class="center"><img class="responsive-img" src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article"></p>
+                        {% endif %}               
+                        <p class="left-align light">{{ blog.content }}</p>
+                    </div>
         {% endfor %}
-        
+
+        </div>
+          </div>
+                </div>
         <div class="pagination">
         <span class="step-links">
         {% if object_list.has_previous %}
@@ -193,9 +194,9 @@
         </span>
         </div>
 
-        </div>
+</div>
 
-        </div>
+        
 
   
   <div class="parallax-container valign-wrapper">
@@ -312,5 +313,4 @@
     </div>
 </div>
 
-</div>
 {% endblock content %}

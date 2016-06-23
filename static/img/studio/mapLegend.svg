@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="864px" height="288px" viewBox="0 0 864 288" enable-background="new 0 0 864 288" xml:space="preserve">
+<rect x="177.389" y="70.689" width="29.861" height="4.167"/>
+<rect x="177.389" y="209.973" width="29.861" height="4.166"/>
+<rect x="226" y="55.389" fill="none" width="368.055" height="108.334"/>
+<text transform="matrix(1 0 0 1 225.9995 90.8882)" font-family="'MyriadPro-Regular'" font-size="50">Occupied</text>
+<rect x="230.999" y="192.777" fill="none" width="368.056" height="108.334"/>
+<text transform="matrix(1 0 0 1 230.999 228.2773)" font-family="'MyriadPro-Regular'" font-size="50">Vacant</text>
+<rect x="48.074" y="17.652" fill="#CFCFCE" width="110.24" height="110.24"/>
+<rect x="48.074" y="154.912" fill="#9AC4E3" width="110.24" height="110.24"/>
+</svg>
