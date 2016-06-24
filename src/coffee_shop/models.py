@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 
 def blog_image_location(instance, filename):
-    return "1080BREW/%s/%s" %(instance.date, filename)
+    return "brew/%s/%s" %(instance.id, filename)
 
 class Contact(models.Model):
     first_name = models.CharField(max_length=120)
@@ -26,6 +26,7 @@ class Blog(models.Model):
                             height_field="height_field")
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
+    date = models.DateField()
     timestamp = models.DateTimeField(auto_now=False, auto_now_add = True) 
     updated =  models.DateTimeField(auto_now=True, auto_now_add = False)
 

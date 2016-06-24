@@ -12,8 +12,8 @@ class ContactAdmin(admin.ModelAdmin):
         model = Contact
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ["title","timestamp"]
-    list_filter = ["timestamp"]
+    list_display = ["title","date","timestamp"]
+    list_filter = ["timestamp","date"]
     search_fields = ["title","content"]
     class Meta:
         model = Blog
