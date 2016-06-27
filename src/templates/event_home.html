@@ -6,18 +6,6 @@
 {% block content %}
 
 
-{% if messages %}
-<div class="row">
-<ul class="messages green-text text-darken-1">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-</div>
-{% endif %}
-
-
-
 <div class="top-bar white hide-on-med-and-down">
 <div class="row white">
 <div class="top-bar-left white">
@@ -64,7 +52,19 @@
 </div>
 </div>
 
+<div id="about">
 
+{% if messages %}
+<div class="row">
+<ul class="messages green-text text-darken-1">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+
+</div>
 
 
 <!-- orbit slider -->
@@ -233,10 +233,7 @@
 <hr>
 </center>
 
-<!--<p >Rockwall Studios is a community, first and foremost, made up of hundreds of incredibly talented artists, professionals and musicians.
-Join us, and instantly connect with individuals and businesses of all colors, shapes and sizes. 
 
-The studio is located on the border of Bushwick (Brooklyn) and Ridgewood (Queens). The neighborhood is vibrant and is  currently the landing pad for NYC’s Great Artistic Migration. The L train is 2 minutes away and parking is available on nearby streets.</p> -->
 </div>
 <div class="large-6 medium-6 small-12 columns">
 <p><img class="responsive-img"  src='{% static "img/event/1080ProjectSpace.jpg" %}' alt="image for article" alt="article preview image"></p>
@@ -266,11 +263,8 @@ The studio is located on the border of Bushwick (Brooklyn) and Ridgewood (Queens
 <div class="row">
     <form method='POST' action='project_space?#about'>{% csrf_token %}
 
-      <div id='about'class="row">
+      <div class="row">
             {{ form.as_p }}
-
-<!--       <input type="date" id="id_date" name="id_date"  class="datepicker"><input> 
- -->
        <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
             <i class="material-icons right">send</i>
         </button> 
