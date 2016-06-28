@@ -6,9 +6,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 # Create your views here.
-from .forms import ContactForm
-from .models import Blog, Contact
-
+from .forms import ContactForm, Mailing_listForm
+from .models import Blog, Contact, Mailing_list
 
 def coffee_shop(request):
     queryset_list = Blog.objects.order_by("-date")
@@ -46,9 +45,16 @@ def coffee_shop(request):
         messages.success(request, "Thank you very much. Your comment has been submitted successfully." )
         return HttpResponseRedirect("/1080_Brew") 
 
+    Email_form = Mailing_listForm(request.POST or None)
+    if Email_form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return HttpResponseRedirect("/1080_Brew")
+
     context={
             "object_list": queryset,
             "title":"1080Brew",
+            "mailForm": Email_form,
             "form": form
             }
     return render(request,"1080Brew.html", context)
