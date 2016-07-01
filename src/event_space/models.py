@@ -1,12 +1,10 @@
 from __future__ import unicode_literals
-
 from django.db import models
 
 # Create your models here.
 
 def blog_image_location(instance, filename):
     return "project_space/%s/%s" %(instance.date, filename)
-
 
 class Contact(models.Model):
 
@@ -25,14 +23,17 @@ class Blog(models.Model):
     content = models.TextField()
     image = models.ImageField(upload_to=blog_image_location,
                         null=True, 
-                        blank=True, 
-                        width_field="width_field", 
-                        height_field="height_field")
-    height_field = models.IntegerField(default=0)
-    width_field = models.IntegerField(default=0)
+                        blank=True) 
+    video_link = models.URLField(null=True,blank=True)
     date = models.DateField()
     time = models.TimeField()
     recent = models.BooleanField(default=False)
     upcoming = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add = True) 
-    updated =  models.DateTimeField(auto_now=True, auto_now_add = False)
+    updated = models.DateTimeField(auto_now=True, auto_now_add = False)
+
+class Mailing_list(models.Model):
+    email = models.EmailField()
+    timestamp  = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+

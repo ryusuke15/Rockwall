@@ -4,7 +4,18 @@
 
 
 {% block content %}
+<style>
+@media only screen and (max-width: 493px){
+.parallax-container {
+  min-height: 160px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
 
+
+
+</style>
 
 <!-- landing section logo and information -->
 
@@ -35,7 +46,7 @@
 
             <div class="center-align">
             
-           <a href="1080_Brew/mailing"> <button class="btn white waves-effect waves-light center-align " style="color:black; " type="submit" name="action">Join Our Mailing List
+           <a href="/1080_Brew/mailing"> <button class="btn white waves-effect waves-light center-align " style="color:black; " type="submit" name="action">Join Our Mailing List
             <i class="material-icons right">send</i>
             </button></a>
             </div>
@@ -125,7 +136,12 @@
 
 
 
-    <div class="parallax"><img src='{% static "img/brew/background1.jpg" %}' alt="Unsplashed background img 1"></div>
+    <div class="parallax" style="background-image:url('{% static "img/brew/background1.jpg" %}'); background-size:cover; background-position: center; ">
+<!--
+<img src='{% static "img/brew/background1.jpg" %}' alt="Unsplashed background img 1">
+-->
+
+</div>
   </div>
         <div class="center">
         <div style="padding-bottom:15px;"></div>
@@ -342,7 +358,7 @@
 
 
 
-    <form method='POST' action='1080_Brew?#about'>{% csrf_token %}
+    <form method='POST' action='/1080_Brew/?#about'>{% csrf_token %}
     {{ form|materializecss }}
                
     <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT

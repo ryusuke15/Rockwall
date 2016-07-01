@@ -16,23 +16,23 @@
 
 
 <!-- tablet -->
-<center>
+<div class="center">
       <li class="menu-text hide-for-large  show-for-medium center" style="font-size:60px;  padding-top:30px;" >Rockwall Studios</li>
-</center>
+</div>
 
-      <center>
+      <div class="center">
           <li  style="display:inline-block; text-align:center;"><a href="directory" class="hide-for-large show-for-medium " style="color:black; font-weight:bold; padding-top:0px; padding-left:0px;  ">Directory</a></li>
           <li  style="display:inline-block; text-align:center;"><a href="available_spaces"  class="hide-for-large show-for-medium"style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Available Spaces </a></li>
 
           <li  style="display:inline-block; text-align:center;"><a href="floorplan" class="hide-for-large show-for-medium" style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Floorplan </a></li>
 
           <li  style="display:inline-block; text-align:center;"><a href="tour" class="hide-for-large show-for-medium" style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Arrange a Tour </a></li>
-      </center>
+      </div>
  
 
 
       <!--mobile-->
-      <center>
+      <div class="center">
       <li class="menu-text show-for-small-only " style="font-size:30px;  padding-top:0px; padding-left:0px;" >Rockwall Studios</li>
  
       <hr class="show-for-small-only">
@@ -43,7 +43,7 @@
       <li style="display:inline-block; text-align:center;"><a href="tour" class="show-for-small-only center"style="color:black; font-weight:bold; padding-top:5px; padding-left:10px; font-size:10px;">Arrange a Tour</a></li>
 
 <hr class="show-for-small-only">
-</center>
+</div>
   </ul>
 </div>
 </div>
@@ -108,23 +108,32 @@
 <div class="w3-card ">
 
 <header class="w3-container w3-light-grey">
-  <h3 class="center">{{ tenant.first_name }} {{tenant.last_name}}</h3>
+  <h3 class="left">{{ tenant.first_name }} {{tenant.last_name}}</h3>
 </header>
 <div class="w3-container">
 
     {% if tenant.image %}
   <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image}}' alt="Avatar" class="w3-left w3-circle w3-margin-right hide-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
-  <center>
+  <div class="center">
   <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image }}' alt="Avatar" class="w3-left w3-circle w3-margin-right show-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
-</center>
+</div>
     {% endif %}
 
   <p style=" padding-top:10px; padding-bottom:10px;" >{{ tenant.content }}</p>
     
     {% if tenant.web %}
-  <a href="{{ tenant.web }}"><p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" >{{ tenant.web }}</p></a>
-  <a href="{{ tenant.web }}"<p style=" padding-top:0px; padding-bottom:10px;" class="show-for-small-only" >{{ tenant.web }}</p></a>
+  
+        <a href="{{ tenant.web }}"><p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" >{{ tenant.web }}</p></a>
+  
+
+    <a href="{{ tenant.web }}"<p style=" padding-top:0px; padding-bottom:10px;" class="hide-for-large" >{{ tenant.web }}</p></a>
+
     {% endif %}
+
+
+
+
+
   <ul class="menu">
  
     <li class="show-for-large "><a href='mailto:{{ tenant.email}}'><i style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-mail"></i></a></li>
@@ -137,6 +146,12 @@
          <li class="show-for-large"><a href='{{ tenant.twitter }}'><i style=" color:black;font-size:20px;"class="fi-social-twitter"></i></a></li>
     {% endif %}
 
+    {% if tenant.linkedin %}
+         <li class="show-for-large"><a href='{{ tenant.linkedin }}'><img style="padding-bottom:6px" src='https://s3.amazonaws.com/rockwall/static/img/linkedin.jpg'></a></li>
+    {% endif %}
+
+
+
 
     <li class="hide-for-large"><a href='mailto:{{ tenant.email}}'><i style=" color:black;font-size:20px; color:black;"class="fi-mail"></i></a></li>
 
@@ -146,6 +161,11 @@
 
     {% if tenant.twitter %}
          <li class="hide-for-large"><a href='{{ tenant.twitter }}'><i style=" color:black;font-size:20px;"class="fi-social-twitter"></i></a></li>
+    {% endif %}
+
+
+    {% if tenant.linkedin %}
+         <li class="hide-for-large"><a href='{{ tenant.linkedin }}'><img style="padding-bottom:6px" src='https://s3.amazonaws.com/rockwall/static/img/linkedin.jpg'></a></li>
     {% endif %}
 
 

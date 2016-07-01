@@ -58,3 +58,13 @@ def coffee_shop(request):
             "form": form
             }
     return render(request,"1080Brew.html", context)
+
+def mailing(request):
+
+    return render(request, "coffee_mailing.html")
+
+
+
+
+
+

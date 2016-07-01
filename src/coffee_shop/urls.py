@@ -2,10 +2,10 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from .views import(
-    coffee_shop
+    coffee_shop, mailing
 )
         
 urlpatterns = [
     url(r'^$', coffee_shop),
-    # url(r'^submit', submit),
+    url(r'^mailing', mailing),
 ]

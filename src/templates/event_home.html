@@ -40,30 +40,16 @@
 <li class="menu-text white" style="font-size:32px; ">1080 Project Space</li>
 </div>
 <hr>
-<center>
+<div class="center">
 <li  style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:0px;" href="project_space#upcoming">Upcoming</a></li>
 <li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="project_space#past">Past</a></li>
 <li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="project_space#rent_space">Rent the Space</a></li>
-</center>
+</div>
 </ul>
 <hr>
 
 </div>
 </div>
-</div>
-
-<div id="about">
-
-{% if messages %}
-<div class="row">
-<ul class="messages green-text text-darken-1">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-</div>
-{% endif %}
-
 </div>
 
 
@@ -128,11 +114,13 @@
     <div class="accordion-content" data-tab-content >
         {% for blog in recent %}
         <div class="row">
+
             {% if blog.image %}            
           <div class="large-6 columns">
           <p><img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
           </div>
             {% endif %}
+
           <div class="large-6 columns">
           <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
           <p>
@@ -236,12 +224,12 @@
 
 
 <div class="row">
-<center>
+<div class="center">
 <div class="large-12 small-12 columns"> 
 
 <h5><a href="#" style="color:black; font-weight:bold; dispaly:inline;">Learn About 1080 Project Space</a></h5>
 <hr>
-</center>
+</div>
 
 
 </div>
@@ -270,7 +258,10 @@
 
 <div class="container">
 <div class="row">
-    <form method='POST' action='project_space?#about'>{% csrf_token %}
+
+
+
+    <form method='POST' action='/project_space/?#about'>{% csrf_token %}
 
       <div class="row">
             {{ form.as_p }}
@@ -280,10 +271,26 @@
       </div>
     
     </form>
+
+<div id="about">
+
+{% if messages %}
+<div class="row">
+<ul class="messages green-text text-darken-1">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+
+</div>
+
+
+
 </div>
 </div>
 
-</center>
 </div>
     </div>
   </li>
@@ -294,5 +301,14 @@
 </div>
 <br>
 </div>
+<script>
+
+if(window.location.hash == '#about') {
+    setTimeout(function(){
+        window.scrollTo(0,document.body.scrollHeight - 600);
+    }, 500);
+}
+
+</script>
 
 {% endblock content %}
