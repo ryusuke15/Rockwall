@@ -7,6 +7,31 @@
 
 
 
+{% if messages %}
+<div class="row">
+<ul class="messages green-text text-darken-1">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+
+
+
+
+    <form method='POST' action='/mailing/'>{% csrf_token %}
+    {{ form|materializecss }}
+               
+    <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
+            <i class="material-icons right">send</i>
+    </button>
+    <div style="padding-bottom:30px;"></div>
+
+    </form>
+
+
+
 
 
 {% endblock content %}

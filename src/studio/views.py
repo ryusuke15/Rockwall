@@ -6,8 +6,8 @@ from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
+from .forms import ContactForm, Mailing_listForm 
 from .models import Blog, Tenant
-from .forms import ContactForm
 # Create your views here.
 def home(request):
     queryset_list = Blog.objects.order_by("-date").filter(spotlight=False, upcoming=False)
@@ -104,7 +104,23 @@ def tour(request):
 
     return render(request,"tour.html", context)
 
+def mailing(request):
+    form = Mailing_listForm(request.POST or None)
 
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+
+        messages.success(request, "Thank you for joining our mailing list." )
+
+        return HttpResponseRedirect("/mailing")
+
+    context={
+            "form": form
+            }
+
+    return render(request, "studio_mailing.html", context)
+   
 
 
 def floorplan(request):

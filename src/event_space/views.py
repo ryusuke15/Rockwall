@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from .models import Blog, Contact
-from .forms import ContactForm
+from .forms import ContactForm, Mailing_listForm
 
 # Create your views here.
 
@@ -59,4 +59,21 @@ def event_home(request):
             }
    
     return render(request,"event_home.html", context)
+
+def mailing(request):
+    form = Mailing_listForm(request.POST or None)
+
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+
+        messages.success(request, "Thank you for joining our mailing list." )
+
+        return HttpResponseRedirect("/mailing")
+
+    context={
+            "form": form
+            }
+
+    return render(request, "event_mailing.html", context)
 

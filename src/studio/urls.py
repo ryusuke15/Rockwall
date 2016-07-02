@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from .views import(
-    home, studio, directory, available, tour, floorplan
+    home, studio, directory, available, tour, floorplan, mailing
 )
         
 urlpatterns = [
@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^directory', directory),
     url(r'^available_spaces', available), 
     url(r'^tour', tour),
-    url(r'^floorplan', floorplan)
-    
+    url(r'^floorplan', floorplan),
+    url(r'^mailing', mailing)
     # url(r'^submit', submit),
 ]

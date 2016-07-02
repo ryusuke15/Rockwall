@@ -1,10 +1,10 @@
 from django.conf.urls import url
 
 from .views import(
-    event_home
+    event_home, mailing
 )
         
 urlpatterns = [
     url(r'^$', event_home),
-    # url(r'^submit', submit),
+    url(r'^mailing', mailing),
 ]
