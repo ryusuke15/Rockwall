@@ -11,7 +11,7 @@ from .models import Blog, Contact, Mailing_list
 
 def coffee_shop(request):
     queryset_list = Blog.objects.order_by("-date")
-    paginator = Paginator(queryset_list, 3)
+    paginator = Paginator(queryset_list, 5)
     page = request.GET.get('page')
     try:
         queryset = paginator.page(page)
@@ -22,12 +22,11 @@ def coffee_shop(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         queryset = paginator.page(paginator.num_pages)
 
-   
     form = ContactForm(request.POST or None)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-
+        #Mail Function
         form_email = form.cleaned_data.get("email")
         form_name = form.cleaned_data.get("first_name")+" "+form.cleaned_data.get("last_name")
         form_comment = form.cleaned_data.get("comment")
@@ -41,30 +40,34 @@ def coffee_shop(request):
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
         msg.attach_alternative(html_content, "text/html")
         msg.send()
-
+        #Message Function
         messages.success(request, "Thank you very much. Your comment has been submitted successfully." )
         return HttpResponseRedirect("/1080_Brew") 
-
-    Email_form = Mailing_listForm(request.POST or None)
-    if Email_form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        return HttpResponseRedirect("/1080_Brew")
 
     context={
             "object_list": queryset,
             "title":"1080Brew",
-            "mailForm": Email_form,
             "form": form
             }
     return render(request,"1080Brew.html", context)
 
+
+
 def mailing(request):
 
-    return render(request, "coffee_mailing.html")
+    form = Mailing_listForm(request.POST or None)
 
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
 
+        messages.success(request, "Thank you for joining our mailing list." )
 
+        return HttpResponseRedirect("/1080_Brew/mailing")
 
+    context={
+            "form": form
+            }
 
+    return render(request, "coffee_mailing.html", context)
 
