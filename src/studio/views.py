@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from .forms import ContactForm, Mailing_listForm 
-from .models import Blog, Tenant
+from .models import Blog, Room, Tenant
 # Create your views here.
 def home(request):
     queryset_list = Blog.objects.order_by("-date").filter(spotlight=False, upcoming=False)
@@ -70,7 +70,13 @@ def studio(request):
     return render(request,"studio.html")
 
 def available(request):
-    return render(request,"available_spaces.html")
+    queryset = Room.objects.order_by("room")
+
+    context = {
+		"object_list": queryset, 
+    }
+
+    return render(request,"available_spaces.html", context)
 
 def tour(request):
 

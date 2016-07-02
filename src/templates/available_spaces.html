@@ -17,23 +17,23 @@
 
 
 <!-- tablet -->
-<center>
+<div class="center">
       <li class="menu-text hide-for-large  show-for-medium center" style="font-size:60px;  padding-top:30px;" >Rockwall Studios</li>
-</center>
+</div>
 
-      <center>
+      <div class="center">
           <li  style="display:inline-block; text-align:center;"><a href="directory" class="hide-for-large show-for-medium " style="color:black; font-weight:bold; padding-top:0px; padding-left:0px;  ">Directory</a></li>
           <li  style="display:inline-block; text-align:center;"><a href="available_spaces"  class="hide-for-large show-for-medium"style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Available Spaces </a></li>
 
           <li  style="display:inline-block; text-align:center;"><a href="floorplan" class="hide-for-large show-for-medium" style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Floorplan </a></li>
 
           <li  style="display:inline-block; text-align:center;"><a href="tour" class="hide-for-large show-for-medium" style="color:black; font-weight:bold; padding-top:15px; padding-left:30px;">Arrange a Tour </a></li>
-      </center>
+      </div>
  
 
 
       <!--mobile-->
-      <center>
+      <div class="center">
       <li class="menu-text show-for-small-only " style="font-size:30px;  padding-top:0px; padding-left:0px;" >Rockwall Studios</li>
  
       <hr class="show-for-small-only">
@@ -44,7 +44,7 @@
       <li style="display:inline-block; text-align:center;"><a href="tour" class="show-for-small-only center"style="color:black; font-weight:bold; padding-top:5px; padding-left:10px; font-size:10px;">Arrange a Tour</a></li>
 
 <hr class="show-for-small-only">
-</center>
+</div>
   </ul>
 </div>
 </div>
@@ -87,105 +87,30 @@
 <div class="row small-up-1 medium-up-2 large-up-2">
 
 <!--Begining of Card -->
-<div class="column  ">
+{% for room in object_list %} 
+
+<div class="column">
 <div class="w3-card " style="">
 <div class="w3-container w3-light-grey">
-  <h3>A24</h3>
+  <h3>{{ room.room }}</h3>
 </div>
 <div class="w3-container">
-      <p><a  href="index_AvailableSpaceSolo.html">  <img src='{% static "img/studio/sampleRoom1.jpg" %}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:15px; padding-bottom:20px;">
-      </a></p>
-      <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
-      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" > 500 sq. ft.</p>
-      <p class="hide-on-large-only" style=" padding-top:0px; padding-bottom:0px;" > 500 sq. ft.</p>
-      <p class=" hide-for-large" style="" > $800 / month</p>
-      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" > $800 / month</p>
-      <p class="hide-on-med-and-down" style="padding-left:210px;"><a  href="#" class="button black" >Arrange A Tour</a></p>
-      <p class="hide-for-large" style="padding-left:0px;"><a  href="#" class="button black" >Arrange A Tour</a></p>
+      <p><img src='https://s3.amazonaws.com/rockwall/media/{{ room.image }}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:15px; padding-bottom:20px;">
+      </p>
+      <p style=" padding-top:10px; padding-bottom:10px;" >{{ room.content }}</p>
+      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" >{{ room.size }} sq. ft.</p>
+      <p class="hide-on-large-only" style=" padding-top:0px; padding-bottom:0px;" >{{ room.size }} sq. ft.</p>
+      <p class=" hide-for-large" style="" > ${{ room.rent }} / month</p>
+      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" > ${{ room.rent }} / month</p>
+      <p class="hide-on-med-and-down" style="padding-left:210px;"><a  href="/tour/" class="button black" >Arrange A Tour</a></p>
+      <p class="hide-for-large" style="padding-left:0px;"><a  href="/tour/" class="button black" >Arrange A Tour</a></p>
   <br>
   <hr>
 </div>
 </div>
 </div>
-
+{% endfor %}
 <!--End of card-->
-
-<!--Begining of Card -->
-<div class="column  ">
-<div class="w3-card " style="">
-<div class="w3-container w3-light-grey">
-  <h3>A24</h3>
-</div>
-<div class="w3-container">
-  <img src='{% static "img/studio/sampleRoom2.jpg" %}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:10px; padding-bottom:0px;">
-      </a></p>
-      <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
-      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" > 500 sq. ft.</p>
-      <p class="hide-on-large-only" style=" padding-top:0px; padding-bottom:0px;" > 500 sq. ft.</p>
-      <p class=" hide-for-large" style="" > $800 / month</p>
-      <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:215px;" > $800 / month</p>
-      <p class="hide-on-med-and-down" style="padding-left:210px;"><a  href="#" class="button black" >Arrange A Tour</a></p>
-      <p class="hide-for-large" style="padding-left:0px;"><a  href="#" class="button black" >Arrange A Tour</a></p>
-  <br>
-  <hr>
-</div>
-</div>
-</div>
-
-<!--End of card-->
-
-
-
-
-
-
-
-<!--Begining of Card -->
-<div class="column  ">
-<div class="w3-card " style="">
-
-<header class="w3-container w3-light-grey">
-  <h3>D4</h3>
-</header>
-<div class="w3-container">
-  <img src='{% static "img/studio/sampleRoom3.jpg" %}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:10px; padding-bottom:0px;">
-
-  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
-
-  
-  <p style=" padding-top:0px; padding-bottom:0px;" > 500 sq. ft.</p>
-          <p class=" hide-for-large" style="" > $800 / month</p>
-
-    <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:220px;" > $800 / month</p>
-
- 
-  <br>
-  <hr>
-</div>
-</div>
-</div>
-
-<!--End of card-->
-
-<!--Begining of Card -->
-<div class="column  ">
-<div class="w3-card " style="">
-
-<header class="w3-container w3-light-grey">
-  <h3>C25</h3>
-</header>
-<div class="w3-container">
-  <img src='{% static "img/studio/sampleRoom4.jpg" %}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:10px; padding-bottom:0px;">
-  <p style=" padding-top:10px; padding-bottom:10px;" > Ullum diceret ius ex, te adipisci efficiantur per, offendit electram in has. Sit at quem elitr argumentum, sea an viderer insolens, an soluta tibique pro. Facer partem nec ne, aliquid periculis per ea.</p>
-  <p style=" padding-top:0px; padding-bottom:0px;" > 500 sq. ft.</p>
-  <p class=" hide-for-large" style="" > $800 / month</p>
-  <p class=" hide-on-med-and-down" style=" padding-top:0px; padding-bottom:0px; padding-left:220px;" > $800 / month</p>
-
-  <br>
-  <hr>
-</div>
-</div>
-</div>
 
 </div>
 
