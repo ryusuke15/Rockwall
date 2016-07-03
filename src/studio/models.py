@@ -47,6 +47,7 @@ class Tenant(models.Model):
     content = models.TextField()
     web = models.URLField(null=True, blank=True)
     linkedin = models.URLField(null=True, blank=True)
+    instagram = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True) 
     facebook = models.URLField(null=True, blank=True)
     
@@ -68,7 +69,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()
     image = models.ImageField(upload_to=blog_image_location, null=True, blank=True)
-    video_link = models.URLField(null=True,blank=True)
+    youtube_link = models.URLField(null=True,blank=True)
     date = models.DateField()
     spotlight = models.BooleanField(default=False)
     upcoming = models.BooleanField(default=False)

@@ -24,7 +24,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to=blog_image_location,
                         null=True, 
                         blank=True) 
-    video_link = models.URLField(null=True,blank=True)
+    youtube_link = models.URLField(null=True,blank=True)
     date = models.DateField()
     time = models.TimeField()
     recent = models.BooleanField(default=False)

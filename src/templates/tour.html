@@ -62,7 +62,10 @@
 <div class="row">
   <div class=" large-12 columns">
       <h3 style="font-weight:bold;">Request a Tour</h3>
-            <p>Molestie facilisis vel ei. Eu mel audiam imperdiet iracundia, eos sumo cibo vidit at, nec quod dico eu. Ei ius falli tollit adversarium, has ex malis perpetua ocurreret. Tota ullamcorper ei eum, an tale erant iisque pro. Ea cum viris legimus mediocrem, autem persius vel ea, magna tation decore qui et.Alia ullum tollit his et, erat definitionem sea in. Adhuc quaeque eam in, ad habeo docendi adolescens vix, ne diam quando ius. Ne usu erat prompta. Erat fabellas ocurreret qui no, ex illum malis nominavi quo. Eos sint appellantur at. </p>
+            <p>
+If you like what you see and want to become a part of our Rockwall Community, send us a note and we will respond with available appointment times for a tour or we'll add you to our wait list!<br><br>  
+
+Either way, we look forward to meeting you!</p>
                 <p><span style="font-weight:bold;">Reception:</span> 347-689-2885</p>
                 <p><span style="font-weight:bold;">General inquiries:</span> Reception@Rockwallstudios.nyc</p>
                 <p><span style="font-weight:bold; color:red; ">***</span> If you are interested in room availabilities, or want to get in touch with us please fill out the form below. </p>   
@@ -97,7 +100,7 @@
 
 
 <div class="row">
-    <form method='POST' action ='tour#form' class="col s12">{% csrf_token %}
+    <form method='POST' action ='/tour#form' class="col s12">{% csrf_token %}
             {{ form.as_p }}
        <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
             <i class="material-icons right">send</i>

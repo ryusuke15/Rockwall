@@ -11,9 +11,10 @@
 <div class="top-bar-left white">
 <ul class="dropdown menu white" data-dropdown-menu>
 <li class="menu-text white" style="font-size:50px; ">1080 Project Space</li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="project_space#upcoming">Upcoming</a></li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="project_space#past">Past</a></li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="project_space#rent_space">Rent the Space</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space#upcoming">Upcoming</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space#past">Past</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space#rent_space">Rent the Space</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space/mailing">Join the Mailing List</a></li>
 </ul>
 </div>
 </div>
@@ -23,10 +24,11 @@
 <div class="row white">
 <div class="top-bar-left white">
 <ul class="dropdown menu white" data-dropdown-menu>
-<li class="menu-text white" style="font-size:30px; padding-top:30px; ">1080 Project Space</li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="project_space#upcoming">Upcoming</a></li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="project_space#past">Past</a></li>
-<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="project_space#rent_space">Rent the Space</a></li>
+    <li class="menu-text white" style="font-size:30px; padding-top:30px; ">1080 Project Space</li>
+    <li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space#upcoming">Upcoming</a></li>
+    <li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space#past">Past</a></li>
+    <li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space#rent_space">Rent the Space</a></li>
+    <li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space/mailing">Join the Mailing List</a></li>
 </ul>
 </div>
 </div>
@@ -41,9 +43,12 @@
 </div>
 <hr>
 <div class="center">
-<li  style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:0px;" href="project_space#upcoming">Upcoming</a></li>
-<li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="project_space#past">Past</a></li>
-<li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="project_space#rent_space">Rent the Space</a></li>
+    <li  style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:0px;" href="/project_space#upcoming">Upcoming</a></li>
+    <li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="/project_space#past">Past</a></li>
+    <li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="/project_space#rent_space">Rent the Space</a></li>
+    <li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="/project_space/mailing">Join the Mailing List</a></li>
+
+
 </div>
 </ul>
 <hr>
@@ -121,6 +126,14 @@
           </div>
             {% endif %}
 
+            {% if blog.youtube_link %}
+          <div class="large-6 columns">
+            <div class="flex-video widescreen youtube">
+                <iframe width="560" height="315" src="{{ blog.youtube_link }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            </div>
+            {% endif %}
+
           <div class="large-6 columns">
           <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
           <p>
@@ -149,6 +162,16 @@
           <p><img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
           </div>
             {% endif %}
+
+        
+            {% if blog.youtube_link %}
+          <div class="large-6 columns">
+            <div class="flex-video widescreen youtube">
+                <iframe width="560" height="315" src="{{ blog.youtube_link }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            </div>
+            {% endif %}
+
           <div class="large-6 columns">
           <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
           <p>
@@ -179,6 +202,18 @@
           <p><img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
           </div>
             {% endif %}
+
+
+        
+            {% if blog.youtube_link %}
+          <div class="large-6 columns">
+            <div class="flex-video widescreen youtube">
+                <iframe width="560" height="315" src="{{ blog.youtube_link }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            </div>
+            {% endif %}
+
+
           <div class="large-6 columns">
           <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
           <p>

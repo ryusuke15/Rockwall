@@ -107,7 +107,7 @@
 <div class="column">
 <div class="w3-card ">
 
-<header class="w3-container w3-light-grey">
+<header class="w3-container w3-light-grey" id={{ tenant.room }}>
   <h3 class="left">{{ tenant.first_name }} {{tenant.last_name}}</h3>
 </header>
 <div class="w3-container">
@@ -145,6 +145,12 @@
     {% if tenant.twitter %}
          <li class="show-for-large"><a href='{{ tenant.twitter }}'><i style=" color:black;font-size:20px;"class="fi-social-twitter"></i></a></li>
     {% endif %}
+
+    {% if tenant.instagram %}
+         <li class="show-for-large"><a href='{{ tenant.instagram }}'><i style=" color:black;font-size:20px;"class="fi-social-instagram"></i></a></li>
+    {% endif %}
+
+
 
     {% if tenant.linkedin %}
          <li class="show-for-large"><a href='{{ tenant.linkedin }}'><img style="padding-bottom:6px" src='https://s3.amazonaws.com/rockwall/static/img/linkedin.jpg'></a></li>
