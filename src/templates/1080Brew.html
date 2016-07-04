@@ -292,95 +292,69 @@
  <div class="page-footer white">
  	<div class="container">
     	<div class="row">
-      	<div class="row">
-        <div class="col s12 m12">
-
+          <div class="col s12 m12">
           <div class="icon-block" style="padding-left:0px;">
-            
             <h4 class="center">About Us</h4>
             <hr>
-     
-        </div>
-        </div>
-      
-    </div>
-          
+          </div>
+          </div>
 
-
-      <div class="row">
+        <div class="row">
         <div class=" col l6 s12">
    
           <h5 class="black-text center" style="font-weight:bold; padding-top:20px;">1080 Brew</h5>
           <p class="black-text text-lighten-4">
-1080Brew started when Marian and Melissa realized the tenants at Rockwall Studios definitely needed their own local supply of caffeine in the building!  1080Brew is a cute and cozy coffee shop serving up Toby's Estate brand coffee and espresso!  We offer our customers pastries from Balthazar and Colson's and seriously delicious made-to-order sandwiches!  Our coffee is the best in the neighborhood and so is our service! ;D Check out our menu and come pay us a visit!  We look forward to serving you!</p>
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo. </p>
 
 
         <p><span style="font-weight:bold;">1080 Brew:</span> 1080coffee@gmail.com</p>
         <p><span style="font-weight:bold;">Adress:</span> 10-80 Wyckoff Avenue Ridgewood, NY 11385</p>      
         <p>347-484-9220</p>
+        </div>
+        </div>
+      	
+    <!--  RESERVE SPPACE-->
+
+        <div class="row">
+        <div class="col s12 m3 l6">
+              <div class=" white " >
+              <div class="col m3 "style="background-color:white; padding-bottom:0px; width:200px;">
+              <h5  class="left"style="color:black;  font-weight:bold;  padding-left:0px; padding-top:15px;">Mailing List</h5>
+              </div>
+              </div>
+<!-- FORM FOR RESERVING SPACE -->
+                <div class="left " style="padding-top:15px;">
+                <label for="date"style="color:black;"><span style="color:red;">*</span>Email Address:</label>
+                     <input style="color:black;"type="email"></input>
+                <label for="date"style="color:black;"><span style="color:red;">*</span>Name:</label>
+                     <input style="color:black;"type="email"></input>
+                </div>
+                        <div class="row">
+                          <form class="col s12">
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Message</label>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                                    <button class="black btn waves-effect waves-light" style="" type="submit" name="action">RESERVE SPACE
+                                    <i class="material-icons right">send</i>
+                                    </button>
+                        <div style="padding-bottom:30px;"></div>
+                        <div style="padding-bottom:30px;"></div>
+
+                        <div style="overflow:hidden;width:300px;height:300px;resize:none;max-width:100%;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=1080+Wyckoff+Avenue,+Ridgewood,+NY,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-map-code-enabler" href="https://www.hostingreviews.website/a2-hosting-review" id="grab-map-data">a2 hosting reviews</a><style>#display-google-map img{max-width:none!important;background:none!important;font-size: inherit;}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=54907f24-d547-3f71-5966-8664aa807337&c=google-map-code-enabler&u=1467225155" defer="defer" async="async"></script>
 
 
         </div>
+        </div>
 
-
-
-<!--  Contact US-->
-
-        <div class="row" id="about">
-        <div class="col s12 m10 l6">
-          <div class=" white " >
-            <div class="col m3 "style="background-color:white; padding-bottom:0px; width:200px;">
-                <h5  class="left"style="color:black;  font-weight:bold;  padding-left:0px; padding-top:15px;">Contact</h5>
-            </div>
-            </div>
-
-<!-- FORM FOR RESERVING SPACE -->
-
-<div class="left " style="padding-top:15px;">
-
-
-{% if messages %}
-<div class="row">
-<ul class="messages green-text text-darken-1">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-</div>
-{% endif %}
-
-
-
-
-    <form method='POST' action='/1080_Brew/?#about'>{% csrf_token %}
-    {{ form|materializecss }}
-               
-    <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
-            <i class="material-icons right">send</i>
-    </button>
-    <div style="padding-bottom:30px;"></div>
-
-    </form>
-
+	 </div>
+	</div>
 </div>
 
-
-
-
-<div style="padding-bottom:30px;"></div>
-
-
-<!-- GOOGLE MAPS  -->
-
-
-<div style="width:300px;overflow:hidden;height:300px;max-width:100%;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=1080+Wyckoff+Avenue,+Ridgewood,+NY,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embedded-map-code" href="https://www.interserver-coupons.com" id="enable-map-data">here</a><style>#display-google-map img{max-width:none!important;background:none!important;}</style></div><script src="https://www.interserver-coupons.com/google-maps-authorization.js?id=1ae2024a-b12f-2d9b-ff37-b9bbce1280cb&c=embedded-map-code&u=1467000167" defer="defer" async="async"></script>
-
-	</div>
-	</div>		
-	</div>
-	</div>
-      </div>
-    </div>
-</div>
 
 {% endblock content %}
