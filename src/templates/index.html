@@ -1,9 +1,29 @@
-{% extends "studio_base.html" %}
-{% load staticfiles %}
-{% load materializecss %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Parallax Template - Materialize</title>
 
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
 
-{% block content %}
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
@@ -20,7 +40,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img src='{% static "img/background1.jpg" %}' alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
@@ -69,7 +89,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src='{% static "img/background2.jpg" %}' alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
   <div class="container">
@@ -95,108 +115,50 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src='{% static "img/background3.jpg" %}' alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
-
-  <div class="page-footer white">
+  <footer class="page-footer teal">
     <div class="container">
-    <div class="row">
       <div class="row">
-        <div class="col s12 m12">
-          <div class="icon-block" style="padding-left:0px;">
-            <h4 class="center">About Us</h4>
-            <hr>
-        </div>
-        </div>
-    </div>
-
-          
-
-
-      <div class="row">
-        <div class=" col l6 s12">
-   
-          <h5 class="black-text center" style="font-weight:bold; padding-top:20px;">1080 Brew</h5>
-          <p class="black-text text-lighten-4">
-
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo. </p>
-
-
-        <p><span style="font-weight:bold;">1080 Brew:</span> 1080coffee@gmail.com</p>
-        <p><span style="font-weight:bold;">Adress:</span> 10-80 Wyckoff Avenue Ridgewood, NY 11385</p>      
-        <p>347-484-9220</p>
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
 
 
         </div>
-
-
-
-
-
-
-
-<!--  RESERVE SPPACE-->
-
-        <div class="row">
-        <div class="col s12 m3 l6">
-          <div class=" white " >
-          <div class="col m3 "style="background-color:white; padding-bottom:0px; width:200px;">
-          <h5  class="left"style="color:black;  font-weight:bold;  padding-left:0px; padding-top:15px;">Mailing List</h5>
-          </div>
-
-</div>
-
-
-
-
-
-<!-- FORM FOR RESERVING SPACE -->
-
-
-
-    <div class="left " style="padding-top:15px;">
-
-    <label for="date"style="color:black;"><span style="color:red;">*</span>Email Address:</label>
-         <input style="color:black;"type="email"></input>
-
-    <label for="date"style="color:black;"><span style="color:red;">*</span>Name:</label>
-         <input style="color:black;"type="email"></input>
-
-
-     
-<div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">Message</label>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
         </div>
-      </div>
-    </form>
-  </div>
-            <button class="black btn waves-effect waves-light" style="" type="submit" name="action">RESERVE SPACE
-            <i class="material-icons right">send</i>
-            </button>
-            
-            <div style="padding-bottom:30px;"></div>
-
-<div style="padding-bottom:30px;"></div>
-
-
-<!-- GOOGLE MAPS  -->
-<div style="overflow:hidden;width:300px;height:300px;resize:none;max-width:100%;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=1080+Wyckoff+Avenue,+Ridgewood,+NY,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="google-map-code-enabler" href="https://www.hostingreviews.website/a2-hosting-review" id="grab-map-data">a2 hosting reviews</a><style>#display-google-map img{max-width:none!important;background:none!important;font-size: inherit;}</style></div><script src="https://www.hostingreviews.website/google-maps-authorization.js?id=54907f24-d547-3f71-5966-8664aa807337&c=google-map-code-enabler&u=1467225155" defer="defer" async="async"></script>
-
-
-          </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
         </div>
-      </div>
       </div>
     </div>
-</div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
 
 
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
 
-
-
-{% endblock content %}
+  </body>
+</html>
