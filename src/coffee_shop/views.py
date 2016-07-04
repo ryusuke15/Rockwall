@@ -71,3 +71,6 @@ def mailing(request):
 
     return render(request, "coffee_mailing.html", context)
 
+def test(request):
+    return render(request, "coffee.html")
+
