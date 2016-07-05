@@ -45,7 +45,7 @@
 <center>
 <div class="center show-for-large " style="padding-top:10px;"><h2>Learn More about Us and Our Community</h2></div>
 <div class="center show-for-medium-only " style="padding-top:10px;"><h2>Learn More about Us and Our Community</h2></div>
-<div class="center show-for-small-only " style="padding-top:10px; "><h2 style="font-size:20px;">Learn More about Us and Our Community</h2></div>
+<div class="center show-for-small-only " style="padding-top:10px; "><h2 style="font-size:20px;font-weight:bold;">Learn More about Us and Our Community</h2></div>
 
 </center>
 
@@ -53,7 +53,7 @@
 
 <!-- Slider -->
 
-<div class="row"  style="padding-top:15px;">
+<div class="row hide-on-small-only"  style="padding-top:15px;">
 
 <div class="medium-8 columns">
 <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
@@ -75,6 +75,7 @@
   
 </div>
 </div>
+
 
 <!-- Navigation images to branches of website -->
 
@@ -105,7 +106,7 @@
 
 
         {% for blog in spotlight %}
-        <div class="row">
+        <div class="row" style="padding-bottom:36px">
 
             {% if blog.image %}
           <div class="large-6 columns">
@@ -143,7 +144,7 @@
 
 
         {% for blog in upcoming %}
-        <div class="row">
+        <div class="row" style="padding-bottom:36px">
             {% if blog.image %}
           <div class="large-6 columns">
           <p><img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
@@ -180,7 +181,7 @@
       <div class="accordion-content" data-tab-content>
 
         {% for blog in object_list %}
-        <div class="row">
+        <div class="row"style="padding-bottom:36px">
             {% if blog.image %}
           <div class="large-6 columns">
           <p><img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>

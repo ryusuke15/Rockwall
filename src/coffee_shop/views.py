@@ -11,7 +11,7 @@ from .models import Blog, Contact, Mailing_list
 
 def coffee_shop(request):
     queryset_list = Blog.objects.order_by("-date")
-    paginator = Paginator(queryset_list, 5)
+    paginator = Paginator(queryset_list, 3)
     page = request.GET.get('page')
     try:
         queryset = paginator.page(page)

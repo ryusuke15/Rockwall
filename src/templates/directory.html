@@ -114,9 +114,11 @@
 
     {% if tenant.image %}
   <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image}}' alt="Avatar" class="w3-left w3-circle w3-margin-right hide-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
-  <div class="center">
-  <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image }}' alt="Avatar" class="w3-left w3-circle w3-margin-right show-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
+
+  <div class="align-center">
+  <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image }}' alt="Avatar" class="w3-left w3-circle w3-margin-right show-for-small-only" style="padding-top:10px; padding-bottom:10px;">
 </div>
+
     {% endif %}
 
   <p style=" padding-top:10px; padding-bottom:10px;" >{{ tenant.content }}</p>
@@ -167,6 +169,10 @@
 
     {% if tenant.twitter %}
          <li class="hide-for-large"><a href='{{ tenant.twitter }}'><i style=" color:black;font-size:20px;"class="fi-social-twitter"></i></a></li>
+    {% endif %}
+
+    {% if tenant.instagram %}
+         <li class="hide-for-large"><a href='{{ tenant.instagram }}'><i style=" color:black;font-size:20px;"class="fi-social-instagram"></i></a></li>
     {% endif %}
 
 

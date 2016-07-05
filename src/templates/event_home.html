@@ -118,7 +118,7 @@
     <a href="#" class="accordion-title" style="background-color:black; color:white; font-size:20px;">Recent</a>
     <div class="accordion-content" data-tab-content >
         {% for blog in recent %}
-        <div class="row">
+        <div class="row"style="padding-bottom:36px">
 
             {% if blog.image %}            
           <div class="large-6 columns">
@@ -156,7 +156,7 @@
     <div class="accordion-content" data-tab-content>
 
         {% for blog in upcoming %}
-        <div class="row">
+        <div class="row style=" style="padding-bottom:36px">
             {% if blog.image %}            
           <div class="large-6 columns">
           <p><img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
@@ -196,7 +196,7 @@
     <div class="accordion-content" data-tab-content>
 
         {% for blog in object_list %}
-        <div class="row">
+        <div class="row" style="padding-bottom:36px">
             {% if blog.image %}
           <div class="large-6 columns">
           <p><img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article" alt="article preview image"></p>
