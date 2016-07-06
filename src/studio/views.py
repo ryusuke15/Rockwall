@@ -93,7 +93,7 @@ def tour(request):
         subject = 'Tour Contact Form Notification'
         from_email = settings.EMAIL_HOST_USER
         body  = 'Name: %s<br/>Contact: %s<br/>Request Date: %s<br/>Message: %s<br/>'%(form_name, form_email, form_date, form_message)
-        to = 'ryusukelavalla@gmail.com'    
+        to = 'Reception@Rockwallstudios.nyc'    
         html_content = body
         text_content = 'This is an example'
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
@@ -116,6 +116,19 @@ def mailing(request):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+
+        form_email = form.cleaned_data.get("email")
+        
+        subject = 'Studios Email Form Notification'
+        from_email = settings.EMAIL_HOST_USER
+        body  = 'Please add %s to the mailing list.'%(form_email)
+        to = 'Reception@Rockwallstudios.nyc'    
+        html_content = body
+        text_content = 'This is an example'
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+
 
         messages.success(request, "Thank you for joining our mailing list." )
 
