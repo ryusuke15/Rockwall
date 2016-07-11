@@ -34,7 +34,7 @@ def coffee_shop(request):
         subject = '1080Brew Contact Form Notification'
         from_email = settings.EMAIL_HOST_USER
         body  = 'Name: %s<br/>Contact: %s<br/>Message: %s<br/>'%(form_name, form_email, form_comment)
-        to = 'Reception@Rockwallstudios.nyc'    
+        to = '1080coffee@gmail.com'    
         html_content = body
         text_content = 'This is an example'
         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
