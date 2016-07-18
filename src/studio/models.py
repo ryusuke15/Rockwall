@@ -44,7 +44,7 @@ class Tenant(models.Model):
     email = models.EmailField(null=True, blank=True)
     image = models.ImageField(upload_to=tenant_image_location,  null=True, blank=True)
     room = models.CharField(max_length=30, choices=ROOM_NUMBERS_CHOICES, unique=True)
-    content = models.TextField(max_length=140)
+    content = models.TextField(max_length= 400)
     web = models.URLField(null=True, blank=True)
     linkedin = models.URLField(null=True, blank=True)
     instagram = models.URLField(null=True, blank=True)
