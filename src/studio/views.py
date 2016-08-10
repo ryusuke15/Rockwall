@@ -49,7 +49,7 @@ def directory(request):
             Q(web__icontains=query)
             ).distinct()
     
-    paginator = Paginator(queryset_list, 10)
+    paginator = Paginator(queryset_list, 100)
 
     page = request.GET.get('page')
     try:
