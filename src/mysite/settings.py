@@ -25,14 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!(60c504rrcvy*pdt9vzw-5%8#rmssnv7_#f6%jo!*g7lj6yjz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
-
-# ALLOWED_HOSTS = ["52.202.53.10","localhost", "rockwallstudios.nyc","www.rockwallstudios.nyc"]
+ALLOWED_HOSTS = ["52.202.53.10","localhost", "rockwallstudios.nyc","www.rockwallstudios.nyc"]
 #
-
 
 
 EMAIL_HOST = 'smtp.gmail.com'
