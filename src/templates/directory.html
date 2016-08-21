@@ -95,100 +95,118 @@
 </div>
 </div>
 
-
-
-<div class="row small-up-1 medium-up-2 large-up-2">
-
-
 <!--Begining of Card -->
-
+<div class="row small-up-1 medium-up-2 large-up-3">
 {% for tenant in object_list %}
 
 <div class="column">
-<div class="w3-card ">
+<div class="w3-card">
+<article class="slide">
+    <header class="w3-container w3-light-grey" id={{ tenant.room }}>
+    <h3 class="left">{{ tenant.first_name }} {{tenant.last_name}}</h3>
+    </header>
 
-<header class="w3-container w3-light-grey" id={{ tenant.room }}>
-  <h3 class="left">{{ tenant.first_name }} {{tenant.last_name}}</h3>
-</header>
 <div class="w3-container">
 
+<!-- Profile Image -->
     {% if tenant.image %}
-  <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image}}' alt="Avatar" class="w3-left w3-circle w3-margin-right hide-for-small-only" style=" padding-top:10px; padding-bottom:10px;">
-
-  <div class="align-center">
-  <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image }}' alt="Avatar" class="w3-left w3-circle w3-margin-right show-for-small-only" style="padding-top:10px; padding-bottom:10px;">
-</div>
-
+  <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image}}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:10px; padding-bottom:10px; width:150px; height:100%;">
     {% endif %}
-
-  <p style=" padding-top:10px; padding-bottom:10px;" >{{ tenant.content }}</p>
-    
+<!-- Profile Content -->
+    <p style="padding-top:10px; padding-bottom:10px;" >{{ tenant.content }}</p>
+<!-- Profile Website -->
     {% if tenant.web %}
-  
-        <a href="{{ tenant.web }}"><p style=" padding-top:0px; padding-bottom:10px; padding-left:220px;" class="show-for-large" >{{ tenant.web }}</p></a>
-  
-
-    <a href="{{ tenant.web }}"<p style=" padding-top:0px; padding-bottom:10px;" class="hide-for-large" >{{ tenant.web }}</p></a>
-
+    <!-- Large Screen--> 
+    <a href="{{ tenant.web }}"><p style="padding-bottom:10px; padding-left:220px;" class="show-for-large" >{{ tenant.web }}</p></a>
+    <!-- Small Screen -->
+    <a href="{{ tenant.web }}"<p style="padding-bottom:10px;" class="show-for-small-only">{{ tenant.web }}</p></a>
     {% endif %}
 
+<!-- Social Links -->
+    <ul class="menu">
 
+        <!-- Email -->
+        {% if tenant.email %}
+            <!-- Large -->
+            <li class="show-for-large ">
+                <a href='mailto:{{ tenant.email }}'>
+                <i style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-mail"></i>
+                </a>
+            </li>
+            <!-- Small -->
+            <li class="hide-for-large ">
+                <a href='mailto:{{ tenant.email }}'>
+                <i style=" color:black;font-size:20px; padding-left:20px; color:black;"class="fi-mail"></i>
+                </a>
+            </li>
+        {% endif %}
 
+        <!-- Facebook -->
+        {% if tenant.facebook %}
+            <!-- Large -->
+            <li class="show-for-large ">
+                <a href='{{ tenant.facebook }}'>
+                <i style="color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i>
+                </a>
+            </li>
+            <!-- Small -->
+            <li class="hide-for-large ">
+                <a href='{{ tenant.facebook }}'>
+                <i style="color:black;font-size:20px; padding-left:20px; color:black;"class="fi-social-facebook"></i>
+                </a>
+            </li>
+        {% endif %}
 
+        <!-- Twitter -->
+        {% if tenant.twitter %}
+            <!-- Large -->
+            <li class="show-for-large ">
+                <a href='{{ tenant.twitter }}'>
+                <i style="color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-twitter"></i>
+                </a>
+            </li>
+            <!-- Small -->
+            <li class="hide-for-large ">
+                <a href='{{ tenant.twitter }}'>
+                <i style="color:black;font-size:20px; padding-left:20px; color:black;"class="fi-social-twitter"></i>
+                </a>
+            </li>
+        {% endif %}
 
-  <ul class="menu">
- 
-    <li class="show-for-large "><a href='mailto:{{ tenant.email}}'><i style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-mail"></i></a></li>
+        <!-- Instagram -->
+        {% if tenant.instagram %}
+            <!-- Large -->
+            <li class="show-for-large ">
+                <a href='{{ tenant.instagram }}'>
+                <i style="color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-instagram"></i>
+                </a>
+            </li>
+            <!-- Small -->
+            <li class="hide-for-large ">
+                <a href='{{ tenant.instagram }}'>
+                <i style="color:black;font-size:20px; padding-left:20px; color:black;"class="fi-social-instagram"></i>
+                </a>
+            </li>
+        {% endif %}
 
-    {% if tenant.facebook %}
-        <li class="show-for-large "><a href='{{ tenant.facebook}}'><i  style="color:black;font-size:20px;"class="fi-social-facebook"></i></a></li>
-    {% endif %}
+        <!-- LInkedin 
+        {% if tenant.linkedin %}
+             <li class="show-for-large"><a href='{{ tenant.linkedin }}'><img style="padding-bottom:6px" src='https://s3.amazonaws.com/rockwall/static/img/linkedin.jpg'></a></li>
+        {% endif %}
+        -->
+    
+        </ul>
 
-    {% if tenant.twitter %}
-         <li class="show-for-large"><a href='{{ tenant.twitter }}'><i style=" color:black;font-size:20px;"class="fi-social-twitter"></i></a></li>
-    {% endif %}
-
-    {% if tenant.instagram %}
-         <li class="show-for-large"><a href='{{ tenant.instagram }}'><i style=" color:black;font-size:20px;"class="fi-social-instagram"></i></a></li>
-    {% endif %}
-
-
-
-    {% if tenant.linkedin %}
-         <li class="show-for-large"><a href='{{ tenant.linkedin }}'><img style="padding-bottom:6px" src='https://s3.amazonaws.com/rockwall/static/img/linkedin.jpg'></a></li>
-    {% endif %}
-
-
-
-
-    <li class="hide-for-large"><a href='mailto:{{ tenant.email}}'><i style=" color:black;font-size:20px; color:black;"class="fi-mail"></i></a></li>
-
-    {% if tenant.facebook %}
-        <li class="hide-for-large"><a href='{{ tenant.facebook}}'><i  style="color:black;font-size:20px;"class="fi-social-facebook"></i></a></li>
-    {% endif %}
-
-    {% if tenant.twitter %}
-         <li class="hide-for-large"><a href='{{ tenant.twitter }}'><i style=" color:black;font-size:20px;"class="fi-social-twitter"></i></a></li>
-    {% endif %}
-
-    {% if tenant.instagram %}
-         <li class="hide-for-large"><a href='{{ tenant.instagram }}'><i style=" color:black;font-size:20px;"class="fi-social-instagram"></i></a></li>
-    {% endif %}
-
-
-    {% if tenant.linkedin %}
-         <li class="hide-for-large"><a href='{{ tenant.linkedin }}'><img style="padding-bottom:6px" src='https://s3.amazonaws.com/rockwall/static/img/linkedin.jpg'></a></li>
-    {% endif %}
-
-
-
-
-</ul>
   <br>
   <hr>
+
+</div>
+
+</article>
 </div>
 </div>
-</div>
+
 {% endfor %}
 </div>
+
 {% endblock content %}
