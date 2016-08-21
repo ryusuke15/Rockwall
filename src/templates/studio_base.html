@@ -135,6 +135,19 @@
         format: 'yyyy-mm-dd'
      });
     $(".button-collapse").sideNav(); 
+    $('article').readmore({
+          speed: 100,
+          collapsedHeight: 350,
+          heightMargin: 16,
+          moreLink: '<a href="#" style="color:blue; padding-top:20px; padding-bottom:20px; padding-left:15px; ">Read More</a>',
+          lessLink: '<a href="#" style=" color:blue; padding-bottom:20px; padding-left:15px;">Close</a>',
+          blockCSS: 'display: block; width: 100%;',
+          startOpen: false,
+          // callbacks
+          blockProcessed: function() {},
+          beforeToggle: function(){},
+          afterToggle: function(){}
+          });
   });
 </script>
 
@@ -146,7 +159,8 @@
 
   ga('create', 'UA-80345036-1', 'auto');
   ga('send', 'pageview');
-
 </script>
+
+
 </body>
 </html>

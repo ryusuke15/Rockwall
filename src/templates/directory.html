@@ -117,7 +117,7 @@
 <!-- Profile Website -->
     {% if tenant.web %}
     <!-- Large Screen--> 
-    <a href="{{ tenant.web }}"><p style="padding-bottom:10px; padding-left:220px;" class="show-for-large" >{{ tenant.web }}</p></a>
+    <a href="{{ tenant.web }}"><p style="padding-bottom:10px;" class="show-for-large" >{{ tenant.web }}</p></a>
     <!-- Small Screen -->
     <a href="{{ tenant.web }}"<p style="padding-bottom:10px;" class="show-for-small-only">{{ tenant.web }}</p></a>
     {% endif %}
@@ -130,13 +130,13 @@
             <!-- Large -->
             <li class="show-for-large ">
                 <a href='mailto:{{ tenant.email }}'>
-                <i style=" color:black;font-size:20px; padding-left:220px; color:black;"class="fi-mail"></i>
+                <i style=" color:black;font-size:20px; color:black;"class="fi-mail"></i>
                 </a>
             </li>
             <!-- Small -->
             <li class="hide-for-large ">
                 <a href='mailto:{{ tenant.email }}'>
-                <i style=" color:black;font-size:20px; padding-left:20px; color:black;"class="fi-mail"></i>
+                <i style=" color:black;font-size:20px; color:black;"class="fi-mail"></i>
                 </a>
             </li>
         {% endif %}
@@ -146,13 +146,13 @@
             <!-- Large -->
             <li class="show-for-large ">
                 <a href='{{ tenant.facebook }}'>
-                <i style="color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-facebook"></i>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-facebook"></i>
                 </a>
             </li>
             <!-- Small -->
             <li class="hide-for-large ">
                 <a href='{{ tenant.facebook }}'>
-                <i style="color:black;font-size:20px; padding-left:20px; color:black;"class="fi-social-facebook"></i>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-facebook"></i>
                 </a>
             </li>
         {% endif %}
@@ -162,13 +162,13 @@
             <!-- Large -->
             <li class="show-for-large ">
                 <a href='{{ tenant.twitter }}'>
-                <i style="color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-twitter"></i>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-twitter"></i>
                 </a>
             </li>
             <!-- Small -->
             <li class="hide-for-large ">
                 <a href='{{ tenant.twitter }}'>
-                <i style="color:black;font-size:20px; padding-left:20px; color:black;"class="fi-social-twitter"></i>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-twitter"></i>
                 </a>
             </li>
         {% endif %}
@@ -178,22 +178,24 @@
             <!-- Large -->
             <li class="show-for-large ">
                 <a href='{{ tenant.instagram }}'>
-                <i style="color:black;font-size:20px; padding-left:220px; color:black;"class="fi-social-instagram"></i>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-instagram"></i>
                 </a>
             </li>
             <!-- Small -->
             <li class="hide-for-large ">
                 <a href='{{ tenant.instagram }}'>
-                <i style="color:black;font-size:20px; padding-left:20px; color:black;"class="fi-social-instagram"></i>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-instagram"></i>
                 </a>
             </li>
         {% endif %}
 
-        <!-- LInkedin 
+        <!-- Linkedin --> 
         {% if tenant.linkedin %}
-             <li class="show-for-large"><a href='{{ tenant.linkedin }}'><img style="padding-bottom:6px" src='https://s3.amazonaws.com/rockwall/static/img/linkedin.jpg'></a></li>
+
+             <li><a href='{{ tenant.linkedin }}'><img style="padding-bottom:6px" src='https://s3.amazonaws.com/rockwall/static/img/linkedin.jpg'></a></li>
+
+
         {% endif %}
-        -->
     
         </ul>
 
