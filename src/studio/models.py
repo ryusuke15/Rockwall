@@ -65,6 +65,16 @@ class Contact(models.Model):
     def __unicode__(self):
         return self.first_name +" "+ self.last_name
 
+class Coworking_Space(models.Model):
+    first_name = models.CharField(max_length = 100)
+    last_name = models.CharField(max_length = 100)
+    email = models.EmailField(max_length=50)
+    message = models.TextField()
+    received  = models.DateTimeField(auto_now=False, auto_now_add = True)
+    
+    def __unicode__(self):
+        return self.first_name +" "+ self.last_name
+
 class Blog(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()

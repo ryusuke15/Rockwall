@@ -7,9 +7,6 @@
     <meta name="description" content="Rockwall Studios">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel='shortcut icon' href='{% static "img/favicon.ico" %}' type='image/x-icon'/ >
-
-
-
 <!--CSS  -->
     <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
@@ -18,84 +15,79 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel='stylesheet' href='{% static "css/indexMainLandingPage.css" %}'>
     <link rel='stylesheet' href='{% static "css/main.css" %}'>
+    <link rel='stylesheet' href='{% static "css/main2.css" %}'>
     <link rel='stylesheet' href='{% static "css/style.css" %}'>
     <link rel='stylesheet' href='{% static "css/floorplan.css" %}'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
 </head>
+
 <body>
+<!--Navigation  -->
+<nav>
+<div class="nav-wrapper black">
+    <a class="brand-logo hide-on-med-and-up"href="/">
+    <img src='{% static "img/logo.svg" %}'style="width:120px">
+    </a>
 
-<header>
-<!--navigation bar -->
+    <ul class="left">
+        <li class="menuIcon">
+            <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+            <i class="material-icons">menu</i> 
+            </a>
+        </li>
 
-  <!-- desktop nav bar -->
-<nav class="hide-on-med-and-down">
-    <div class="nav-wrapper black">
-        <a href="/" class="brand-logo" style="width:9.5%; font-size:20px; padding-left:23px; padding-top:0px; color:black; font-weight:bold;">
-            <img src='{% static "img/logo.svg" %}' style="width:100%; height:10%;" id="rockwallLogo">
-        </a>
-        <a href="/studio" style="font-size:14px; font-weight: bold; padding-left:260px; color:white;">Studios</a>
-        <a href="/project_space"  style="font-size:14px; font-weight: bold; padding-left:48px; color:white;">Project Space</a>
-        <a href="/1080_Brew"  style="font-size:14px; font-weight: bold; padding-left:48px; color:white;">1080 Brew</a>
-
-      <ul class="right">
-        <li><a href="https://www.facebook.com/Rockwallstudioz/"><i class="fi-social-facebook" style="color:white;font-size:24px"></i></a></li>
-        <li><a href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter" style="color:white;font-size:24px"></i></a></li>
-        <li><a href="https://www.instagram.com/rockwallstudios/"><i class="fi-social-instagram" style="color:white;font-size:24px"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin" style="color:white;font-size:24px"></i></a></li>
-      </ul>
-
-    </div>
-</nav>
-
-<!-- Tablet nav bar -->
-<nav class="hide-on-small-only hide-on-large-only ">
-    <div class="nav-wrapper black">
-       <a href="/" class="brand-logo left" style="width:18%; padding-left:0px; padding-top:0px; color:black; font-weight:bold;">
-            <img style="width:100%; height:20%;" id="rockwallLogo" src='{% static "img/logo.svg" %}'></a>
-
-       <a href="/studio" style="font-size:14px; font-weight: bold; padding-left:163px; color:white;">Studios</a>
-       <a href="/project_space" style="font-size:14px; font-weight: bold; padding-left:10px; color:white;">Project Space</a>
-       <a href="/1080_Brew" style="font-size:14px; font-weight: bold; padding-left:10px; color:white;">1080 Brew</a>
-
-      <ul class="right">
-        <li><a href="https://www.facebook.com/Rockwallstudioz/"><i class="fi-social-facebook" style="color:white;font-size:24px"></i></a></li>
-        <li><a href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter" style="color:white;font-size:24px"></i></a></li>
-        <li><a href="https://www.instagram.com/rockwallstudios/"><i class="fi-social-instagram" style="color:white;font-size:24px"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin" style="color:white;font-size:24px"></i></a></li>
-      </ul>
-
-    </div>
-</nav>
-
-
-<!--Mobile nav bar -->
-
- 
-  <nav class="hide-on-med-and-up">
-     <div class="nav-wrapper black">
-           <a href="/" class="brand-logo"><img style="padding-bottom:12px;width:91%; height:100%;" id="rockwallLogo" src='{% static "img/logo.svg" %}'></a> 
-        <a href="/" data-activates="nav-mobile" class="button-collapse"><i style="color:white" class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="side-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/studio">Studios</a></li>
-            <li><a href="/project_space">Project Space</a></li>
-            <li><a href="/1080_Brew">1080 Brew</a></li>
-
-        <li><a href="https://www.facebook.com/Rockwallstudioz/"><i class="fi-social-facebook"></i></a></li>
-        <li><a href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter"></i></a></li>
-        <li><a href="https://www.instagram.com/rockwallstudios/"><i class="fi-social-instagram"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin"></i></a></li>
-
-        </ul>
+        <li class="menuLogo hide-on-med-and-down">
+            <a href="/">
+            <img src='{% static "img/logo.svg" %}'>
+            </a>
+        </li>
         
+    </ul>
 
-    </div
+    <!--Right Side  -->
+    <div class="menuRight hide-on-small-only">
+    <ul class="right">
+        <li class="menuPosition"><a href="/tour">Arrange a Tour</a></li>
+        <li class="menuPosition"><a href="/mailing">Join Our Mailing List</a></li>
+        <li class="menuIcon"><a href="https://www.facebook.com/Rockwallstudioz"><i class="fi-social-facebook"></i></a></li>
+        <li class="menuIcon"><a href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter"></i></a></li>
+        <li class="menuIcon"><a href="https://www.instagram.com/rockwallstudios"><i class="fi-social-instagram"></i></a></li>
+        <li class="menuIcon"><a href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin"></i></a></li>
+    </ul> 
+    </div>
+
+</div>
 </nav>
-
-
-</header>
-
+<!--Side Navigation  -->
+<ul id="slide-out" class="side-nav black">
+    <li class="center sideLogo">
+        <div class="userView">
+        <div class="background">
+        <a href="/">
+        <img src='{% static "img/logo.svg" %}'>
+        </a>
+        </div>
+        </div>
+    </li>
+    <div class="sideHr">
+    <hr>
+    </div>
+    <div class="sideMenu left">
+      <li><a href="/studios">Studios</a></li>
+      <li><a href="/project_space">Project Space</a></li>
+      <li><a href="/1080_Brew">1080 Brew</a></li>
+      <li><a href="/co_working_space">Co-Working Space</a></li>
+      <!-- <li><a href="/directory">Directory</a></li> -->
+      <li><a href="/tour">Arrrange a Tour</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li class="sideIcon">
+          <a href="https://www.facebook.com/Rockwallstudioz"><i class="fi-social-facebook"></i></a>
+            <a href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter"></i></a>
+            <a href="https://www.instagram.com/rockwallstudios"><i class="fi-social-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin"></i></a>
+      </li>
+</ul>
 
 <!--Content  -->
 {% block content %}
@@ -104,8 +96,6 @@
 <br>
 
 <footer>
-
-
 <div class="row expanded">
 <div class="medium-12 columns" style="background-color:grey;">
 <ul class="menu align-center">

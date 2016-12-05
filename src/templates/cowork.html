@@ -1,0 +1,51 @@
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+{% load materializecss %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+    <div class="col s12">
+    <h4>1080 Co-Working Space</h4>
+    </div>
+
+    <div class="col s12">
+    <img class="thumbnail" src="http://placehold.it/850x350">
+    </div>
+
+    <div class="col s12">
+    <h5>About 1080 Co-Working Space at Rockwall Studios</h5>
+    </div>
+
+    <div class="col s12">
+    <p class="black-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque dignissim nunc feugiat vehicula. Quisque a ex vel dui mattis maximus. Integer tempus massa tortor, non pharetra massa ultrices eu. Aliquam euismod tempus lorem, sit amet molestie velit interdum id. Quisque sit amet purus in odio posuere fermentum. Duis volutpat vitae ligula ac maximus. Duis ultricies leo odio, ut fringilla nisi rutrum id. Nam quis maximus dui. Mauris malesuada congue ex nec feugiat. Morbi ornare risus diam, in bibendum risus dapibus ac. Phasellus pellentesque sodales nisi, vel dictum leo pulvinar a.</p>
+    </div>
+
+    <div class="col s12">
+    <h6>**If you would like to contact us please fill out the form below and we will get back to you as soon as we can</h6>
+    </div>
+
+    {% if messages %}
+    <div class="col s12" id="message">
+    <ul class="messages green-text text-darken-1">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+
+    <div class="col s12"> 
+       <form method='POST' action='/co_working_space/?#message'>{% csrf_token %}
+
+        {{ form | materializecss }}
+        <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
+                <i class="material-icons right">send</i>
+        </button>
+   </form>   
+    </div>
+
+
+</div>
+</div>
+{% endblock content %}

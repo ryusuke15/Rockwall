@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-from .forms import ContactForm, Mailing_listForm 
+from .forms import ContactForm, Mailing_listForm, Coworking_SpaceForm 
 from .models import Blog, Room, Tenant
 # Create your views here.
 def home(request):
@@ -67,7 +67,23 @@ def directory(request):
     return render(request,"directory.html", context)
 
 def studio(request):
-    return render(request,"studio.html")
+
+    queryset_list = Tenant.objects.order_by("last_name")
+    query = request.GET.get("q")
+
+    if query:
+        queryset_list = queryset_list.filter(
+            Q(first_name__icontains=query) |
+            Q(last_name__icontains=query) |        
+            Q(content__icontains=query) |
+            Q(room__icontains=query) |
+            Q(email__icontains=query)|
+            Q(web__icontains=query)
+            ).distinct()
+    context = {
+		"object_list": queryset_list, 
+    }
+    return render(request,"studio.html", context)
 
 def available(request):
     queryset = Room.objects.order_by("room")
@@ -110,6 +126,35 @@ def tour(request):
 
     return render(request,"tour.html", context)
 
+def coworking(request):
+    form = Coworking_SpaceForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        form_email = form.cleaned_data.get("email")
+        form_name = form.cleaned_data.get("first_name")+" "+form.cleaned_data.get("last_name")
+        form_message = form.cleaned_data.get("message")
+
+        subject = 'Coworking-Space Form Notification'
+        from_email = settings.EMAIL_HOST_USER
+        body  = 'Name: %s<br/>Contact: %s<br/>Message: %s<br/>'%(form_name, form_email, form_message)
+        # to = 'ryusukelavalla@gmail.com'
+        to = 'Reception@Rockwallstudios.nyc'    
+        html_content = body
+        text_content = 'This is an example'
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+
+        messages.success(request, "Thank you very much. Your request has been submitted successfully." )
+        return HttpResponseRedirect("/co_working_space") 
+
+    context={
+            "form":form,
+            }
+
+    return render(request,"cowork.html", context)
+
 def mailing(request):
     form = Mailing_listForm(request.POST or None)
 
@@ -140,7 +185,8 @@ def mailing(request):
 
     return render(request, "studio_mailing.html", context)
    
-
+def contact(request):
+    return render(request, "contact.html")
 
 def floorplan(request):
     return render(request,"floorplan.html")

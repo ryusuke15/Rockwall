@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Blog, Contact, Mailing_list, Room, Tenant
+from .models import Blog, Contact, Coworking_Space,Mailing_list, Room, Tenant
 class BlogAdmin(admin.ModelAdmin):
     list_display = ["title","date","spotlight","upcoming","timestamp"]
     list_filter = ["date","timestamp"]
@@ -13,6 +13,10 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ["__unicode__","date","email","received"]
     class Meta:
         model = Contact
+class CoworkAdmin(admin.ModelAdmin):
+    list_display = ["__unicode__","email","received"]
+    class Meta:
+        model = Coworking_Space
 
 class Mailing_listAdmin(admin.ModelAdmin):
     list_display = ["email", "timestamp"]
@@ -34,6 +38,7 @@ class TenantAdmin(admin.ModelAdmin):
         model = Tenant
 
 admin.site.register(Blog, BlogAdmin)
+admin.site.register(Coworking_Space, CoworkAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(Mailing_list, Mailing_listAdmin)
 admin.site.register(Room, RoomAdmin)
