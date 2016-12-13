@@ -119,8 +119,8 @@ DEFAULT_FILE_STORAGE = 'mysite.s3utils.MediaRootS3BotoStorage'
 S3_URL = '//%s.s3.amazonaws.com/' %AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = S3_URL + "media/"
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
-# STATIC_URL = "/static/"
-STATIC_URL = S3_URL + "static/"
+STATIC_URL = "/static/"
+# STATIC_URL = S3_URL + "static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static") 
 

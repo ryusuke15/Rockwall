@@ -134,10 +134,17 @@
     .homeTopContainer{
         width:82% !important;
     }
+    .SpotWidth{ 
+        width:94% !important;
+
+    }
 }
 @media only screen and (min-width : 1200px){
     .homeTopContainer{
         width:81% !important;
 
+    }
+    .SpotWidth{
+         width:94% !important;       
     }
 }
