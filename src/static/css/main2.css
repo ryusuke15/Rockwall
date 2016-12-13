@@ -6,9 +6,10 @@
 }
 .menuIcon i{
     color:white;
+    font-size:22px;
 }
 .menuLogo{
-    padding-top:16px;    
+    padding-top:19px;    
 }
 .menuLogo img{
     width:120px;
@@ -24,7 +25,6 @@
 /*Side Navigation  */
 .sideLogo{
     padding-top:10px;
-    padding-bottom:20px;
 }
 .sideLogo a{
     padding-right:0px;
@@ -49,11 +49,67 @@
 .sideMenu li{
     height:30px;
 }
+
+.sideIcon{
+    padding-top:14px;
+}
 .sideIcon a{
     display:inline-block;
     font-size:24px;
     padding-right:15px;
 }
+/*Home Page  */
+.homeTL{
+    padding-top:10px !important;
+}
+.homeTR li{
+    padding-top:10px;
+}
+.homeBL{
+    border-style:solid;
+    border-width: 0px 1px 1px 1px;
+    padding-left:0px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    border-color:gainsboro !important;
+    margin-bottom:20px !important;
+}
+.homeBL h5{
+    color:white;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    margin-top:0px;
+}
+
+.blogData{
+    padding-bottom:70px;
+}
+.blogData h5{
+    color:black;
+    padding-top:25px;
+    padding-left:0px !important;
+
+}
+.blogText{
+    padding-bottom:20px;
+}
+
+.borders{
+    border-style:solid;
+    padding-left:7px;
+    padding-right:4px;
+}
+.borders h5{
+    font-weight:bold;
+}
+.borders span{
+    font-weight:bold;
+}
+.borders p {
+    padding-top:10px;
+}
+
 /*Studio Page  */
 .stuTitle h3{
     font-weight:bold;
@@ -72,4 +128,16 @@
 /*Contact Page  */
 .contact span h4{
     font-weight:bold;
+}
+
+@media only screen and (min-width : 992px) {
+    .homeTopContainer{
+        width:82% !important;
+    }
+}
+@media only screen and (min-width : 1200px){
+    .homeTopContainer{
+        width:81% !important;
+
+    }
 }

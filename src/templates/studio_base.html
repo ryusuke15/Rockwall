@@ -16,10 +16,10 @@
     <link rel='stylesheet' href='{% static "css/indexMainLandingPage.css" %}'>
     <link rel='stylesheet' href='{% static "css/main.css" %}'>
     <link rel='stylesheet' href='{% static "css/main2.css" %}'>
+    <!-- <link rel='stylesheet' href='static/css/main2.css'> -->
     <link rel='stylesheet' href='{% static "css/style.css" %}'>
     <link rel='stylesheet' href='{% static "css/floorplan.css" %}'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 </head>
 
 <body>
@@ -37,7 +37,7 @@
             </a>
         </li>
 
-        <li class="menuLogo hide-on-med-and-down">
+        <li class="menuLogo hide-on-small-only">
             <a href="/">
             <img src='{% static "img/logo.svg" %}'>
             </a>
@@ -74,11 +74,11 @@
     <hr>
     </div>
     <div class="sideMenu left">
+      <li><a href="/">Home</a></li>
       <li><a href="/studios">Studios</a></li>
       <li><a href="/project_space">Project Space</a></li>
       <li><a href="/1080_Brew">1080 Brew</a></li>
       <li><a href="/co_working_space">Co-Working Space</a></li>
-      <!-- <li><a href="/directory">Directory</a></li> -->
       <li><a href="/tour">Arrrange a Tour</a></li>
       <li><a href="/contact">Contact Us</a></li>
       <li class="sideIcon">
@@ -118,6 +118,12 @@
 </script>
 <script>
   $(document).ready(function(){
+    $('.slider').slider({
+        full_width: true,
+        indicators: false,
+        interval: 2000
+    });
+
     $('.tooltipped').tooltip({delay: 50});
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month

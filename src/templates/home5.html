@@ -2,10 +2,9 @@
 {% load staticfiles %}
 {% block content %}
 
-<div class="container homeTopContainer">
 <!-- Top Section -->
 <div class="row">
-    <div class="col s12 m8 homeTL">
+    <div class="col s12 homeTL">
         <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
         <ul class="orbit-container">
           <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
@@ -24,7 +23,7 @@
         </div>
     </div>
 
-    <div class="col s12 m4 homeTR">
+    <div class="col s12 homeTR">
          <ul>
             <li>
             <a href="1080_Brew"><img src='{% static "img/home/1080Brew2.jpg" %}' ></a>
@@ -41,72 +40,51 @@
     </div>
 </div>
 
-<!-- Bottom -->
+<!-- Bottom Section-->
 <div class="row">
-    <!-- Right -->
 
-    <div class="col s12 m12 l8 homeBL">
+    <div class="col s12 homeBL">
         <h5 class="black">Spotlight</h5>
-        
-        <div class="container">
+
         {% for blog in spotlight %} 
         <div class="blogData">           
-        
+ 
             {% if blog.youtube_link %}
                 <div class="flex-video widescreen youtube">
                 <iframe width="560" height="315" src="{{ blog.youtube_link }}" frameborder="0" allowfullscreen></iframe>
-                </div>  
+                </div>
             {% endif %}
 
             {% if blog.image %}
             <img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' class="responsive-img"alt="image for article" alt="article preview image">
             {% endif %}
-    
-            <h5>{{ blog.title }}</h5>
-            <p>
-                <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
-            </p>  
-            <p>{{ blog.content | linebreaks }}</p>
+                <div class="blogText"> 
+                <h5>{{ blog.title }}</h5>
+                <p>
+                    <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
+                </p>  
+                <p>{{ blog.content }}</p>
+                </div>
+
         </div>
         {% endfor %}
     </div>
-    </div>
 
-    <!-- Buttom Right-->
-    <div class="col s12 m7 l4 homeBR">    
-    <div class="borders">
-        
-        <h5>Contact</h5>   
-       
+    <div class="col s12 m4">
+        <h5>Contact</h5>
+
         <div style="width:300px;overflow:hidden;height:300px;max-width:100%;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=1080+Wyckoff+Avenue,+Ridgewood,+NY,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embedded-map-code" href="https://www.interserver-coupons.com" id="enable-map-data">visit them now</a><style>#display-google-map img{max-width:none!important;background:none!important;}</style></div><script src="https://www.interserver-coupons.com/google-maps-authorization.js?id=913e48cf-caaa-3a2d-7557-5d8935ab6ac4&c=embedded-map-code&u=1467000167" defer="defer" async="async"></script>
 
-        <ul style="width:93%">
-            <li>
-            <p><span>Address: </span>10-80 Wyckoff Avenue Ridgewood, NY 11385</p></li>
+        <p><span>Address: </span>10-80 Wyckoff Avenue Ridgewood, NY 11385</p>
+        <p><span>Reception/General Inquirires: </span>347-457-5125
+    Reception@Rockwallstudios.nyc</p>
+        <p><span>Maintenance Request: </span>Maintenance@Rockwallstudios.nyc</p>
+        <p><span>1080 Brew: </span>1080coffee@gmail.com</p>
+        <p><span>1080 Project Space: </span>1080projectspace@rockwallstudios.nyc</p>
+        </div>
 
-            <li>
-            <p><span>Reception/General Inquirires: </span>347-457-512 Reception@Rockwallstudios.nyc</p>
-            </li>
-
-            <li>
-                <p><span>Maintenance Request: </span>Maintenance@Rockwallstudios.nyc</p>
-            </li>
-
-            <li>
-                <p><span>1080 Brew: </span>1080coffee@gmail.com</p>
-            </li>
-
-            <li>
-                <p><span>1080 Project Space: </span>1080projectspace@rockwallstudios.nyc</p>
-            </li>
-
-        </ul>
-    </div>
     </div>
 
-</div>
-
-    
 
 </div>
 {% endblock content %}

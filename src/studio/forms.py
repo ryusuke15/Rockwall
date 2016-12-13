@@ -1,5 +1,13 @@
+from pagedown.widgets import AdminPagedownWidget
 from django import forms
-from .models import Contact, Coworking_Space, Mailing_list
+from .models import Blog, Contact, Coworking_Space, Mailing_list
+
+class BlogForm(forms.ModelForm):
+   content = forms.CharField(widget=AdminPagedownWidget())     
+   class Meta:
+        model = Blog
+        fields = '__all__'
+
 
 class ContactForm(forms.ModelForm):
     date = forms.DateField(widget=forms.DateInput(attrs={'class':'datepicker','type':'date'}))

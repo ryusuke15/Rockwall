@@ -1,14 +1,13 @@
 from django.contrib import admin
 from models import Blog, Contact, Mailing_list
+from .forms import BlogForm
 
 # Register your models here.
 class BlogAdmin(admin.ModelAdmin):
     list_display = ["title", "time","recent", "upcoming", "timestamp"]
     list_filter = ["timestamp"]
     search_fields = ["title","content"]
-    class Meta:
-        model = Blog
-
+    form = BlogForm
 class ContactAdmin(admin.ModelAdmin):
     list_display = ["__unicode__", "email","received"]
     class Meta:

@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from .forms import BlogForm
 # Register your models here.
 
 from .models import Contact, Blog, Mailing_list
@@ -15,8 +15,7 @@ class BlogAdmin(admin.ModelAdmin):
     list_display = ["title","date","timestamp"]
     list_filter = ["timestamp","date"]
     search_fields = ["title","content"]
-    class Meta:
-        model = Blog
+    form = BlogForm
 
 class Mailing_listAdmin(admin.ModelAdmin):
     list_display = ["email", "timestamp"]

@@ -1,30 +1,22 @@
 import os
 import datetime
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '!(60c504rrcvy*pdt9vzw-5%8#rmssnv7_#f6%jo!*g7lj6yjz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["52.202.53.10","localhost", "rockwallstudios.nyc","www.rockwallstudios.nyc"]
-#
-
+#Email Setup
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'rockwall.mgmt@gmail.com'
 EMAIL_HOST_PASSWORD = 'ptwftqvgubwzxxym'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-# Application definition
 
+# Application definition
 INSTALLED_APPS = [
     'grappelli',
     'django.contrib.admin',
@@ -33,8 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #Third Party App     
     'storages',
     'materializecssform',
+    'pagedown',
+    #MyApp     
     'studio',
     'event_space',
     'coffee_shop',
@@ -73,19 +68,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'rockwall',
-	'USER': 'rockwalluser',
-	'PASSWORD': 'silverchicken771',
-	'HOST': 'localhost',
-	'PORT': '',
+        'USER': 'rockwalluser',
+        'PASSWORD': 'silverchicken771',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -107,24 +99,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.9/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'America/New_York'
-
 USE_I18N = True
-
 USE_L10N = True
-
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_URL = '/static/'
-
+# Static and Media Files 
 access_key = 'AKIAJHTCDKXITBQSSUKQ'
 secret_key = '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'
 
@@ -138,6 +119,7 @@ DEFAULT_FILE_STORAGE = 'mysite.s3utils.MediaRootS3BotoStorage'
 S3_URL = '//%s.s3.amazonaws.com/' %AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = S3_URL + "media/"
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
+# STATIC_URL = "/static/"
 STATIC_URL = S3_URL + "static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static") 
@@ -147,10 +129,7 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 date_two_months_later = datetime.date.today() + datetime.timedelta(2 * 365 / 12)
 expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
 
-AWS_HEADERS = {
-    'Expires': expires,
-    'Cache-Control': 'max-age=86400',
-}
+AWS_PRELOAD_METADATA = True 
 
 
 GRAPPELLI_ADMIN_TITLE = 'Rockwall Studios'
