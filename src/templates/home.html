@@ -1,5 +1,6 @@
 {% extends "studio_base.html" %}
 {% load staticfiles %}
+{% load markdown_deux_tags %}
 {% block content %}
 
 <div class="container homeTopContainer">
@@ -51,24 +52,52 @@
         <div class="container SpotWidth">
         {% for blog in spotlight %} 
         <div class="blogData">           
-        
+        <div class="row">
+
+            <!--Video Content -->        
             {% if blog.youtube_link %}
-                <div class="flex-video widescreen youtube">
-                <iframe width="560" height="315" src="{{ blog.youtube_link }}" frameborder="0" allowfullscreen></iframe>
-                </div>  
+            <div class="col l6">
+            <div class="flex-video widescreen youtube">
+            <iframe width="560" height="315" src="{{ blog.youtube_link }}" frameborder="0" allowfullscreen></iframe>
+            </div>  
+            </div>
             {% endif %}
 
+            <!--Image Content -->
             {% if blog.image %}
+            <div class="col l6">
             <img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' class="responsive-img"alt="image for article" alt="article preview image">
+            </div>
             {% endif %}
-    
+
+            <!-- Text Content -->   
+            {% if not blog.youtube_link and not blog.image %} 
+            <div class="col l12">
             <h5>{{ blog.title }}</h5>
             <p>
                 <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
             </p>  
             <p>{{ blog.content | linebreaks }}</p>
+            </div>
+            {% else %}
+            <div class="col l6">
+            <h5>{{ blog.title }}</h5>
+            <p>
+                <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
+            </p>  
+
+            <div class="blogLength">
+            <p>{{ blog.content | linebreaks }}</p>
+            </div>
+
+
+            </div>
+            {% endif %}
+
+
         </div>
-        {% endfor %}
+        </div> 
+       {% endfor %}
     </div>
     </div>
 

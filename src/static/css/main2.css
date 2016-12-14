@@ -109,6 +109,38 @@
 .borders p {
     padding-top:10px;
 }
+/*Project Space  */
+.proTitle h4{
+    font-weight:bold;
+}
+.proTitle a{
+    font-weight:bold;
+    color:black;
+    font-size:85%;
+}
+.proSlider{
+    padding-bottom:10px;
+
+}
+
+.wall {
+    border-style:solid;
+    border-width: 0px 1px 1px 1px;
+    padding-left:0px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    border-color:gainsboro !important;
+    margin-bottom:20px !important;
+}
+
+.wall h5{
+    color:white;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    margin-top:0px;
+}   
+
 
 /*Studio Page  */
 .stuTitle h3{
@@ -136,7 +168,9 @@
     }
     .SpotWidth{ 
         width:94% !important;
-
+    }
+    .blogData h5{
+        padding-top:0px;        
     }
 }
 @media only screen and (min-width : 1200px){
