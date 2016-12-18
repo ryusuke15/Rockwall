@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'storages',
     'materializecssform',
     'pagedown',
-    'markdown_deux',
+    'django_markup',
     #MyApp     
     'studio',
     'event_space',

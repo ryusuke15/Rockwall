@@ -1,0 +1,241 @@
+{% extends "studio_base.html" %}
+{% load materializecss %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<div class="top-bar white hide-on-med-and-down">
+<div class="row white">
+<div class="top-bar-left white">
+<ul class="dropdown menu white" data-dropdown-menu>
+<li class="menu-text white" style="font-size:50px; ">1080 Project Space</li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space#rent_space">Rent the Space</a></li>
+<li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space/mailing">Join the Mailing List</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- tablet -->
+<div class="top-bar white hide-on-small-only hide-on-large-only">
+<div class="row white">
+<div class="top-bar-left white">
+<ul class="dropdown menu white" data-dropdown-menu>
+    <li class="menu-text white" style="font-size:30px; padding-top:30px; ">1080 Project Space</li>
+    <li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space#rent_space">Rent the Space</a></li>
+    <li><a class="white" style="color:black; font-weight: bold; padding-top:35px;" href="/project_space/mailing">Join the Mailing List</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- mobile -->
+<div class="top-bar white hide-on-med-and-up ">
+<div class="row white ">
+<div class="top-bar-left white" style="display:inline;">
+<ul class="dropdown menu white " data-dropdown-menu>
+<div class="center-align">
+<li class="menu-text white" style="font-size:32px; ">1080 Project Space</li>
+</div>
+<hr>
+
+<div class="center">
+    <li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="/project_space#rent_space">Rent the Space</a></li>
+    <li style="display:inline-block; text-align:center;"><a class="white" style="color:black; font-size:12px; font-weight: bold; padding-left:10px;" href="/project_space/mailing">Join the Mailing List</a></li>
+
+
+</div>
+</ul>
+<hr>
+
+</div>
+</div>
+</div>
+
+
+<!-- orbit slider -->
+
+<div class="row hide-for-small-only"  style="padding-top:px;">
+<div class="medium-12 columns">
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+  <ul class="orbit-container">
+    <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+    <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+ 
+    <li class="is-active orbit-slide">
+
+      <img class="orbit-image4" src='{% static "img/event/slider6.jpg" %}' alt="main article image">
+    </li>
+    <li class="orbit-slide">
+      <img class="orbit-image4" src='{% static "img/event/slider3.jpg" %}' alt="main article image">
+    </li>
+    <li class="orbit-slide">
+      <img class="orbit-image4" src='{% static "img/event/slider5.jpg" %}' alt="main article image">
+    </li>
+      <li class="orbit-slide">
+      <img class="orbit-image4" src='{% static "img/event/slider2.jpg" %}' alt="main article image">
+    </li>
+       <li class="orbit-slide">
+      <img class="orbit-image4" src='{% static "img/event/slider1.jpg" %}' alt="main article image">
+    </li>
+        <li class="orbit-slide">
+      <img class="orbit-image4" src='{% static "img/event/slider4.jpg" %}' alt="main article image">
+    </li>
+       
+    <li class="orbit-slide">
+      <img class="orbit-image4" src='{% static "img/event/slider8.jpg" %}' alt="main article image">
+    </li>
+ 
+  </ul>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="row column ">
+<div class="large-12 columns" style="background-color:grey; align:right; color:white; ">
+  
+</div>
+
+<div style="padding-bottom:0px; font-weight:bold;"></div>
+
+
+<div class="large-12 columns" style="border-right: 1px solid #E3E5E8;">
+<article>
+<div class="row">
+
+<!-- Recent Accordian tab -->
+
+<ul class="accordion" data-accordion   >
+  <li class="accordion-item is-active " data-accordion-item  >
+    <a href="#" class="accordion-title" style="background-color:black; color:white; font-size:20px;">Recent</a>
+    <div class="accordion-content" data-tab-content >
+        {% for blog in recent %}
+        <div class="row"style="padding-bottom:36px">
+
+            {% if blog.image %}            
+          <div class="large-6 columns">
+          <p><img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' class="responsive-img"  alt="image for article" alt="article preview image"></p>
+          </div>
+            {% endif %}
+
+            {% if blog.youtube_link %}
+          <div class="large-6 columns">
+            <div class="flex-video widescreen youtube">
+                <iframe width="560" height="315" src="{{ blog.youtube_link }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+            </div>
+            {% endif %}
+
+          <div class="large-6 columns">
+          <h5><a href="#" style="color:black;">{{ blog.title }}</a></h5>
+          <p>
+          <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>&nbsp;
+          <span><i class="fi-clock">&nbsp;&nbsp;Start Time&nbsp;{{ blog.time }}</i></span>
+          </p>  
+          <p>{{ blog.content }}</p>
+          </div>
+        </div>
+        {% endfor %}
+</div>
+</li>
+</ul>
+
+
+<!-- rent the space contact form -->
+<ul id="rent_space" class="accordion" data-accordion >
+  <li class="accordion-item is-active" data-accordion-item>
+    <a href="#" class="accordion-title"  style="background-color:black; color:white; font-size:20px;" >Rent The Space</a>
+    <div class="accordion-content" data-tab-content>
+
+
+<div class="row">
+<div class="center">
+<div class="large-12 small-12 columns"> 
+
+<h5><a href="#" style="color:black; font-weight:bold; dispaly:inline;">Learn About 1080 Project Space</a></h5>
+<hr>
+</div>
+
+
+</div>
+<div class="large-6 medium-6 small-12 columns">
+<p><img class="responsive-img"  src='{% static "img/event/1080ProjectSpace.jpg" %}' alt="image for article" alt="article preview image"></p>
+</div>
+<div class="large-6 medium-6 small-12 columns">
+
+<div class="flex-video " style="overflow:visible;">
+<iframe  src="https://calendar.google.com/calendar/embed?src=rockwall.mgmt%40gmail.com&ctz=America/New_York" style="border: 0" width="500" height="700" frameborder="0" scrolling="no"></iframe>
+</div>
+</div>
+
+
+<div class="row medium-12 large-12 columns">
+<div class="blog-post" style="padding-left:10px;">
+<hr>
+<p class="black-text " style="font-weight:normal; font-size:14px; padding-bottom:30px;">
+Our Gallery space is a 1500 sf space designed for the purpose of offering our tenants an in-house place to exhibit their work.  When our tenants are not utilizing the space we envision it becoming a go-to location for Art Exhibits, Performance Art, Work Shops, Markets and more!  With its 23ft ceiling height, the sky is the limit!  Pass through the hallway next to the Gallery and you enter The Deep End Bar and Restaurant.  The owners of this restaurant are all too happy to offer food and beverage service to all events going on in 1080 Project Space!  Give us a call to check it out and book your next event with us!
+</p>
+
+
+
+ <h5 class="black-text " style="font-weight:normal; font-size:18px; padding-bottom:30px;">**If you would like to contact us please fill out the form below and we will get back to you as soon as we can</h5>
+
+
+<div class="container">
+<div class="row">
+
+
+
+    <form method='POST' action='/project_space/?#about'>{% csrf_token %}
+
+      <div class="row">
+            {{ form.as_p }}
+       <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
+            <i class="material-icons right">send</i>
+        </button> 
+      </div>
+    
+    </form>
+
+<div id="about">
+
+{% if messages %}
+<div class="row">
+<ul class="messages green-text text-darken-1">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+    </div>
+  </li>
+  <!-- ... -->
+</ul>
+</article>
+</div>
+</div>
+<br>
+</div>
+<script>
+
+if(window.location.hash == '#about') {
+    setTimeout(function(){
+        window.scrollTo(0,document.body.scrollHeight - 600);
+    }, 500);
+}
+
+</script>
+
+{% endblock content %}

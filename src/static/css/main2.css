@@ -1,3 +1,12 @@
+strong{
+    font-weight:bold!important;
+}
+ol{
+    list-style-position:inside !important;
+}
+.homeTopContainer{
+    width:93%;
+}
 /*Navigation  */
 .menuIcon a{
     display:inline-block;
@@ -14,7 +23,6 @@
 .menuLogo img{
     width:120px;
 }
-
 .menuRight li a{
     color:white;
 }
@@ -72,7 +80,8 @@
     padding-right:0px !important;
     padding-top:0px !important;
     border-color:gainsboro !important;
-    margin-bottom:20px !important;
+    padding-bottom:20px !important;;
+    margin-bottom:30px !important;
 }
 .homeBL h5{
     color:white;
@@ -83,13 +92,22 @@
 }
 
 .blogData{
-    padding-bottom:70px;
+    padding-bottom:0px;
+    padding-top:10px;
 }
 .blogData h5{
     color:black;
     padding-top:25px;
     padding-left:0px !important;
 
+}
+.blogImage{
+    background-size:cover !important;
+    background-repeat:no-repeat !important;
+    height:317px !important;
+}
+.blogImage img{
+    cursor:zoom-in;
 }
 .blogText{
     padding-bottom:20px;
@@ -110,16 +128,18 @@
     padding-top:10px;
 }
 /*Project Space  */
+.proTitle{
+    text-align:center;
+}
 .proTitle h4{
     font-weight:bold;
 }
 .proTitle a{
     font-weight:bold;
     color:black;
-    font-size:85%;
 }
 .proSlider{
-    padding-bottom:10px;
+    padding-bottom:30px;
 
 }
 
@@ -132,16 +152,46 @@
     border-color:gainsboro !important;
     margin-bottom:20px !important;
 }
+.wallData{
+    padding-bottom:10px;    
+}
 
-.wall h5{
+.wallTitle{
     color:white;
     padding-top:10px;
     padding-bottom:10px;
     padding-left:10px;
-    margin-top:0px;
 }   
-
-
+.wallImage{
+    background-size:cover !important;
+    background-repeat:no-repeat !important;
+    height:317px !important;
+    
+}
+.rent{
+    border-style:solid;
+    border-width: 0px 1px 1px 1px;
+    padding-left:0px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    border-color:gainsboro !important;
+    margin-bottom:20px !important;
+    padding-bottom:10px;
+}
+.rentTitle{
+    color:white;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+}
+.spaceTitle{
+    font-weight:bold;
+    text-align:center;
+}
+.spaceInfo{
+    color:black !important;
+    font-size:18px !important;
+}
 /*Studio Page  */
 .stuTitle h3{
     font-weight:bold;
@@ -162,23 +212,46 @@
     font-weight:bold;
 }
 
+@media only screen and (min-width : 766px) {
+    .proTitle{
+        text-align:left;
+    }
+    .proLinks{
+        padding-top:24px !important;
+    }
+    .wallContainer{
+        width:90% !important;
+    }
+    .spaceContainer{
+        width:91% !important;
+    }
+    .spotWidth{
+        width:90% !important;
+    }
+    .blogData h5{
+        padding-top:0px !important;
+    }
+    .eventTitle{
+        padding-top:0px!important;
+    }
+}
 @media only screen and (min-width : 992px) {
     .homeTopContainer{
         width:82% !important;
     }
-    .SpotWidth{ 
-        width:94% !important;
+    .spotWidth{
+        width:95% !important;
     }
-    .blogData h5{
-        padding-top:0px;        
+    .proTitle h4{
+        font-size:45px !important;
     }
-}
-@media only screen and (min-width : 1200px){
-    .homeTopContainer{
-        width:81% !important;
-
+    .proTitle a{
+        padding-right:39px;
     }
-    .SpotWidth{
-         width:94% !important;       
+    .proLinks{
+        padding-top:35px !important;
+    }
+    .blogData{
+        padding-top:30px;
     }
 }

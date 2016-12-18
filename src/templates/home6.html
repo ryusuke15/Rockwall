@@ -1,11 +1,9 @@
 {% extends "studio_base.html" %}
 {% load staticfiles %}
-{% load markup_tags %}
-
+{% load markdown_deux_tags %}
 {% block content %}
-<!-- Top Container -->
-<div class="container homeTopContainer">
 
+<div class="container homeTopContainer">
 <!-- Top Section -->
 <div class="row">
     <div class="col s12 m8 homeTL">
@@ -43,82 +41,80 @@
          </ul>
     </div>
 </div>
-<!--End of Top Section -->
 
-<!-- Bottom Section -->
+<!-- Bottom -->
 <div class="row">
+    <!-- Right -->
 
-    <!-- Bottom Left -->
     <div class="col s12 m12 l8 homeBL">
-
         <h5 class="black">Spotlight</h5>
         
-        <div class="container spotWidth">
+        <div class="container SpotWidth">
         {% for blog in spotlight %} 
         <div class="blogData">           
         <div class="row">
 
-            <!--Image Content -->
-            {% if blog.image %}
-            <a href="https://s3.amazonaws.com/rockwall/media/{{ blog.image }}">
-            <div class="col s12 m6 l6 blogImage"style="background: url('https://s3.amazonaws.com/rockwall/media/{{ blog.image }}')"></div>
-            </a>
-            {% endif %}
-
             <!--Video Content -->        
             {% if blog.youtube_link %}
-            <div class="col s12 m6">
+            <div class="col l6">
             <div class="flex-video widescreen youtube">
             <iframe width="560" height="315" src="{{ blog.youtube_link }}" frameborder="0" allowfullscreen></iframe>
             </div>  
             </div>
             {% endif %}
 
-            <!-- Text Content -->   
-            {% if not blog.image and not blog.youtube_link %} 
-            <div class="col s12">
-                <h5>{{ blog.title }}</h5>
-                <p>
-                    <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
-                </p>  
-                <div class="article"><p>{{ blog.content|apply_markup:"markdown" }}</p></div>
+            <!--Image Content -->
+            {% if blog.image %}
+            <div class="col l6">
+            <img src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' class="responsive-img"alt="image for article" alt="article preview image">
             </div>
-    
+            {% endif %}
+
+            <!-- Text Content -->   
+            {% if not blog.youtube_link and not blog.image %} 
+            <div class="col l12">
+            <h5>{{ blog.title }}</h5>
+            <p>
+                <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
+            </p>  
+            <p>{{ blog.content | linebreaks }}</p>
+            </div>
             {% else %}
-            <div class="col s12 m6">
+            <div class="col l6">
             <h5>{{ blog.title }}</h5>
             <p>
                 <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
             </p>  
 
-            <div class="article">
-                   <p>{{ blog.content|apply_markup:"markdown" }}</p>
+            <div class="blogLength">
+            <p>{{ blog.content | linebreaks }}</p>
             </div>
+
 
             </div>
             {% endif %}
+
 
         </div>
         </div> 
        {% endfor %}
     </div>
     </div>
-    <!-- Endo of Bottom Left -->
 
-    <!-- Bottom Right -->
-    <div class="col s12 m7 l4">    
+    <!-- Buttom Right-->
+    <div class="col s12 m7 l4 homeBR">    
     <div class="borders">
         
         <h5>Contact</h5>   
        
         <div style="width:300px;overflow:hidden;height:300px;max-width:100%;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=1080+Wyckoff+Avenue,+Ridgewood,+NY,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embedded-map-code" href="https://www.interserver-coupons.com" id="enable-map-data">visit them now</a><style>#display-google-map img{max-width:none!important;background:none!important;}</style></div><script src="https://www.interserver-coupons.com/google-maps-authorization.js?id=913e48cf-caaa-3a2d-7557-5d8935ab6ac4&c=embedded-map-code&u=1467000167" defer="defer" async="async"></script>
-        
-        <ul style="width:93">
+
+        <ul style="width:93%">
             <li>
             <p><span>Address: </span>10-80 Wyckoff Avenue Ridgewood, NY 11385</p></li>
 
             <li>
-            <p><span>Reception/General Inquirires: </span><br>347-457-512 Reception@Rockwallstudios.nyc</p>
+            <p><span>Reception/General Inquirires: </span>347-457-512 Reception@Rockwallstudios.nyc</p>
             </li>
 
             <li>
@@ -132,16 +128,14 @@
             <li>
                 <p><span>1080 Project Space: </span>1080projectspace@rockwallstudios.nyc</p>
             </li>
+
         </ul>
     </div>
     </div>
-    <!-- End of Bottom Right -->
-
-
 
 </div>
-<!--End of Bottom Section -->
 
-<!--End of Top Container -->
+    
+
 </div>
 {% endblock content %}

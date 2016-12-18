@@ -13,17 +13,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/normalize.css">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <link rel='stylesheet' href='{% static "css/indexMainLandingPage.css" %}'>
+    <!-- <link rel='stylesheet' href='{% static "css/indexMainLandingPage.css" %}'> -->
     <link rel='stylesheet' href='{% static "css/main.css" %}'>
     <link rel='stylesheet' href='{% static "css/main2.css" %}'>
     <!-- <link rel='stylesheet' href='/static/css/main2.css'> -->
-    <link rel='stylesheet' href='{% static "css/style.css" %}'>
-    <link rel='stylesheet' href='{% static "css/floorplan.css" %}'>
+    <!-- <link rel='stylesheet' href='{% static "css/style.css" %}'> -->
+    <!-- <link rel='stylesheet' href='{% static "css/floorplan.css" %}'> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
 <!--Navigation  -->
+<div class="navbar-fixed">
 <nav>
 <div class="nav-wrapper black">
     <a class="brand-logo hide-on-med-and-up"href="/">
@@ -59,6 +60,7 @@
 
 </div>
 </nav>
+</div>
 <!--Side Navigation  -->
 <ul id="slide-out" class="side-nav black">
     <li class="center sideLogo">
@@ -82,7 +84,7 @@
       <li><a href="/tour">Arrrange a Tour</a></li>
       <li><a href="/contact">Contact Us</a></li>
       <li class="sideIcon">
-          <a href="https://www.facebook.com/Rockwallstudioz"><i class="fi-social-facebook"></i></a>
+            <a href="https://www.facebook.com/Rockwallstudioz"><i class="fi-social-facebook"></i></a>
             <a href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter"></i></a>
             <a href="https://www.instagram.com/rockwallstudios"><i class="fi-social-instagram"></i></a>
             <a href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin"></i></a>
@@ -145,6 +147,12 @@
           beforeToggle: function(){},
           afterToggle: function(){}
           });
+
+    $('.article').readmore({
+        collapsedHeight:208
+    });
+
+
   });
 </script>
 

@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import models
 
 # Create your models here.
@@ -85,6 +86,10 @@ class Blog(models.Model):
     upcoming = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add = True) 
     updated =  models.DateTimeField(auto_now=True, auto_now_add = False)
+   
+    def clean(self):
+        if self.image and self.youtube_link:
+            raise ValidationError("Uploading both videos and photos are prohibitted.")
 
 class Mailing_list(models.Model):
     email = models.EmailField()
