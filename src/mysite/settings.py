@@ -131,5 +131,4 @@ expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
 
 AWS_PRELOAD_METADATA = True 
 
-
 GRAPPELLI_ADMIN_TITLE = 'Rockwall Studios'
