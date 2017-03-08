@@ -1,0 +1,133 @@
+.homeTopContainer{
+    width:93%;
+}
+
+
+/*Home Page  */
+.homeTL{
+    padding-top:10px !important;
+}
+.homeTR li{
+    padding-top:10px;
+}
+.homeBL{
+    border-style:solid;
+    border-width: 0px 1px 1px 1px;
+    padding-left:0px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    border-color:gainsboro !important;
+    padding-bottom:20px !important;;
+    margin-bottom:30px !important;
+}
+.homeBL h5{
+    color:white;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    margin-top:0px;
+}
+
+.blogData{
+    padding-bottom:0px;
+    padding-top:10px;
+}
+.blogData h5{
+    color:black;
+    padding-top:25px;
+    padding-left:0px !important;
+
+}
+.blogImage{
+    background-size:cover !important;
+    background-repeat:no-repeat !important;
+    height:317px;
+}
+.blogImage img{
+    cursor:zoom-in;
+}
+.blogText{
+    padding-bottom:20px;
+}
+
+.borders{
+    border-style:solid;
+    padding-left:7px;
+    padding-right:4px;
+}
+.borders h5{
+    font-weight:bold;
+}
+.borders span{
+    font-weight:bold;
+}
+.borders p {
+    padding-top:10px;
+}
+
+/*Studio Page  */
+.stuTitle h3{
+    font-weight:bold;
+}
+.directory{
+    padding-top:20px;
+}
+.directory h5{
+    font-weight:bold;
+}
+
+/*Co-Working Page  */
+.workMessage{
+    font-weight:bold;
+}
+/*Contact Page  */
+.contact span h4{
+    font-weight:bold;
+}
+
+@media only screen and (min-width : 766px) {
+    .proTitle{
+        text-align:left;
+    }
+    .proLinks{
+        padding-top:24px !important;
+    }
+    .wallContainer{
+        width:90% !important;
+    }
+    .spaceContainer{
+        width:91% !important;
+    }
+    .spotWidth{
+        width:90% !important;
+    }
+    .blogData h5{
+        padding-top:0px !important;
+    }
+    .eventName h5{
+        margin-top:0px !important;
+    }
+    .eventTitle{
+        padding-top:0px!important;
+    }
+}
+@media only screen and (min-width : 992px) {
+    .homeTopContainer{
+        width:82% !important;
+    }
+    .spotWidth{
+        width:95% !important;
+    }
+    .proTitle h4{
+        font-size:45px !important;
+    }
+    .proTitle a{
+        padding-right:39px;
+    }
+    .proLinks{
+        padding-top:35px !important;
+    }
+    .blogData{
+        padding-top:30px;
+    }
+}
