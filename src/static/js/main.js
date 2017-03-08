@@ -29,7 +29,7 @@
 
 
     $('.article').readmore({
-        collapsedHeight: 114
+        collapsedHeight: 132
     });
     $('.text_length').readmore({
         collapsedHeight: 180

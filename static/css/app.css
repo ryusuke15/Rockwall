@@ -50,7 +50,8 @@ ol {
     height: 250px !important; }
 
 .blog_Container {
-  width: 97%; }
+  width: 97%;
+  overflow: hidden !important; }
 
 .blog_Text {
   padding-bottom: 40px !important; }
@@ -79,7 +80,7 @@ ol {
   .border span {
     font-weight: bold; }
 
-@media screen and (min-width: 992px) {
+@media only screen and (min-width: 992px) {
   .home_slider .slider {
     height: 450px !important; }
   .home_slider .slides {
