@@ -1,6 +1,7 @@
 {% load staticfiles %}
+{% load sass_tags %}
 <!DOCTYPE HTML>
-<html>
+<html lang="en" ng-app="Rockwall">
 <head>
     <meta charset="UTF-8">
     <title>Rockwall Studios NYC</title>
@@ -8,153 +9,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel='shortcut icon' href='{% static "img/favicon.ico" %}' type='image/x-icon'/ >
 <!--CSS  -->
-    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/normalize.css">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-    <!-- <link rel='stylesheet' href='{% static "css/indexMainLandingPage.css" %}'> -->
-    <link rel='stylesheet' href='{% static "css/main.css" %}'>
-    <link rel='stylesheet' href='{% static "css/main2.css" %}'>
-    <!-- <link rel='stylesheet' href='/static/css/main2.css'> -->
-    <!-- <link rel='stylesheet' href='{% static "css/style.css" %}'> -->
-    <!-- <link rel='stylesheet' href='{% static "css/floorplan.css" %}'> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'materialize/dist/css/materialize.min.css' %}" type="text/css" rel="stylesheet" />
+    <link rel='stylesheet' href='{% sass_src "css/app.sass" %}'>
 </head>
 
 <body>
-<!--Navigation  -->
-<div class="navbar-fixed">
-<nav>
-<div class="nav-wrapper black">
-    <a class="brand-logo hide-on-med-and-up"href="/">
-    <img src='{% static "img/logo.svg" %}'style="width:120px">
-    </a>
 
-    <ul class="left">
-        <li class="menuIcon">
-            <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
-            <i class="material-icons">menu</i> 
-            </a>
-        </li>
-
-        <li class="menuLogo hide-on-small-only">
-            <a href="/">
-            <img src='{% static "img/logo.svg" %}'>
-            </a>
-        </li>
-        
-    </ul>
-
-    <!--Right Side  -->
-    <div class="menuRight hide-on-small-only">
-    <ul class="right">
-        <li class="menuPosition"><a href="/tour">Arrange a Tour</a></li>
-        <li class="menuPosition"><a href="/mailing">Join Our Mailing List</a></li>
-        <li class="menuIcon"><a href="https://www.facebook.com/Rockwallstudioz"><i class="fi-social-facebook"></i></a></li>
-        <li class="menuIcon"><a href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter"></i></a></li>
-        <li class="menuIcon"><a href="https://www.instagram.com/rockwallstudios"><i class="fi-social-instagram"></i></a></li>
-        <li class="menuIcon"><a href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin"></i></a></li>
-    </ul> 
-    </div>
-
-</div>
-</nav>
-</div>
-<!--Side Navigation  -->
-<ul id="slide-out" class="side-nav black">
-    <li class="center sideLogo">
-        <div class="userView">
-        <div class="background">
-        <a href="/">
-        <img src='{% static "img/logo.svg" %}'>
-        </a>
-        </div>
-        </div>
-    </li>
-    <div class="sideHr">
-    <hr>
-    </div>
-    <div class="sideMenu left">
-      <li><a href="/">Home</a></li>
-      <li><a href="/studios">Studios</a></li>
-      <li><a href="/project_space">Project Space</a></li>
-      <li><a href="/1080_Brew">1080 Brew</a></li>
-      <li><a href="/co_working_space">Co-Working Space</a></li>
-      <li><a href="/tour">Arrrange a Tour</a></li>
-      <li><a href="/contact">Contact Us</a></li>
-      <li class="sideIcon">
-            <a href="https://www.facebook.com/Rockwallstudioz"><i class="fi-social-facebook"></i></a>
-            <a href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter"></i></a>
-            <a href="https://www.instagram.com/rockwallstudios"><i class="fi-social-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin"></i></a>
-      </li>
-</ul>
+{% include "navigation.html" %}
 
 <!--Content  -->
 {% block content %}
 {% endblock content %}
 
-<br>
 
 <footer>
-<div class="row expanded">
-<div class="medium-12 columns" style="background-color:grey;">
-<ul class="menu align-center">
-<li class="menu-text align-right" style="color:white;">Copyright © 2016 Rockwallstudios LLC.</li>
-</ul>
-</div>
+<div class="footer-copyright black center-align">
+Copyright © 2017 Rockwallstudios LLC.
 </div>
 </footer>
 
-
 <!--JS Lib  -->
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script> 
-<script src='{% static "js/materialize.js" %}'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/vendor/modernizr.js"></script>
-<script src='{% static "js/readmore.min.js" %}'></script>
-<script src='{% static "js/init.js" %}'></script>
-<script>
-      $(document).foundation();
-</script>
-<script>
-  $(document).ready(function(){
-    $('.slider').slider({
-        full_width: true,
-        indicators: false,
-        interval: 2000
-    });
-
-    $('.tooltipped').tooltip({delay: 50});
-    $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15, // Creates a dropdown of 15 years to control year
-        format: 'yyyy-mm-dd'
-     });
-    $(".button-collapse").sideNav(); 
-
-    $('article').readmore({
-          speed: 100,
-          collapsedHeight: 350,
-          heightMargin: 16,
-          moreLink: '<a href="#" style="color:blue; padding-top:20px; padding-bottom:20px; padding-left:15px; ">Read More</a>',
-          lessLink: '<a href="#" style=" color:blue; padding-bottom:20px; padding-left:15px;">Close</a>',
-          blockCSS: 'display: block; width: 100%;',
-          startOpen: false,
-          // callbacks
-          blockProcessed: function() {},
-          beforeToggle: function(){},
-          afterToggle: function(){}
-          });
-
-    $('.article').readmore({
-        collapsedHeight:208
-    });
-
-
-  });
-</script>
+<script type="text/javascript" src='{% static 'jquery/dist/jquery.min.js' %}'></script>
+<script type="text/javascript" src='{% static 'angular/angular.min.js' %}'></script>
+<script type="text/javascript" src='{% static 'materialize/dist/js/materialize.min.js' %}'></script>
+<script type="text/javascript" src='{% static 'readmore-js/readmore.min.js' %}'></script>
+<script type="text/javascript" src='{% static 'js/main.js' %}'></script>
+<script type="text/javascript" src='{% static 'js/angular/controller/core.js' %}'></script>
+<script type="text/javascript" src='{% static 'js/angular/controller/the_wall.js' %}'></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

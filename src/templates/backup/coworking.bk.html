@@ -1,0 +1,72 @@
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+{% load materializecss %}
+{% block content %}
+<div class="container">
+<div class="row">
+
+    <div class="col s12">
+    <h4>1080 Co-Working Space</h4>
+    </div>
+
+    <div class="col s12">
+    <img class="thumbnail" src="http://placehold.it/850x350">
+    </div>
+
+    <div class="col s12">
+    <h5>About 1080 Co-Working Space at Rockwall Studios</h5>
+    </div>
+
+    <div class="col s12 l6">
+        <p class="black-text text-lighten-4">Our coworking space offers a reliable and quiet workplace when you need to get things done! Office spaces are furnished with desks, chairs, desk lamps, and some more seating.</p>  
+
+        <p>Plans:</p>
+        <p>- 20 hours a month for $200/mo</p>
+        <ul>
+            <li> Small/Medium sized Rehearsal Space</li>
+            <li> Large Furnished Office Space suitable for up to 10 people.</li>
+        </ul>
+
+        <p>- 20 hours a month for $300/mo</p>
+        <ul>           
+            <li>Huge, 1300 sq ft Rehearsal Space</li>
+            <li>Private Furnished Office Space suitable for up to 6 people.<li>
+        </ul>
+
+        <p>Amenities include: Tenants' Discount on anything at the building's full service coffee shop (1080 Brew), All Utilities included, Use of conference room, Mail service, Discounted use of the Gallery Space, and more!</p>
+
+        <p>Please contact Reception@rockwallstudios.nyc to inquire and apply for membership.</p>  
+
+        <p>*Credit check required.  *Held credit or debit card information is required.  *Minimum commitment required.</p>
+
+
+    </div>
+
+    <div class="col s12">
+    <h6>**If you would like to contact us please fill out the form below and we will get back to you as soon as we can</h6>
+    </div>
+
+    {% if messages %}
+    <div class="col s12" id="message">
+    <ul class="messages green-text text-darken-1">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+
+    <div class="col s12"> 
+       <form method='POST' action='/co_working_space/?#message'>{% csrf_token %}
+
+        {{ form | materializecss }}
+        <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
+                <i class="material-icons right">send</i>
+        </button>
+   </form>   
+    </div>
+
+
+</div>
+</div>
+{% endblock content %}

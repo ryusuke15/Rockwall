@@ -1,0 +1,385 @@
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+{% load materializecss %}
+
+
+{% block content %}
+<style>
+@media only screen and (max-width: 493px){
+.parallax-container {
+  min-height: 160px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+
+
+</style>
+
+<!-- landing section logo and information -->
+
+
+  <div id="index-banner" class="parallax-container" style="height:650px;">
+
+  <!--large-->
+    <div class="section no-pad-bot hide-on-med-and-down " style=" padding-top:140px;">
+
+      <div class="container " style="background-color:rgba(255, 255, 255, 0.6); border-radius: 5%; height:380px; width:480px;">
+            <br><br>
+
+            <div class="center">
+            <!-- logo -->
+            <p style="padding-top:29px;" ><img  src='{% static "img/brew/logo.jpg" %}'  style="  width:225px; height:225px; border-radius: 15%; padding-top:0px;" alt="image for article"></p>
+            </div>
+
+              <div class="row center">
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; line-height:0em; ">1080 Wyckoff Ave. Queens, Ny 11385</h5>
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; font-size:18px; line-height:0em;">Hours: 8am-6pm Mon-Fri Sat & Sun</h5>
+
+
+		<h5><a href="https://www.instagram.com/1080brew/"><i style=" color:black; font-size:40px;  "class="fi-social-instagram"></i></a></h5>
+
+
+              </div>
+
+
+            <div class="center-align">
+            
+           <a href="/1080_Brew/mailing"> <button class="btn white waves-effect waves-light center-align " style="color:black; " type="submit" name="action">Join Our Mailing List
+            <i class="material-icons right">send</i>
+            </button></a>
+            </div>
+
+
+             <br><br>
+
+    
+       </div>
+    </div>
+
+
+
+
+<!--tablet logo section-->
+
+<div class="section no-pad-bot hide-on-small-only hide-on-large-only " style=" padding-top:20px;">
+
+      <div class="container " style="background-color:rgba(255, 255, 255, 0.6); border-radius: 5%; height:470px; width:580px; ">
+            <br><br>
+
+            <div class="center">
+            <!-- logo -->
+            <p style="padding-top:29px;" ><img  src='{% static "img/brew/logo.jpg" %}'  style="  width:300px; height:300px; border-radius: 15%; padding-top:0px;" alt="image for article"></p>
+            </div>
+
+              <div class="row center">
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; line-height:1em; ">1080 Wyckoff Ave. Queens, Ny 11385</h5>
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; font-size:18px; line-height:1em;">Hours: 8am-6pm Mon-Fri Sat & Sun</h5>
+                    
+
+		<h5><a href="https://www.instagram.com/1080brew/"><i style=" color:black; font-size:40px;  "class="fi-social-instagram"></i><a></h5>
+              </div>
+            
+
+            <div class="center-align">
+            
+           <a href="/1080_Brew/mailing"> <button class="btn white waves-effect waves-light center-align " style="color:black; " type="submit" name="action">Join Our Mailing List
+            <i class="material-icons right">send</i>
+            </button></a>
+            </div>
+
+
+
+
+             <br><br>
+       </div>
+    </div>
+
+
+<!-- mobile logo section-->
+
+<div class="section no-pad-bot hide-on-med-and-up" style=" padding-top:70px;">
+
+      <div class="container hide-on-med-and-up" style="background-color:rgba(255, 255, 255, 0.6); border-radius: 5%; height:470px; width:280px; ">
+            <br><br>
+
+            <div class="center">
+            <!-- logo -->
+            <p style="padding-top:29px;" ><img  src='{% static "img/brew/logo.jpg" %}'  style="  width:250px; height:250px; border-radius: 15%; padding-top:0px;" alt="image for article"></p>
+            </div>
+
+              <div class="row center">
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; line-height:1em; ">1080 Wyckoff Ave. Queens, Ny 11385</h5>
+                  <h5 class="header col s12 light black-text " style=" padding-bottom:10px; font-weight:bold; font-size:18px; line-height:1em;">Hours: 8am-6pm Mon-Fri Sat & Sun</h5>
+            
+		<h5><a href="https://www.instagram.com/1080brew/"><i style=" color:black; font-size:40px;  "class="fi-social-instagram"></i></a></h5>
+              </div>
+
+            <div class="center-align">
+            
+           <a href="/1080_Brew/mailing"> <button class="btn white waves-effect waves-light center-align " style="color:black; " type="submit" name="action">Join Our Mailing List
+            <i class="material-icons right">send</i>
+            </button></a>
+            </div>
+
+
+
+
+
+             <br><br>
+       </div>
+    </div>
+
+
+
+
+
+
+    <div class="parallax" style="background-image:url('{% static "img/brew/background1.jpg" %}'); background-size:cover; background-position: center; ">
+<!--
+<img src='{% static "img/brew/background1.jpg" %}' alt="Unsplashed background img 1">
+-->
+
+</div>
+  </div>
+        <div class="center">
+        <div style="padding-bottom:15px;"></div>
+        <img style="width:3%; height:3%;" src='{% static "img/brew/downArrow.svg" %}'>
+        </center>
+
+
+
+
+
+    <div class="section">
+
+      <!--   menu   -->
+
+
+      <div class="row" style="padding-top:20px;">
+                  <h4 class="center">Menu</h4>
+          <hr>
+
+        <div class="col s12 m4 l4">
+          <div class="icon-block">
+                  <h2 class="center "><img class="thumbnail" src='{% static "img/brew/menuCoffee.jpg" %}'></h2>
+                  <h5 class="center" style=" line-height: 0em;">Hot Drinks</h5>
+                  <br>
+                  <h6 class="center" style=" line-height: 1em;">Americano $3.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Cappuccino $3.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Chai Latte $3.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Cortado $3.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Cafe Au Lait $3.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Dirty Chai $3.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Drip Coffee $2.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Macchiato $4.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Matcha Latte $4.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Tea $2.50</h6>
+          </div>
+        </div>
+
+         <div class="col s12 m4 l4">
+          <div class="icon-block">
+                  <h2 class="center "><img class="thumbnail" src='{% static "img/brew/menuPastries.jpg" %}'></h2>
+                  <h5 class="center" style=" line-height: 0em;">Cold Drinks</h5>
+                  <br>
+                  <h6 class="center" style=" line-height: 1em;">Iced Coffee $2.75</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Iced Latte $4.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Iced Mocha $4.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Iced Americano $3.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Iced Red Eye $3.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Iced Chai Latte $3.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Iced Dirty Chai $4.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Iced Matcha Latte $4.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Iced Mocha $1.50</h6>
+          </div>
+        </div>
+
+         <div class="col s12 m4 l4">
+          <div class="icon-block">
+                  <h2 class="center "><img class="thumbnail" src='{% static "img/brew/menuSandwiches.jpg" %}'></h2>
+                  <h5 class="center" style=" line-height: 0em;">Sandwiches</h5>
+                  <br>
+                  <h6 class="center" style=" line-height: 1em;">Avocado Toast $5.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Brie Soppressata $7.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Munster Salami $7.00</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Smoked Salmon $7.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Vegan Avocado $6.50</h6>
+                  <h6 class="center" style=" line-height: 0.75em;">Croissant $5.50</h6>
+
+          </div>
+        </div>       
+    </div>
+  </div>
+
+
+
+
+  <div class="parallax-container valign-wrapper">
+   
+    <div class="parallax"><img src='{% static "img/brew/background3.jpg" %}' alt="Unsplashed background img 2"></div>
+  </div>
+</div>
+
+
+    <div class="section">
+    <br>
+
+        <div class="row">
+            <div class="col s12 ">
+                <h4 class="center">Recent</h4>
+                <hr>
+                   
+                <div style="padding-bottom:20px;"></div>
+
+        {% for blog in object_list %}         
+                    <div class="col s12 m12 l12" style="padding-bottom:87px">
+                        <h5>{{ blog.title }}
+                        <small class="light" style="padding-left:20px;">{{ blog.date }}</small>
+                        </h5>
+                    <!-- image is 500x300 -->
+                        {% if blog.image %}
+                        <p class="center"><img class="responsive-img" src='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}' alt="image for article"></p>
+                        {% endif %}               
+                        <p class="left-align light">{{ blog.content }}</p>
+                    </div>
+        {% endfor %}
+
+        </div>
+          </div>
+                </div>
+        <div class="pagination">
+        <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?page={{ objects_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?page={{ object_list.next_page_number }}">next</a>
+        {% endif %}
+        </span>
+        </div>
+
+
+        
+
+  
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+    <!--
+      <div class="container"  style="background-color:rgba(255, 255, 255, 0.6);">
+        <div class="row center">
+
+          <h5 class="header col s12  black-text"> Sample Text Advertising the Coffee Shop</h5>
+        </div>
+      </div>
+      -->
+    </div>
+
+
+    <div class="parallax"><img src='{% static "img/brew/background4.jpg" %}' alt="Unsplashed background img 2"></div>
+  </div>
+
+
+
+  <!--last section Reserve Space Form and about section -->
+
+
+ <div class="page-footer white" style="padding-left:20px">
+    	<div class="row">
+      	<div class="row">
+        <div class="col s12 m12 l12">
+
+          <div class="icon-block" style="padding-left:0px;">
+            
+            <h4 class="center">About Us</h4>
+            <hr>
+     
+        </div>
+        </div>
+      
+    </div>
+          
+
+
+      <div class="row">
+        <div class=" col l12 s12">
+   
+          <h5 class="black-text center" style="font-weight:bold; padding-top:20px;">1080 Brew</h5>
+          <p class="black-text text-lighten-4">
+1080Brew started when Marian and Melissa realized the tenants at Rockwall Studios definitely needed their own local supply of caffeine in the building!  1080Brew is a cute and cozy coffee shop serving up Toby's Estate brand coffee and espresso!  We offer our customers pastries from Balthazar and Colson's and seriously delicious made-to-order sandwiches!  Our coffee is the best in the neighborhood and so is our service! ;D Check out our menu and come pay us a visit!  We look forward to serving you!</p>
+
+
+        <p><span style="font-weight:bold;">1080 Brew:</span> 1080coffee@gmail.com</p>
+        <p><span style="font-weight:bold;">Adress:</span> 10-80 Wyckoff Avenue Ridgewood, NY 11385</p>      
+        <p>347-484-9220</p>
+
+
+        </div>
+
+
+
+<!--  Contact US-->
+
+        <div class="row" id="about">
+        <div class="col s12 m10 l12">
+          <div class=" white " >
+            <div class="col m3 "style="background-color:white; padding-bottom:0px; width:200px;">
+                <h5  class="left"style="color:black;  font-weight:bold;  padding-left:0px; padding-top:15px;">Contact</h5>
+            </div>
+            </div>
+
+<!-- FORM FOR RESERVING SPACE -->
+
+<div class="left " style="padding-top:15px;">
+
+
+{% if messages %}
+<div class="row">
+<ul class="messages green-text text-darken-1">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+
+
+
+
+    <form method='POST' action='/1080_Brew/?#about'>{% csrf_token %}
+    {{ form|materializecss }}
+               
+    <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
+            <i class="material-icons right">send</i>
+    </button>
+    <div style="padding-bottom:30px;"></div>
+
+    </form>
+
+</div>
+
+
+
+
+<div style="padding-bottom:30px;"></div>
+
+
+<!-- GOOGLE MAPS  -->
+
+
+<div style="width:300px;overflow:hidden;height:300px;max-width:100%;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=1080+Wyckoff+Avenue,+Ridgewood,+NY,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embedded-map-code" href="https://www.interserver-coupons.com" id="enable-map-data">here</a><style>#display-google-map img{max-width:none!important;background:none!important;}</style></div><script src="https://www.interserver-coupons.com/google-maps-authorization.js?id=1ae2024a-b12f-2d9b-ff37-b9bbce1280cb&c=embedded-map-code&u=1467000167" defer="defer" async="async"></script>
+
+	</div>
+	</div>		
+	</div>
+	</div>
+    </div>
+</div>
+
+{% endblock content %}

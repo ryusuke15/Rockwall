@@ -1,44 +1,44 @@
 {% extends "studio_base.html" %}
 {% load staticfiles %}
 {% load markup_tags %}
-
 {% block content %}
 <!-- Top Container -->
-<div class="container homeTopContainer">
 
+<div class="container">
 <!-- Top Section -->
+
 <div class="row">
-    <div class="col s12 m8 homeTL">
-        <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
-        <ul class="orbit-container">
-          <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-          <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-     
-            <li class="is-active orbit-slide">
-            <img class="orbit-image4" src='{% static "img/home/orbit1.jpg" %}' alt="main article image">
-            </li>
-            <li class="orbit-slide">
-            <img class="orbit-image4" src='{% static "img/home/orbit2.jpg" %}' alt="main article image">
-            </li>
-            <li class="orbit-slide">
-            <img class="orbit-image4" src='{% static "img/home/orbit3.jpg" %}' alt="main article image">
-            </li>
+
+    <div class="col s12 m8 center-align home_slider">
+        <div class="slider">
+        <ul class="slides">
+
+          <li>
+            <img src='{% static "img/home/orbit1.jpg" %}'>
+          </li>
+          <li>
+            <img src='{% static "img/home/orbit2.jpg" %}'>
+          </li>
+          <li>
+            <img src='{% static "img/home/orbit3.jpg" %}'>
+          </li>
         </ul>
         </div>
     </div>
 
-    <div class="col s12 m4 homeTR">
+
+    <div class="col s12 m4">
          <ul>
             <li>
-            <a href="1080_Brew"><img src='{% static "img/home/1080Brew2.jpg" %}' ></a>
+            <a href="1080_Brew"><img class="responsive-img"src='{% static "img/home/1080Brew2.jpg" %}' ></a>
             </li>
 
             <li> 
-            <a  href="studio"><img src='{% static "img/home/StudioRentalAndAvailability2.jpg" %}'></a>
+            <a  href="studio"><img class="responsive-img"src='{% static "img/home/StudioRentalAndAvailability2.jpg" %}'></a>
             </li>
 
             <li>
-            <a  href="project_space"><img src='{% static "img/home/1080ProjectSpace2.jpg" %}'></a>
+            <a  href="the_wall"><img class="responsive-img"src='{% static "img/home/thewall.jpg" %}'></a>
             </li>
          </ul>
     </div>
@@ -47,28 +47,26 @@
 
 <!-- Bottom Section -->
 <div class="row">
+<div class="col s12 l8  emblem">
+     
+        <div class="col s12 emblem_title">
+            <h4 class="black">Spotlight</h4>
+        </div>
 
-    <!-- Bottom Left -->
-    <div class="col s12 m12 l8 homeBL">
+        <div class="container blog_Container">
 
-        <h5 class="black">Spotlight</h5>
-        
-        <div class="container spotWidth">
-        {% for blog in spotlight %} 
-        <div class="blogData">           
-        <div class="row">
-
+            {% for blog in spotlight %} 
             <!--Image Content -->
             {% if blog.image %}
-            <a href="https://s3.amazonaws.com/rockwall/media/{{ blog.image }}">
-            <div class="col s12 m6 l6 blogImage"style="background: url('https://s3.amazonaws.com/rockwall/media/{{ blog.image }}')"></div>
+            <a href='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}'>
+            <div class="col s12 m6 l6 blog_Image" style="background: url('https://s3.amazonaws.com/rockwall/media/{{ blog.image }}')"></div>
             </a>
             {% endif %}
 
             <!--Video Content -->        
             {% if blog.youtube_link %}
-            <div class="col s12 m6">
-            <div class="flex-video widescreen youtube">
+            <div class="col s12 m6 blog_Video">
+            <div class="video-container">
             <iframe width="560" height="315" src="{{ blog.youtube_link }}" frameborder="0" allowfullscreen></iframe>
             </div>  
             </div>
@@ -76,16 +74,16 @@
 
             <!-- Text Content -->   
             {% if not blog.image and not blog.youtube_link %} 
-            <div class="col s12">
+            <div class="col s12 blog_Text">
                 <h5>{{ blog.title }}</h5>
                 <p>
                     <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
                 </p>  
-                <div class="article"><p>{{ blog.content|apply_markup:"markdown" }}</p></div>
+                <div class="text_length"><p>{{ blog.content|apply_markup:"markdown" }}</p></div>
             </div>
-    
+
             {% else %}
-            <div class="col s12 m6">
+            <div class="col s12 m6 blog_Text">
             <h5>{{ blog.title }}</h5>
             <p>
                 <span><i class="fi-calendar">&nbsp;&nbsp;{{ blog.date }}</i></span>
@@ -97,51 +95,47 @@
 
             </div>
             {% endif %}
-
+            {% endfor %}
         </div>
-        </div> 
-       {% endfor %}
-    </div>
-    </div>
-    <!-- Endo of Bottom Left -->
+</div>
 
-    <!-- Bottom Right -->
-    <div class="col s12 m7 l4">    
-    <div class="borders">
-        
-        <h5>Contact</h5>   
-       
-        <div style="width:300px;overflow:hidden;height:300px;max-width:100%;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=1080+Wyckoff+Avenue,+Ridgewood,+NY,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embedded-map-code" href="https://www.interserver-coupons.com" id="enable-map-data">visit them now</a><style>#display-google-map img{max-width:none!important;background:none!important;}</style></div><script src="https://www.interserver-coupons.com/google-maps-authorization.js?id=913e48cf-caaa-3a2d-7557-5d8935ab6ac4&c=embedded-map-code&u=1467000167" defer="defer" async="async"></script>
-        
-        <ul style="width:93">
-            <li>
-            <p><span>Address: </span>10-80 Wyckoff Avenue Ridgewood, NY 11385</p></li>
+<!-- Contact -->
+<div class="col s12 m6 l4">    
+<div class="border">
+    
 
-            <li>
-            <p><span>Reception/General Inquirires: </span><br>347-457-512 Reception@Rockwallstudios.nyc</p>
-            </li>
+    <h5>Contact</h5>   
+   
+    <div class="map" style="width:300px;overflow:hidden;height:300px;max-width:100%;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=1080+Wyckoff+Avenue,+Ridgewood,+NY,+United+States&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="embedded-map-code" href="https://www.interserver-coupons.com" id="enable-map-data">visit them now</a><style>#display-google-map img{max-width:none!important;background:none!important;}</style></div><script src="https://www.interserver-coupons.com/google-maps-authorization.js?id=913e48cf-caaa-3a2d-7557-5d8935ab6ac4&c=embedded-map-code&u=1467000167" defer="defer" async="async"></script>
+    
+    <ul style="width:93">
+        <li>
+        <p><span>Address: </span>10-80 Wyckoff Avenue Ridgewood, NY 11385</p></li>
 
-            <li>
-                <p><span>Maintenance Request: </span>Maintenance@Rockwallstudios.nyc</p>
-            </li>
+        <li>
+        <p><span>Reception/General Inquirires: </span><br>347-457-5125 Reception@Rockwallstudios.nyc</p>
+        </li>
 
-            <li>
-                <p><span>1080 Brew: </span>1080coffee@gmail.com</p>
-            </li>
+        <li>
+            <p><span>Maintenance Request: </span>Maintenance@Rockwallstudios.nyc</p>
+        </li>
 
-            <li>
-                <p><span>1080 Project Space: </span>1080projectspace@rockwallstudios.nyc</p>
-            </li>
-        </ul>
-    </div>
-    </div>
-    <!-- End of Bottom Right -->
+        <li>
+            <p><span>1080 Brew: </span>1080coffee@gmail.com</p>
+        </li>
+
+        <li>
+            <p><span>The Wall: </span>Reception@rockwallstudios.nyc</p>
+        </li>
+    </ul>
+</div>
+</div>
 
 
 
 </div>
-<!--End of Bottom Section -->
 
-<!--End of Top Container -->
+<!--End of container-->
+
 </div>
 {% endblock content %}

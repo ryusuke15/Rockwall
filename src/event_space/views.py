@@ -49,7 +49,7 @@ def event_home(request):
         msg.send()
 
         messages.success(request, "Thank you very much. Your request has been submitted successfully." )
-        return HttpResponseRedirect("/project_space") 
+        return HttpResponseRedirect("/the_wall") 
 
     context={
             "object_list": queryset,
@@ -58,7 +58,7 @@ def event_home(request):
             "upcoming": upcoming
             }
    
-    return render(request,"event_home.html", context)
+    return render(request,"the_wall.html", context)
 
 def mailing(request):
     form = Mailing_listForm(request.POST or None)

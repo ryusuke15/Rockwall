@@ -1,71 +1,8 @@
-strong{
-    font-weight:bold!important;
-}
-ol{
-    list-style-position:inside !important;
-}
 .homeTopContainer{
     width:93%;
 }
-/*Navigation  */
-.menuIcon a{
-    display:inline-block;
-    padding-left:10px;
-    padding-right:10px;
-}
-.menuIcon i{
-    color:white;
-    font-size:22px;
-}
-.menuLogo{
-    padding-top:19px;    
-}
-.menuLogo img{
-    width:120px;
-}
-.menuRight li a{
-    color:white;
-}
-.menuPosition{
-   padding-top:20px; 
-   font-weight:bold;
-}
-/*Side Navigation  */
-.sideLogo{
-    padding-top:10px;
-}
-.sideLogo a{
-    padding-right:0px;
-    padding-left:0px;
-}
-.sideLogo img{
-    width:218px;
-}
-.sideHr{
-    padding-left:7px;
-    padding-right:7px;
-}
-.sideHr hr{
-    margin-bottom:0px;
 
-}
-.sideMenu a{
-    padding-left:7px;
-    color:white;
-    font-weight:bold;
-}
-.sideMenu li{
-    height:30px;
-}
 
-.sideIcon{
-    padding-top:14px;
-}
-.sideIcon a{
-    display:inline-block;
-    font-size:24px;
-    padding-right:15px;
-}
 /*Home Page  */
 .homeTL{
     padding-top:10px !important;
@@ -104,7 +41,7 @@ ol{
 .blogImage{
     background-size:cover !important;
     background-repeat:no-repeat !important;
-    height:317px !important;
+    height:317px;
 }
 .blogImage img{
     cursor:zoom-in;
@@ -127,71 +64,7 @@ ol{
 .borders p {
     padding-top:10px;
 }
-/*Project Space  */
-.proTitle{
-    text-align:center;
-}
-.proTitle h4{
-    font-weight:bold;
-}
-.proTitle a{
-    font-weight:bold;
-    color:black;
-}
-.proSlider{
-    padding-bottom:30px;
 
-}
-
-.wall {
-    border-style:solid;
-    border-width: 0px 1px 1px 1px;
-    padding-left:0px !important;
-    padding-right:0px !important;
-    padding-top:0px !important;
-    border-color:gainsboro !important;
-    margin-bottom:20px !important;
-}
-.wallData{
-    padding-top:20px;    
-}
-
-.wallTitle{
-    color:white;
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left:10px;
-}   
-.wallImage{
-    background-size:cover !important;
-    background-repeat:no-repeat !important;
-    height:317px !important;
-    
-}
-.rent{
-    border-style:solid;
-    border-width: 0px 1px 1px 1px;
-    padding-left:0px !important;
-    padding-right:0px !important;
-    padding-top:0px !important;
-    border-color:gainsboro !important;
-    margin-bottom:20px !important;
-    padding-bottom:10px;
-}
-.rentTitle{
-    color:white;
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left:10px;
-}
-.spaceTitle{
-    font-weight:bold;
-    text-align:center;
-}
-.spaceInfo{
-    color:black !important;
-    font-size:18px !important;
-}
 /*Studio Page  */
 .stuTitle h3{
     font-weight:bold;

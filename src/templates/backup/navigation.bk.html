@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<!--Navigation bar  -->
+<div class="navbar-fixed">
+<nav>
+<div class="nav-wrapper black">
+    <!--Left Side -->
+
+    <!-- Mobile Nav Logo -->
+    <div class="hide-on-med-and-up logoMobile">
+        <a class="brand-logo"href="/">
+        <img src='{% static "img/logo.svg" %}'>
+        </a>
+    </div>
+
+    <!-- Nav Logo   -->
+    <ul class="left">
+        <li class="menuIcon">
+            <a href="#" data-activates="slide-out" class="button-collapse show-on-large">
+            <i class="material-icons">menu</i> 
+            </a>
+        </li>
+
+        <li class="menuLogo hide-on-small-only">
+            <a href="/">
+            <img src='{% static "img/logo.svg" %}'>
+            </a>
+        </li>
+    </ul>
+
+    <!--Right Side  -->
+    <div class="menuRight hide-on-small-only">
+    <ul class="right">
+        <li class="menuPosition"><a href="/tour">Arrange a Tour</a></li>
+        <li class="menuPosition"><a href="/mailing">Join Our Mailing List</a></li>
+
+        <li class="menuIcon">
+            <a target="_blank"href="https://www.facebook.com/Rockwallstudios"><i class="fi-social-facebook"></i>
+            </a>
+        </li>
+        <li class="menuIcon">
+            <a target="_blank"href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter"></i>
+            </a>
+        </li>
+        <li class="menuIcon">
+            <a target="_blank"href="https://www.instagram.com/rockwallstudios"><i class="fi-social-instagram"></i>
+            </a>
+        </li>
+        <li class="menuIcon">
+            <a target="_blank"href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin"></i
+            ></a>
+        </li>
+    </ul> 
+    </div>
+
+</div>
+</nav>
+</div>
+<!--Side Navigation  -->
+<ul id="slide-out" class="side-nav black">
+    <li class="center sideLogo">
+        <div class="userView">
+        <div class="background">
+        <a href="/">
+        <img src='{% static "img/logo.svg" %}'>
+        </a>
+        </div>
+        </div>
+    </li>
+    <div class="sideHr">
+    <hr>
+    </div>
+    <div class="sideMenu left">
+      <li><a href="/">Home</a></li>
+      <li><a href="/studios">Studios</a></li>
+      <li><a href="/the_wall">The Wall</a></li>
+      <li><a href="/1080_Brew">1080 Brew</a></li>
+      <li><a href="/co_working_space">Co-Working Space</a></li>
+      <li><a href="/tour">Arrrange a Tour</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li class="sideIcon">
+            <a target="_blank"href="https://www.facebook.com/Rockwallstudios"><i class="fi-social-facebook"></i></a>
+            <a target="_blank" href="https://twitter.com/RockwallStudioz"><i class="fi-social-twitter"></i></a>
+            <a target="_blank"href="https://www.instagram.com/rockwallstudios"><i class="fi-social-instagram"></i></a>
+            <a target="_blank"href="https://www.linkedin.com/in/rockwall-studios-llc-979724124"><i class="fi-social-linkedin"></i></a>
+      </li>
+</ul>

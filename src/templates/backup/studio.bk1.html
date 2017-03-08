@@ -1,0 +1,194 @@
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+
+<div class="row stuTitle">
+    <h3>Rockwall Studios</h3>
+</div>
+
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <ul class="orbit-container" style="height:281px">
+        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
+        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
+        <li class="orbit-slide is-active">
+        <img src='{% static "img/studio/sliderImage1.jpg" %}'>
+        </li>
+        <li class="orbit-slide">
+        <img src='{% static "img/studio/sliderImage2.jpg" %}'>
+        </li>
+        <li class="orbit-slide">
+        <img src='{% static "img/studio/sliderImage3.jpg" %}'>
+        </li>
+
+    </ul>
+</div>
+
+
+<div class="row directory">
+
+    <div class="col s2 left">
+        <h5>Directory</h5>
+    </div>
+    
+    <div class="col s2 right">
+        <form method='GET' action=''>
+        <ul class="menu right" style="background-color:white;">
+            <li><input style="width:180px;padding-top:7px; font-size:10px;" name='q' type="search" placeholder="Search directory"></li>
+            <li><button type="submit" value='Search'class="button small" style="color:black;" >Search</button></li>
+        </ul>
+        </form>
+
+    </div>
+</div>
+<!--Begining of Card -->
+<div class="row small-up-1 medium-up-2 large-up-3">
+{% for tenant in object_list %}
+
+<div class="column">
+<div class="w3-card">
+<article class="slide">
+    <header class="w3-container w3-light-grey" id={{ tenant.room }}>
+    <h5 class="left">{{ tenant.first_name }} {{tenant.last_name}}</h5>
+    </header>
+
+<div class="w3-container">
+
+<!-- Profile Image -->
+    {% if tenant.image %}
+  <img src='https://s3.amazonaws.com/rockwall/media/{{ tenant.image}}' alt="Avatar" class="w3-left  w3-margin-right" style=" padding-top:10px; padding-bottom:10px; width:150px; height:100%;">
+    {% endif %}
+<!-- Profile Content -->
+    <p style="padding-top:10px; padding-bottom:10px;" >{{ tenant.content }}</p>
+<!-- Profile Website -->
+    {% if tenant.web %}
+    <!-- Large Screen--> 
+    <a href="{{ tenant.web }}"><p style="padding-bottom:10px;" class="show-for-large" >{{ tenant.web }}</p></a>
+    <!-- Small Screen -->
+    <a href="{{ tenant.web }}"<p style="padding-bottom:10px;" class="show-for-small-only">{{ tenant.web }}</p></a>
+    {% endif %}
+
+<!-- Social Links -->
+
+
+
+        <!-- Profile Website -->
+        {% if tenant.web %}
+        <div class="info_web">
+        <a href="{{ tenant.web }}">
+        <i class="fi-web"></i>
+        <p>{{ tenant.web }}</p></a>
+        </div>
+        {% endif %}
+
+        <!--Social Media   -->
+         <div class="info_media">
+            {% if tenant.email %}
+            <a href='mailto:{{ tenant.email }}'>
+            <i class="fi-mail"></i>
+            </a>
+            {% endif %}
+        </div>        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ul class="menu">
+
+        <!-- Email -->
+        {% if tenant.email %}
+            <!-- Large -->
+            <li class="show-for-large ">
+                <a href='mailto:{{ tenant.email }}'>
+                <i style=" color:black;font-size:20px; color:black;"class="fi-mail"></i>
+                </a>
+            </li>
+            <!-- Small -->
+            <li class="hide-for-large ">
+                <a href='mailto:{{ tenant.email }}'>
+                <i style=" color:black;font-size:20px; color:black;"class="fi-mail"></i>
+                </a>
+            </li>
+        {% endif %}
+
+        <!-- Facebook -->
+        {% if tenant.facebook %}
+            <!-- Large -->
+            <li class="show-for-large ">
+                <a href='{{ tenant.facebook }}'>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-facebook"></i>
+                </a>
+            </li>
+            <!-- Small -->
+            <li class="hide-for-large ">
+                <a href='{{ tenant.facebook }}'>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-facebook"></i>
+                </a>
+            </li>
+        {% endif %}
+
+        <!-- Twitter -->
+        {% if tenant.twitter %}
+            <!-- Large -->
+            <li class="show-for-large ">
+                <a href='{{ tenant.twitter }}'>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-twitter"></i>
+                </a>
+            </li>
+            <!-- Small -->
+            <li class="hide-for-large ">
+                <a href='{{ tenant.twitter }}'>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-twitter"></i>
+                </a>
+            </li>
+        {% endif %}
+
+        <!-- Instagram -->
+        {% if tenant.instagram %}
+            <!-- Large -->
+            <li class="show-for-large ">
+                <a href='{{ tenant.instagram }}'>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-instagram"></i>
+                </a>
+            </li>
+            <!-- Small -->
+            <li class="hide-for-large ">
+                <a href='{{ tenant.instagram }}'>
+                <i style="color:black;font-size:20px; color:black;"class="fi-social-instagram"></i>
+                </a>
+            </li>
+        {% endif %}
+
+        <!-- Linkedin --> 
+        {% if tenant.linkedin %}
+
+             <li><a href='{{ tenant.linkedin }}'><img style="padding-bottom:6px" src='https://s3.amazonaws.com/rockwall/static/img/linkedin.jpg'></a></li>
+
+
+        {% endif %}
+    
+        </ul>
+
+  <br>
+  <hr>
+
+</div>
+
+</article>
+</div>
+</div>
+
+{% endfor %}
+</div>
+
+{% endblock content %}

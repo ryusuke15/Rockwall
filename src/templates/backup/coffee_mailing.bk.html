@@ -1,0 +1,30 @@
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+{% load materializecss %}
+<div class="row">
+    <div class="col s12">
+
+        <h3>Join the 1080 Brew Mailing List</h3>
+
+        <h5><span class="point">***</span>Please Enter Your Email Address Below  </h5>
+
+        {% if messages %}
+        <ul class="messages green-text text-darken-1">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+        </ul>
+        {% endif %}
+
+
+        <form method='POST' action='/1080_Brew/mailing'>{% csrf_token %}
+            {{ form|materializecss:'l6' }}
+            
+            <button value="Create Mailing"type="submit"class="btn black">Submit My Information</button>
+        </form>
+
+
+    </div>
+</div>
+{% block content %}
+{% endblock content %}

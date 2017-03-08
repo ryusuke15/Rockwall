@@ -1,0 +1,204 @@
+{% extends "studio_base.html" %}
+{% load materializecss %}
+{% load markup_tags %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+
+<!-- topwall section -->
+<div class="row topWall">
+
+    <div class="col s12 m4 wall_title">
+        <h3>The Wall</h3>
+    </div>
+ 
+    <div class="col s12 hide-on-med-and-up">
+        <hr>
+    </div>
+
+    <div class="wall_links">
+    <div class="col s6 m4">
+        <a href="/the_wall/#rent">Rent the Space</a>
+    </div>
+
+    <div class="col s6 m4">
+        <a href="/the_wall/mailing">Join the Mailing List</a>
+    </div>
+    </div>
+
+    <div class="col s12 hide-on-med-and-up wall_hr">
+        <hr>
+    </div>
+<!-- Slider -->
+    <div class="col s12 wall_top">
+        <div class="slider">
+        <ul class="slides">
+
+          <li>
+            <img src='{% static "img/event/slider6.jpg" %}'>
+          </li>
+          <li>
+            <img src='{% static "img/event/slider1.jpg" %}'>
+          </li>
+          <li>
+            <img src='{% static "img/event/slider2.jpg" %}'>
+          </li>
+          <li>
+            <img src='{% static "img/event/slider3.jpg" %}'>
+          </li>
+          <li>
+            <img src='{% static "img/event/slider4.jpg" %}'>
+          </li>
+          <li>
+            <img src='{% static "img/event/slider5.jpg" %}'>
+          </li>
+          <li>
+            <img src='{% static "img/event/slider6.jpg" %}'>
+          </li>
+          <li>
+            <img src='{% static "img/event/slider8.jpg" %}'>
+          </li>
+
+          </ul>
+      </div> 
+    </div>
+
+</div>    
+<!-- end of topwall -->
+
+<!-- Instagram -->
+<div class="row">
+    <div class="emblem gallery">
+    
+    <div class="col s12 emblem_title">
+        <h4 class="black">Gallery</h4>
+    </div>
+
+    <div ng-controller="wallController">
+    <div ng-repeat="photo in photos">        
+
+        <div class="hide-on-med-and-up row center-align" ng-if="$even">
+            <div class="col s6">
+            <a href="[[ photos[$index].link ]]">
+            <img  class="responsive-img"ng-src="[[ photos[$index].images.thumbnail.url ]]">
+            </a>
+            </div>
+
+            <div class="col s6">
+            <a href="[[ photos[$index + 1].link ]]">
+            <img class="responsive-img"ng-src="[[ photos[$index + 1].images.thumbnail.url ]]">
+            </a>
+            </div>
+
+            <br>
+        </div>
+
+        <div class="hide-on-small-only row center-align" ng-if="$even">
+            <div class="col s6">
+            <a href="[[ photos[$index].link ]]">
+            <div style="background: url('[[photos[$index].images.standard_resolution.url]]')" class="photo"></div>
+            </a>
+            </div>
+
+            <div class="col s6">
+            <a href="[[ photos[$index + 1].link ]]">
+            <div style="background: url('[[photos[$index + 1].images.standard_resolution.url]]')" class="photo"></div>
+            </a>
+            </div>
+
+            <br>
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+    </div>
+
+</div>
+<!-- End of Instagram -->
+
+<!--  Rent-->
+<div class="row" id="rent">
+<div class="col s12">
+<div class="emblem">
+    
+    <div class="col s12 emblem_title">
+        <h4 class="black">Rent the Space</h4>
+    </div>
+        
+        <div class="container">
+        <div class="row">
+
+            <div class="col s12">
+            <h5 class="spaceTitle">Learn About The Wall </h5>
+            </div>
+
+            <div class="col s12">
+            <hr>
+            </div>
+
+
+            <div class="col s12 m6">
+            <img class="responsive-img wall_img"  src='{% static "img/event/1080ProjectSpace.jpg" %}'>
+            </div>
+
+            <div class="col s12 m6">
+            <div class="video-container calendar">
+            <iframe  src="https://calendar.google.com/calendar/embed?src=rockwall.mgmt%40gmail.com&ctz=America/New_York" style="border: 0" height="700" frameborder="0" scrolling="no"></iframe>
+
+            </div>
+            </div>
+
+
+            <div class="col s12">
+            <hr>        
+            </div>
+
+            <div class="col s12">
+            <p>Our Gallery space is a 1500 sf space designed for the purpose of offering our tenants an in-house place to exhibit their work.  When our tenants are not utilizing the space we envision it becoming a go-to location for Art Exhibits, Performance Art, Work Shops, Markets and more!  With its 23ft ceiling height, the sky is the limit!  Pass through the hallway next to the Gallery and you enter The Deep End Bar and Restaurant.  The owners of this restaurant are all too happy to offer food and beverage service to all events going on in The Wall!  Give us a call to check it out and book your next event with us!</p>
+            </div>
+
+            <div id="thank"class="col s12">
+            <h5 class="spaceInfo"><span style="color:red;">**</span>If you would like to contact us please fill out the form below and we will get back to you as soon as we can.</h5>
+            </div>
+            
+            {% if messages %}
+            <div class="col s12">
+            <ul class="messages green-text text-darken-1">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </ul>
+            </div>
+            {% endif %}
+
+
+            <div class="col s12">
+             <form method='POST' action='/the_wall/?#thank'>{% csrf_token %}
+            {{ form.as_p }}
+    
+               <div class="center-align">
+               <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
+                        <i class="material-icons right">send</i>
+               </button> 
+               </div>
+
+
+            </form>
+            </div>
+        </div>
+        </div>
+
+</div>
+</div>
+</div>
+<!-- End of Rent -->
+
+
+</div>
+
+{% endblock content %}

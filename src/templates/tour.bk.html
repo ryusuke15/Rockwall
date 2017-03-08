@@ -1,0 +1,72 @@
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="row medium-12 large-12 columns">
+  <div class="subNavArea">
+
+<!-- desktop -->
+
+<!-- Request a tour information -->
+
+<div class="row">
+<center>
+  <div class="large-12 columns" >
+    <p><img class="responsive-img"src='{% static "img/studio/arrangeATour.jpg" %}'></p>
+  </div>
+  </center>
+</div>
+
+<div class="row">
+  <div class=" large-12 columns">
+      <h3 style="font-weight:bold;">Request a Tour</h3>
+            <p>
+If you like what you see and want to become a part of our Rockwall Community, send us a note and we will respond with available appointment times for a tour or we'll add you to our wait list!<br><br>  
+
+Either way, we look forward to meeting you!</p>
+                <p><span style="font-weight:bold;">Reception:</span> 347-457-5125</p>
+                <p><span style="font-weight:bold;">General inquiries:</span> Reception@Rockwallstudios.nyc</p>
+                <p><span style="font-weight:bold; color:red; ">***</span> If you are interested in room availabilities, or want to get in touch with us please fill out the form below. </p>   
+      
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- Contact Form-->
+
+
+
+ 
+<div class="row medium-12 large-10 columns">
+<div id="form" class="contactForm">
+<h3>Contact Us:</h3>
+
+{% if messages %}
+<div class="row">
+<ul class="messages green-text text-darken-1">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+
+
+<div class="row">
+    <form method='POST' action ='/tour#form' class="col s12">{% csrf_token %}
+            {{ form.as_p }}
+       <button class="black btn waves-effect waves-light" type="submit" value="Create Contact">SUBMIT
+            <i class="material-icons right">send</i>
+        </button> 
+    </form>
+  </div>
+</div>
+
+</div>
+
+{% endblock content %}

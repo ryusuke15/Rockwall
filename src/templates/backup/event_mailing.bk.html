@@ -1,0 +1,63 @@
+{% extends "studio_base.html" %}
+{% load staticfiles %}
+{% load materializecss %}
+
+
+{% block content %}
+
+
+
+<div class="row medium-8 large-12 columns">
+<div class="contactForm">
+
+<h3 class="show-for-large" style="font-weight:bold; padding-left:px;">Join the 1080 Project Space Mailing List!</h3>
+<h3 class="show-for-medium-only" style="font-weight:bold; padding-left:px;font-size:25px;">Join the 1080 Project Space Mailing List!</h3>
+<h3 class="show-for-small-only" style="font-size:20px; font-weight:bold; padding-left:px;">Join the 1080 Project Space Mailing List!</h3>
+
+
+<div>
+<h5 style="font-weight:bold; font-size:18px;"><span style="color:red;">***</span>Please Enter Your Email Address Below  </h5>
+</div>
+
+<div class="row">
+
+
+{% if messages %}
+<div class="row" style="padding-left:20px">
+<ul class="messages green-text text-darken-1">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}
+
+
+
+
+
+    <form method='POST' action='/project_space/mailing'>{% csrf_token %}
+
+     <div class="row">
+
+    <div style="padding-left:10px">{{ form|materializecss:'l6' }}</div>
+
+
+     </div>
+     
+     </div>
+     <button value="Create Mailing"type="submit"class="button black">Submit My Information</button>
+   </form>
+
+ </div>
+</div>
+
+<!-- Mailing list Form End-->
+
+
+<div style="padding-bottom:250px"></div>
+
+
+
+
+{% endblock content %}

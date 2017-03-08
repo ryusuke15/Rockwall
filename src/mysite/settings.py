@@ -6,9 +6,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!(60c504rrcvy*pdt9vzw-5%8#rmssnv7_#f6%jo!*g7lj6yjz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["52.202.53.10","localhost", "rockwallstudios.nyc","www.rockwallstudios.nyc"]
+
 #Email Setup
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'rockwall.mgmt@gmail.com'
@@ -26,16 +27,26 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #Third Party App     
-    'storages',
+    'djangobower',
+    'django_markup',
     'materializecssform',
     'pagedown',
-    'django_markup',
+    'sass_processor',
+    'storages',
     #MyApp     
     'studio',
     'event_space',
     'coffee_shop',
 ]
 
+#Bower
+BOWER_INSTALLED_APPS = (
+    'angular',
+    'foundation',
+    'jquery',
+    'materialize',
+    'readmore-js',
+)
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -67,6 +78,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
+
 
 # Database
 DATABASES = {
@@ -106,29 +118,34 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-# Static and Media Files 
+# Media Files 
 access_key = 'AKIAJHTCDKXITBQSSUKQ'
 secret_key = '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'
-
 AWS_ACCESS_KEY_ID = access_key
 AWS_SECRET_ACCESS_KEY = secret_key
 AWS_STORAGE_BUCKET_NAME = 'rockwall'
-
-STATICFILES_STORAGE = 'mysite.s3utils.StaticRootS3BotoStorage'
-DEFAULT_FILE_STORAGE = 'mysite.s3utils.MediaRootS3BotoStorage'
-
 S3_URL = '//%s.s3.amazonaws.com/' %AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = S3_URL + "media/"
+DEFAULT_FILE_STORAGE = 'mysite.s3utils.MediaRootS3BotoStorage'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
-# STATIC_URL = "/static/"
-STATIC_URL = S3_URL + "static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static") 
-ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
-date_two_months_later = datetime.date.today() + datetime.timedelta(2 * 365 / 12)
-expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
-
 AWS_PRELOAD_METADATA = True 
 
+#STATIC Files
+STATIC_URL = "/static/"
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+        ]
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static") 
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+    'sass_processor.finders.CssFinder',
+]
+
+#ADMIN 
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 GRAPPELLI_ADMIN_TITLE = 'Rockwall Studios'

@@ -1,0 +1,455 @@
+strong {
+  font-weight: bold !important; }
+
+ol {
+  list-style-position: inside !important; }
+
+.footer-copyright {
+  color: white !important; }
+
+.emblem {
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+  border-color: gainsboro !important;
+  margin-bottom: 25px;
+  padding-right: 0px !important;
+  padding-left: 0px !important; }
+
+.emblem_title {
+  padding-top: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important; }
+  .emblem_title h4 {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-top: 0px; }
+
+.article {
+  overflow: hidden !important; }
+
+.text_length {
+  overflow: hidden !important; }
+
+.bold {
+  font-weight: bold; }
+
+.point {
+  color: red; }
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 85%; } }
+
+.home_slider {
+  padding-top: 15px !important; }
+  .home_slider .slider {
+    height: 250px !important; }
+  .home_slider .slides {
+    height: 250px !important; }
+
+.blog_Container {
+  width: 97%; }
+
+.blog_Text {
+  padding-bottom: 40px !important; }
+  .blog_Text h5 {
+    margin-top: 0px !important; }
+
+.blog_Video {
+  padding-bottom: 10px !important; }
+
+.blog_Image {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  height: 223px;
+  margin-bottom: 14px !important; }
+
+.border {
+  border-style: solid;
+  padding-left: 8px;
+  padding-right: 8px; }
+  .border h5 {
+    font-weight: bold;
+    padding-bottom: 5px; }
+  .border .map {
+    padding-bottom: 5px; }
+  .border span {
+    font-weight: bold; }
+
+@media screen and (min-width: 992px) {
+  .home_slider .slider {
+    height: 450px !important; }
+  .home_slider .slides {
+    height: 450px !important; }
+  .blog_Image {
+    height: 317px; } }
+
+/*Navigation  */
+.logoMobile img {
+  width: 120px; }
+
+.brand-logo img {
+  padding-top: 17px; }
+
+.menu a {
+  display: inline-block;
+  margin-left: 0px !important; }
+
+.menu i {
+  color: white;
+  font-size: 43px !important; }
+
+.menuIcon a {
+  display: inline-block; }
+
+.menuIcon i {
+  color: white;
+  font-size: 25px !important; }
+
+.menuIcon a {
+  display: inline-block;
+  padding-left: 0px !important; }
+
+.menuIcon i {
+  color: white;
+  font-size: 25px !important; }
+
+.menuLogo {
+  padding-top: 10px; }
+  .menuLogo a {
+    height: 55px !important; }
+  .menuLogo img {
+    width: 120px; }
+
+.menuRight li a {
+  color: white; }
+
+.menuPosition {
+  font-weight: bold; }
+
+/*Side Navigation  */
+.sideLogo {
+  padding-top: 10px; }
+  .sideLogo a {
+    padding-right: 0px;
+    padding-left: 0px; }
+  .sideLogo img {
+    width: 218px; }
+
+.sideHr {
+  padding-left: 7px;
+  padding-right: 7px; }
+  .sideHr hr {
+    margin-bottom: 0px; }
+
+.sideMenu a {
+  color: white;
+  font-weight: bold;
+  font-size: 130% !important; }
+
+.sideMenu li {
+  height: 30px; }
+
+.sideIcon {
+  padding-top: 14px; }
+  .sideIcon a {
+    display: inline-block; }
+  .sideIcon i {
+    color: white !important;
+    font-size: 160% !important;
+    margin-right: 0px !important; }
+
+@media screen and (min-width: 768px) {
+  .brand-logo img {
+    padding-top: 22px !important; } }
+
+@media screen and (min-width: 992px) {
+  .sideIcon a {
+    padding-right: 0px !important; } }
+
+/*The Wall */
+.topWall h3 {
+  font-weight: bold; }
+
+.topWall a {
+  font-weight: bold;
+  color: black; }
+
+.topWall hr {
+  color: black;
+  border-bottom: 1px solid; }
+
+.wall_title {
+  text-align: center; }
+
+.wall_links {
+  text-align: center; }
+
+.wall_hr {
+  padding-bottom: 15px !important; }
+
+.spaceTitle {
+  font-weight: bold;
+  text-align: center; }
+
+.spaceInfo {
+  color: black !important;
+  font-size: 18px !important; }
+
+.calendar {
+  height: 320px !important; }
+
+.photo {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  height: 317px !important; }
+
+.gallery {
+  overflow: hidden !important; }
+
+@media only screen and (min-width: 768px) {
+  .wall_title {
+    text-align: left; }
+  .wall_links {
+    text-align: right;
+    padding-top: 33px; }
+  .wall_img {
+    height: 321px !important; } }
+
+@media only screen and (min-width: 992px) {
+  .wall_top .slider {
+    height: 500px !important; }
+  .wall_top .slides {
+    height: 500px !important; }
+  .calendar {
+    height: 380px !important; }
+  .photo {
+    height: 500px !important; }
+  .wall_img {
+    height: 376px !important; } }
+
+.studio_top h3 {
+  font-weight: bold;
+  font-size: 2rem; }
+
+.studio_top .slider {
+  height: 200px !important; }
+
+.studio_top .slides {
+  height: 200px !important; }
+
+.directory_Title h5 {
+  font-weight: bold;
+  font-size: 1.3rem; }
+
+.search input {
+  font-size: 11px;
+  width: 93px; }
+
+.info_card {
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+  border-color: gainsboro !important;
+  margin-bottom: 25px;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+  min-height: 336px !important; }
+  .info_card h5 {
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-top: 0px; }
+
+.info_img {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  height: 150px;
+  width: 150px;
+  float: left;
+  margin-right: 12px; }
+
+.info_text {
+  overflow: hidden !important; }
+  .info_text p {
+    margin-top: 0px !important;
+    display: block;
+    overflow: hidden !important; }
+
+.info_web {
+  clear: left; }
+  .info_web a {
+    color: black; }
+  .info_web i {
+    display: inline-block !important; }
+  .info_web p {
+    display: inline-block !important; }
+
+.info_media {
+  clear: left; }
+  .info_media a {
+    color: black; }
+  .info_media i {
+    display: inline-block !important;
+    font-size: 28px;
+    padding-right: 10px; }
+
+@media screen and (min-width: 412px) {
+  .studio_top h3 {
+    font-size: 2.9rem !important; }
+  .directory_Title h5 {
+    font-size: 1.64rem !important; }
+  .search input {
+    font-size: 18px !important;
+    width: 106px !important; } }
+
+@media screen and (min-width: 768px) {
+  .search input {
+    width: 160px !important; } }
+
+@media screen and (min-width: 992px) {
+  .studio_top .slider {
+    height: 400px !important; }
+  .studio_top .slides {
+    height: 400px !important; } }
+
+.coworking h4 {
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.coworking h5 {
+  font-weight: bold; }
+
+.coworking h6 {
+  font-weight: bold; }
+
+.parallax-container {
+  height: 300px; }
+
+.brew_img {
+  height: 620px;
+  background-position: center !important;
+  background-size: cover !important; }
+
+.brew_logo {
+  padding-top: 30px; }
+  .brew_logo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15%; }
+
+.brew_spacing {
+  padding-bottom: 60px; }
+
+.brew_title {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  border-radius: 5%;
+  width: 74%; }
+  .brew_title h5 {
+    font-weight: bold; }
+  .brew_title h6 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .brew_title i {
+    color: black;
+    font-size: 40px; }
+
+.brew_mail {
+  padding-top: 15px; }
+  .brew_mail a {
+    color: black; }
+
+.menu_info {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  .menu_info h4 {
+    padding-bottom: 70px; }
+  .menu_info h5 {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .menu_info ul {
+    padding-bottom: 30px; }
+
+.coffee_blog {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+  .coffee_blog h4 {
+    padding-bottom: 30px;
+    font-weight: bold; }
+
+.coffee_blog_content {
+  padding-bottom: 30px !important; }
+
+.coffee_blog_img {
+  height: 200px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important; }
+
+.coffee_blog_text {
+  overflow: hidden !important; }
+
+.coffee_contact {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important; }
+  .coffee_contact h4 {
+    font-weight: bold;
+    padding-bottom: 30px; }
+  .coffee_contact h5 {
+    font-weight: bold;
+    padding-bottom: 30px; }
+  .coffee_contact button {
+    margin-bottom: 30px; }
+
+.coffee_info {
+  padding-bottom: 50px !important; }
+
+@media only screen and (min-width: 412px) {
+  .brew_logo img {
+    width: 250px !important;
+    height: 250px !important; }
+  .brew_title h6 {
+    font-size: 1.3rem !important; } }
+
+@media only screen and (min-width: 768px) {
+  .brew_logo img {
+    width: 300px !important;
+    height: 300px !important; }
+  .parallax-container {
+    height: 500px !important; }
+  .coffee_blog_img {
+    height: 300px !important; } }
+
+@media only screen and (min-width: 992px) {
+  .brew_title {
+    width: 41% !important; }
+  .coffee_blog_img {
+    height: 400px !important; } }
+
+.mail h3 {
+  font-weight: bold;
+  font-size: 2.7rem; }
+
+.mail h5 {
+  font-weight: bold;
+  font-size: 1.4rem; }
+
+.mail_space {
+  padding-bottom: 250px !important; }
+
+@media only screen and (min-width: 992px) {
+  h3 {
+    font-size: 2.9rem !important; }
+  h5 {
+    font-size: 1.6rem !important; }
+  .mail_space {
+    padding-bottom: 300px !important; } }
+
+/*# sourceMappingURL=../../../../../../../static/css/app.css.map */
