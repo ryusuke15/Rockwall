@@ -6,14 +6,10 @@ from .views import(
 )
         
 urlpatterns = [
-    url(r'^$', home),
-    url(r'^studio', studio),
-    url(r'^co_working_space', coworking),
-    url(r'^contact', contact),
-    # url(r'^directory', directory),
-    # url(r'^directory', directory),
-    # url(r'^available_spaces', available), 
-    url(r'^tour', tour),
-    # url(r'^floorplan', floorplan),
-    url(r'^mailing', mailing)
+    url(r'^$', home, name="home"),
+    url(r'^studio', studio, name="studio"),
+    url(r'^co_working_space', coworking, name="coworking"),
+    url(r'^contact', contact, name="contact"),
+    url(r'^tour', tour, name="tour"),
+    url(r'^mailing', mailing, name="mail")
 ]

@@ -5,6 +5,6 @@ from .views import(
 )
         
 urlpatterns = [
-    url(r'^$', event_home),
-    url(r'^mailing', mailing),
+    url(r'^$', event_home, name="wall"),
+    url(r'^mailing', mailing, name="wall_mail"),
 ]

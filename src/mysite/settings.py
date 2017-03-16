@@ -24,19 +24,25 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites', 
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #Third Party App     
+    'easy_thumbnails',
     'djangobower',
+    'djangoseo',
     'django_markup',
+    'image_cropping',
     'materializecssform',
     'pagedown',
+    'robots',
     'sass_processor',
     'storages',
     #MyApp     
     'studio',
     'event_space',
     'coffee_shop',
+    'django.contrib.sitemaps',
 ]
 
 #Bower
@@ -47,6 +53,16 @@ BOWER_INSTALLED_APPS = (
     'materialize',
     'readmore-js',
 )
+
+#Easy_Thumbnail
+from easy_thumbnails.conf import Settings as thumbnail_settings
+THUMBNAIL_PROCESSORS = (
+    'image_cropping.thumbnail_processors.crop_corners',
+) + thumbnail_settings.THUMBNAIL_PROCESSORS
+
+#Django-Image-Cropping
+IMAGE_CROPPING_THUMB_SIZE = (500, 500)
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -79,6 +95,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+#Djnago Site
+SITE_ID = 1
 
 # Database
 DATABASES = {
@@ -129,6 +147,7 @@ MEDIA_URL = S3_URL + "media/"
 DEFAULT_FILE_STORAGE = 'mysite.s3utils.MediaRootS3BotoStorage'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 AWS_PRELOAD_METADATA = True 
+THUMBNAIL_DEFAULT_STORAGE = DEFAULT_FILE_STORAGE
 
 #STATIC Files
 STATIC_URL = "/static/"

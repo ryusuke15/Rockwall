@@ -13,7 +13,6 @@
         format: 'yyyy-mm-dd'
      });
     $(".button-collapse").sideNav(); 
-
     $('.info_text').readmore({
           collapsedHeight: 163,
     });
@@ -22,19 +21,15 @@
           moreLink: '<a href="#">View more</a>',
           lessLink: '<a href="#">Close</a>'
     });
-
     $('.coffee_blog_text').readmore({
           collapsedHeight: 200,
     });
 
-
     $('.article').readmore({
-        collapsedHeight: 132
+        collapsedHeight: 194
     });
     $('.text_length').readmore({
         collapsedHeight: 180
     });
-
-
 });
 

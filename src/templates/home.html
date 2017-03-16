@@ -16,12 +16,43 @@
           <li>
             <img src='{% static "img/home/orbit1.jpg" %}'>
           </li>
-          <li>
-            <img src='{% static "img/home/orbit2.jpg" %}'>
-          </li>
+
           <li>
             <img src='{% static "img/home/orbit3.jpg" %}'>
           </li>
+
+          <li>
+            <img src='{% static "img/home/home1.png" %}'>
+          </li>
+
+          <li>
+            <img src='{% static "img/home/home2.JPG" %}'>
+          </li>
+
+          <li>
+            <img src='{% static "img/home/home3.JPG" %}'>
+          </li>
+
+          <li>
+            <img src='{% static "img/home/home4.JPG" %}'>
+          </li>
+
+          <li>
+            <img src='{% static "img/home/home5.JPG" %}'>
+          </li>
+
+          <li>
+            <img src='{% static "img/home/home9.JPG" %}'>
+          </li>
+
+          <li>
+            <img src='{% static "img/home/home10.JPG" %}'>
+          </li>
+
+          <li>
+            <img src='{% static "img/home/home11.JPG" %}'>
+          </li>
+
         </ul>
         </div>
     </div>
@@ -56,7 +87,7 @@
         <div class="container blog_Container">
 
             {% for blog in spotlight %} 
-            <div class="row">
+            <div class="row blog_sec">
             <!--Image Content -->
             {% if blog.image %}
             <a href='https://s3.amazonaws.com/rockwall/media/{{ blog.image }}'>

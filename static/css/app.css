@@ -53,10 +53,12 @@ ol {
   width: 97%;
   overflow: hidden !important; }
 
-.blog_Text {
-  padding-bottom: 40px !important; }
-  .blog_Text h5 {
-    margin-top: 0px !important; }
+.blog_sec {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important; }
+
+.blog_Text h5 {
+  margin-top: 0px !important; }
 
 .blog_Video {
   padding-bottom: 10px !important; }

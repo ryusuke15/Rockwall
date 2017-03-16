@@ -2,9 +2,9 @@ from __future__ import unicode_literals
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
+from image_cropping import ImageRatioField, ImageCropField
 
 # Create your models here.
-
 def tenant_image_location(instance, filename):
     return "studio/tenant/%s/%s" %(instance.room, filename)
 
@@ -75,11 +75,12 @@ class Coworking_Space(models.Model):
     
     def __unicode__(self):
         return self.first_name +" "+ self.last_name
-
+#
 class Blog(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()
     image = models.ImageField(upload_to=blog_image_location, null=True, blank=True)
+    cropping = ImageRatioField('image', '430x360',free_crop=True)
     youtube_link = models.URLField(null=True,blank=True)
     date = models.DateField()
     spotlight = models.BooleanField(default=False)
@@ -90,6 +91,13 @@ class Blog(models.Model):
     def clean(self):
         if self.image and self.youtube_link:
             raise ValidationError("Uploading both videos and photos are prohibitted.")
+
+    def admin_image(self):
+        if self.image:
+            return '<img style="width:120px;height:120px;"src="https://s3.amazonaws.com/rockwall/media/%s">' % self.image
+        else:
+            return '<div style="width:120px;height:120px;>'
+    admin_image.allow_tags = True
 
 class Mailing_list(models.Model):
     email = models.EmailField()
@@ -126,3 +134,4 @@ class Room(models.Model):
     rent = models.IntegerField()
     image = models.ImageField(upload_to=room_image_location)
     content = models.TextField(max_length=140)
+
