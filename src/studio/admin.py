@@ -1,13 +1,13 @@
-from djangoseo.admin import register_seo_admin
+# from djangoseo.admin import register_seo_admin
 from django.contrib import admin
-from mysite.seo import MyMetadata
+# from mysite.seo import MyMetadata
 from .forms import BlogForm
 from image_cropping import ImageCroppingMixin
 
 # Register your models here.
 from .models import Blog, Contact, Coworking_Space,Mailing_list, Room, Tenant
 
-class BlogAdmin(ImageCroppingMixin, admin.ModelAdmin):
+class BlogAdmin(admin.ModelAdmin):
     list_display = ["title","date","spotlight","timestamp","admin_image"]
     list_filter = ["date","timestamp"]
     search_fields = ["title","content"]
@@ -17,6 +17,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ["__unicode__","date","email","received"]
     class Meta:
         model = Contact
+
 
 class CoworkAdmin(admin.ModelAdmin):
     list_display = ["__unicode__","email","received"]
@@ -43,7 +44,7 @@ class TenantAdmin(admin.ModelAdmin):
         model = Tenant
 
 
-register_seo_admin(admin.site, MyMetadata)
+# register_seo_admin(admin.site, MyMetadata)
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Coworking_Space, CoworkAdmin)
 admin.site.register(Contact, ContactAdmin)

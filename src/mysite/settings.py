@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     #Third Party App     
     'easy_thumbnails',
     'djangobower',
-    'djangoseo',
+    # 'djangoseo',
     'django_markup',
     'image_cropping',
     'materializecssform',

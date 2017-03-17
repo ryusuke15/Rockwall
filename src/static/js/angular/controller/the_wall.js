@@ -7,7 +7,7 @@ var address = "https://api.instagram.com/v1/users/self/media/recent/?access_toke
 
 function call(response){
     $scope.photos=response.data.data;
-    console.log(response)  
+    // console.log(response)  
 }
 
 $http.jsonp(' https://api.instagram.com/v1/users/self/media/recent/',{
