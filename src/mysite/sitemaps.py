@@ -13,9 +13,7 @@ class StaticViewSitemap(sitemaps.Sitemap):
                 'mail',
                 'tour',
                 'brew',
-                'brew_mail',
                 'wall',
-                'wall_mail'
                 ]
 
     def location(self, item):

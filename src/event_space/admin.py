@@ -18,6 +18,6 @@ class Mailing_listAdmin(admin.ModelAdmin):
     list_filter = ["timestamp"]
     search_fields = ["email"]
 
-admin.site.register(Blog, BlogAdmin)
+#admin.site.register(Blog, BlogAdmin)
 admin.site.register(Contact, ContactAdmin)
 admin.site.register(Mailing_list, Mailing_listAdmin)
